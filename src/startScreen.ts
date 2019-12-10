@@ -6,5 +6,7 @@
 class StartScreen extends GameScreen {
 
     private levelBackground: HTMLImageElement;
+
+    
     
 }
