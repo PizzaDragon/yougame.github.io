@@ -1,5 +1,5 @@
 body {
 background-image: url('../images/characters/download.jpg');
 background-color: black;
-
+overflow: hidden;
 }
