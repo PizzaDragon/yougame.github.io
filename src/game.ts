@@ -1,5 +1,7 @@
+/**
+ * This class handles the basic canvas elements
+ */
 class Game {
-<<<<<<< HEAD
     //global attributes for canvas
     //Readonly attributes are read-only. They can only be initialized in the constructor.
     private readonly canvas: HTMLCanvasElement;
@@ -15,7 +17,4 @@ class Game {
 
 
 
-=======
-    
->>>>>>> 01a61a295b35ed3f282b262475fbfba94dcfecc5
 }
