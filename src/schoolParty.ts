@@ -5,4 +5,7 @@
 /// <reference path="GameScreen.ts"/>
 class SchoolParty extends GameScreen {
 
+    //add the global attributes
+    private character: HTMLImageElement;
+    private keyboardListener: KeyboardListener;
 }
