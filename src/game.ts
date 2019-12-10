@@ -1,3 +1,6 @@
+/**
+ * This class handles the basic canvas elements
+ */
 class Game {
     //global attributes for canvas
     //Readonly attributes are read-only. They can only be initialized in the constructor.
@@ -22,4 +25,8 @@ class Game {
 
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2f1a736cb6f9d236f9c64b95beae44fcad80cd50
 }
