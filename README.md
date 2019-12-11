@@ -1,6 +1,8 @@
 # yougame.github.io
 Game with different branches, eaach class handles a branch.
+
 This game is being developed for a preschool class, it will teach the kids how to be safe online in a fun way.
+The story follows a girl in her first year of highschool, as a player you will encounter various characters which all will play a part in your choices and your story.
 
 Never forget to comment your code what it does!
 
