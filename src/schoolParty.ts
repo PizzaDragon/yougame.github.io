@@ -8,10 +8,14 @@ class SchoolParty extends GameScreen {
     //add the global attributes
    
     private keyboardListener: KeyboardListener;
+    private shouldStartLevel: boolean = false;
 
+    //Add the constructor
+    
     public constructor(
         game: Game) {
         super(game);
+        document.body.style.backgroundImage = '/assets/images/background/SchoolPartyBackground.jpg'
        
 
     }
