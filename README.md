@@ -1,5 +1,6 @@
 # yougame.github.io
-Game with different branches, eaach class handles a branch
+Game with different branches, eaach class handles a branch.
+This game is being developed for a preschool class, it will teach the kids how to be safe online in a fun way.
 
 Never forget to comment your code what it does!
 
@@ -10,4 +11,4 @@ git commands:
 4: git commit -m "${current date, message you want to commit}" //commit to the local repository.
 5: git push // finally, pushes to our master branch.
 
-code created by Evan Verdoorn, Leslie Scherbeijn, Calvin Hannewijk and Neo McNeese.
+code created by Evan Verdoorn, Leslie Scherbeijn, Calvin Hannewijk and Neo McNeese. Four first year IT-students at HZ-University of Applied Sciences.
