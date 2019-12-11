@@ -3,7 +3,9 @@ class GameObject {
     protected xPos: number;
     protected yPos: number;
     protected img: HTMLImageElement;
+    protected keyboardListener: KeyboardListener;
 
+   
     /**
     * Construct a new object.
     *
@@ -15,9 +17,12 @@ class GameObject {
         imgUrl: string,
         xPos: number,
         yPos: number,
+        keyboardListener: KeyboardListener,
+
     ) {
         this.xPos = xPos;
         this.yPos = yPos;
+        this.keyboardListener = keyboardListener
     }
 
     /**
@@ -28,7 +33,7 @@ class GameObject {
    */
     public draw(ctx: CanvasRenderingContext2D) {
 
-        // We want the center of the image to be the position of this objectgi
+        // We want the center of the image to be the position of this object
         const x = this.xPos - this.img.width / 2;
         const y = this.yPos - this.img.height / 2;
 
@@ -48,7 +53,7 @@ class GameObject {
      *
      * @param {string} source - the name of the image file to load
      */
-    protected loadImage(source: string) {
+    public loadImage(source: string) {
         this.img = new Image();
         // Now, set the src to start loading the image
         this.img.src = source;
@@ -63,14 +68,14 @@ class GameObject {
      * @param character1 
      * @param character2 
      */
-    public writeDialogueOptions(
+    protected selectDialogueOptions(
         dialogue1: string,
         dialogue2: string,
         dialogue3: string,
         character1: HTMLImageElement,
         character2: HTMLImageElement        
     ){
-        //only if else here
+      
 
 
     }
