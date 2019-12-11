@@ -10,8 +10,11 @@ class StartScreen extends GameScreen {
 
     public constructor(game:Game) {
         super(game);
-        document.body.style.backgroundImage = "/assets/images/background/startscreen.jpg"
+        
     }
+
+    const backgroundImage = "./assets/images/background/startscreen.jpg";
+    this.loadImage(backgroundImage, this.drawBackgroundToStartScreen);
 
     public listen(input: KeyboardListener) {
         if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
@@ -27,8 +30,16 @@ class StartScreen extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.writeTextToCanvas(ctx, "You", 140, this.canvas.width/2, 200,);
-        this.writeTextToCanvas(ctx, "PRESS ENTER TO PLAY", 30, this.canvas.width/2, 400, )
+        this.writeTextToCanvas(ctx, "PRESS ENTER TO PLAY", 30, this.canvas.width/2, 400,)
+
+
+
+    }
+
+    public drawBackgroundToStartScreen(img: HTMLImageElement) {
+        let x = 0;
+        let y = 0;
+        this.ctx.drawImage(img, x, y);
     }
 }
 
-//push
