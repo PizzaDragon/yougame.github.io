@@ -23,5 +23,10 @@ class StartScreen extends GameScreen {
             game.switchScreen(new SchoolParty(game));
         }
     }
+
+    public draw(ctx: CanvasRenderingContext2D) {
+        this.writeTextToCanvas(ctx, "You", 140, this.canvas.width/2, 200,);
+        this.writeTextToCanvas(ctx, "PRESS ENTER TO PLAY", 30, this.canvas.width/2, 400, )
+    }
 }
 

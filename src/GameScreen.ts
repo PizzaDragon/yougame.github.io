@@ -20,12 +20,13 @@ class GameScreen{
      * @param {string} color - The color of the text
      */
     protected writeTextToCanvas(
+        ctx: CanvasRenderingContext2D,
         text: string,
         fontSize: number = 20,
         xCoordinate: number,
         yCoordinate: number,
         alignment: CanvasTextAlign = "center",
-        color: string = "white",
+        color: string = "blue",
     ) {
         this.ctx.font = `${fontSize}px Minecraft`;
         this.ctx.fillStyle = color;

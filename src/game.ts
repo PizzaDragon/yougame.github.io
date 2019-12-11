@@ -6,6 +6,7 @@ class Game {
     //Readonly attributes are read-only. They can only be initialized in the constructor.
     private readonly canvas: HTMLCanvasElement;
     private readonly ctx: CanvasRenderingContext2D;
+    private readonly game: Game;
 
     //Handles screen events
     private currentScreen: GameScreen;
@@ -21,10 +22,10 @@ class Game {
         this.ctx = this.canvas.getContext('2d');
 
         this.keyboardListener = new KeyboardListener();
-        this.currentScreen = new SchoolParty(this.canvas, this.ctx);
+        this.currentScreen = new SchoolParty(this.game);
     }
 
-    public switchScreen() {
+    public switchScreen(newScreen: GameScreen) {
         // If the current screen is an instance of the StartScreen class
         // Basically: if the current screen is the start screen
         // And the user pressed "s", render the level screen
@@ -32,9 +33,11 @@ class Game {
             this.currentScreen instanceof StartScreen
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_S)
         ) {
-            this.currentScreen = new SchoolParty(this.canvas, this.ctx);
+            this.currentScreen = new SchoolParty(this.game);
         }
     }
+
+   
 }
 
 // This will get an HTML element. I cast this element in de appropriate type using <>
