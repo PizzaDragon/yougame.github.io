@@ -19,15 +19,15 @@ class StartScreen extends GameScreen {
         }
     }
 
-    public adjust(game: Game) {
-        if (this.shouldStartLevel) {
-            game.switchScreen(new SchoolParty(game));
-        }
-    }
+    // public adjust(game: Game) {
+    //     if (this.shouldStartLevel) {
+    //         game.switchScreen();
+    //     }
+    // }
 
     public draw(ctx: CanvasRenderingContext2D) {
-        this.writeTextToCanvas(ctx, "You", 140, this.canvas.width/2, 200,);
-        this.writeTextToCanvas(ctx, "PRESS ENTER TO PLAY", 30, this.canvas.width/2, 400, )
+        this.writeTextToCanvas(ctx, "You", 140, 500, 200,);
+        this.writeTextToCanvas(ctx, "PRESS ENTER TO PLAY", 30, 500, 400, )
     }
 }
 

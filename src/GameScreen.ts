@@ -28,9 +28,9 @@ class GameScreen{
         alignment: CanvasTextAlign = "center",
         color: string = "blue",
     ) {
-        this.ctx.font = `${fontSize}px Minecraft`;
-        this.ctx.fillStyle = color;
-        this.ctx.textAlign = alignment;
-        this.ctx.fillText(text, xCoordinate, yCoordinate);
+        ctx.font = `${fontSize}px Minecraft`;
+        ctx.fillStyle = color;
+        ctx.textAlign = alignment;
+        ctx.fillText(text, xCoordinate, yCoordinate);
     }
 }
