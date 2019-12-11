@@ -6,6 +6,22 @@
 class SchoolParty extends GameScreen {
 
     //add the global attributes
-    private character: HTMLImageElement;
+   
     private keyboardListener: KeyboardListener;
+
+    public constructor(
+        game: Game) {
+        super(game);
+       
+
+    }
+
+
+
+
+
+
+
+
+
 }
