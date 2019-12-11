@@ -11,11 +11,11 @@ class SchoolParty extends GameScreen {
     private shouldStartLevel: boolean = false;
 
     //Add the constructor
-    
+
     public constructor(
         game: Game) {
         super(game);
-        document.body.style.backgroundImage = '/assets/images/background/SchoolPartyBackground.jpg'
+        
        
 
     }

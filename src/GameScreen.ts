@@ -43,5 +43,8 @@ class GameScreen{
         character2: HTMLImageElement        
     ){
 
+
     }
+
+    
 }
