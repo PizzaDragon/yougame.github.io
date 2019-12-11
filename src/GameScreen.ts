@@ -1,15 +1,14 @@
 class GameScreen{
 
-    
+    protected readonly game: Game;
     protected readonly canvas: HTMLCanvasElement;
     protected readonly ctx: CanvasRenderingContext2D;
 
-    public constructor(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D){
-        this.canvas = canvas;
-        this.ctx = ctx;
+    public constructor(game: Game){
+        this.game = game;
     }
 
-    public draw(){}
+    public draw(ctx: CanvasRenderingContext2D){}
 
     /**
      * Writes text to the canvas

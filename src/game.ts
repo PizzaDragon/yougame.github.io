@@ -24,7 +24,7 @@ class Game {
         this.currentScreen = new SchoolParty(this.canvas, this.ctx);
     }
 
-    private switchScreen() {
+    public switchScreen() {
         // If the current screen is an instance of the StartScreen class
         // Basically: if the current screen is the start screen
         // And the user pressed "s", render the level screen
