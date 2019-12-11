@@ -1,15 +1,33 @@
 class GameScreen{
 
+    //Add basic attributes to GameScreen class
     protected readonly game: Game;
     protected readonly canvas: HTMLCanvasElement;
     protected readonly ctx: CanvasRenderingContext2D;
-    private img: HTMLImageElement;
+    protected img: HTMLImageElement;
+    protected keyboardListener: KeyboardListener
 
-    public constructor(game: Game){
+
+    //Add the global constructor
+    public constructor(
+        game: Game,
+        canvas: HTMLCanvasElement,
+        ctx: CanvasRenderingContext2D,
+        img: HTMLImageElement,
+        keyboardlistener: KeyboardListener
+        ){
         this.game = game;
+        this.canvas = canvas;
+        this.ctx = ctx;
+        this.img = img;
+        this.keyboardListener = keyboardlistener;
     
     }
 
+    /**
+     * 
+     * method to draw the canvas to the screen
+     */
     public draw(ctx: CanvasRenderingContext2D){}
 
     /**
@@ -47,6 +65,15 @@ class GameScreen{
         this.img = new Image();
         // Now, set the src to start loading the image
         this.img.src = source;
+    }
+
+    /**
+     * method to draw the background image to the current screen
+     */
+    public drawBackgroundToScreen(img: HTMLImageElement) {
+        let x = 0;
+        let y = 0;
+        this.ctx.drawImage(img, x, y);
     }
 
        

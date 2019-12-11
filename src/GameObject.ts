@@ -1,3 +1,6 @@
+/**
+ * Class that handles the character and other objects in game
+ */
 class GameObject {
     //add the global GameObject attributes.
     protected xPos: number;
@@ -59,24 +62,21 @@ class GameObject {
         this.img.src = source;
     }
 
-    /**
-     * constructs a function to handle the dialogue options
-     * 
-     * @param dialogue1 
-     * @param dialogue2 
-     * @param dialogue3 
-     * @param character1 
-     * @param character2 
-     */
-    protected selectDialogueOptions(
-        dialogue1: string,
-        dialogue2: string,
-        dialogue3: string,
-        character1: HTMLImageElement,
-        character2: HTMLImageElement        
-    ){
-      
+    // /**
+    //  * constructs a function to handle the dialogue options
+    //  * 
+    //  * @param dialogue1 option one which will go to the correct path
+    //  * @param dialogue2 option two which will go to the neutral path
+    //  * @param dialogue3 option three which will go to the bad path
+     
+    //  */
+    // protected selectDialogueOptions(
+    //     dialogue: string,
+    //     dialogue: string,
+    //     dialogue: string,
+  
+    // ) {
+    // }
 
-
-    }
+    
 }

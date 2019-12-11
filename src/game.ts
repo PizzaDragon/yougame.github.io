@@ -7,6 +7,7 @@ class Game {
     private readonly canvas: HTMLCanvasElement;
     private readonly ctx: CanvasRenderingContext2D;
     private readonly game: Game;
+    private readonly img: HTMLImageElement;
 
     //Handles screen events
     private currentScreen: GameScreen;
@@ -22,7 +23,7 @@ class Game {
         this.ctx = this.canvas.getContext('2d');
 
         this.keyboardListener = new KeyboardListener();
-        this.currentScreen = new StartScreen(this.game);
+        this.currentScreen = new StartScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
 
         this.loop();
     }
