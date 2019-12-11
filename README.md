@@ -1,6 +1,8 @@
 # yougame.github.io
 Game with different branches, eaach class handles a branch
 
+Never forget to comment your code what it does!
+
 git commands:
 1: git pull // (first commit if you pull from the same branch) pulls the changes other change.
 2: git status // Let's you know the status of the files which you want to change.
