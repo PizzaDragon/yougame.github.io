@@ -10,6 +10,7 @@ class StartScreen extends GameScreen {
 
     public constructor(game:Game) {
         super(game);
+        
     }
 
     public listen(input: KeyboardListener) {
