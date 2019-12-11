@@ -70,7 +70,7 @@ class GameObject {
         character1: HTMLImageElement,
         character2: HTMLImageElement        
     ){
-        
+        //only if else here
 
 
     }
