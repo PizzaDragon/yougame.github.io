@@ -33,4 +33,8 @@ class GameScreen{
         ctx.textAlign = alignment;
         ctx.fillText(text, xCoordinate, yCoordinate);
     }
+
+       
+
+
 }
