@@ -10,7 +10,7 @@ class StartScreen extends GameScreen {
 
     public constructor(game:Game) {
         super(game);
-        
+        document.body.style.backgroundImage = "/assets/images/background/startscreen.jpg"
     }
 
     public listen(input: KeyboardListener) {
