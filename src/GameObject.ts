@@ -53,4 +53,25 @@ class GameObject {
         // Now, set the src to start loading the image
         this.img.src = source;
     }
+
+    /**
+     * constructs a function to handle the dialogue options
+     * 
+     * @param dialogue1 
+     * @param dialogue2 
+     * @param dialogue3 
+     * @param character1 
+     * @param character2 
+     */
+    public writeDialogueOptions(
+        dialogue1: string,
+        dialogue2: string,
+        dialogue3: string,
+        character1: HTMLImageElement,
+        character2: HTMLImageElement        
+    ){
+        
+
+
+    }
 }
