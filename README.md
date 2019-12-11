@@ -4,7 +4,7 @@ This game is being developed for a preschool class, it will teach the kids how t
 
 Never forget to comment your code what it does!
 
-git commands:
+Here follow some usefull git commands for you to use:
 1: git pull // (first commit if you pull from the same branch) pulls the changes other change.
 2: git status // Let's you know the status of the files which you want to change.
 3: git add ${filename} // Adds the files which are going to be pushed to the master branch.
