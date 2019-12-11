@@ -10,11 +10,13 @@ class StartScreen extends GameScreen {
 
     public constructor(game:Game) {
         super(game);
+
+        const backgroundImage = "./assets/images/background/startscreen.jpg";
+        this.loadImage(backgroundImage, this.drawBackgroundToStartScreen);
         
     }
 
-    const backgroundImage = "./assets/images/background/startscreen.jpg";
-    this.loadImage(backgroundImage, this.drawBackgroundToStartScreen);
+    
 
     public listen(input: KeyboardListener) {
         if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
@@ -22,15 +24,15 @@ class StartScreen extends GameScreen {
         }
     }
 
-    // public adjust(game: Game) {
-    //     if (this.shouldStartLevel) {
-    //         game.switchScreen();
-    //     }
-    // }
+    public adjust(game: Game) {
+        if (this.shouldStartLevel) {
+            game.switchScreen();
+        }
+    }
 
     public draw(ctx: CanvasRenderingContext2D) {
-        this.writeTextToCanvas(ctx, "You", 140, this.canvas.width/2, 200,);
-        this.writeTextToCanvas(ctx, "PRESS ENTER TO PLAY", 30, this.canvas.width/2, 400,)
+        this.writeTextToCanvas(ctx, "You", 140, 500, 200,);
+        this.writeTextToCanvas(ctx, "PRESS ENTER TO PLAY", 30, 500, 400,)
 
 
 

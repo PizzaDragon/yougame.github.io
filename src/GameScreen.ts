@@ -3,9 +3,11 @@ class GameScreen{
     protected readonly game: Game;
     protected readonly canvas: HTMLCanvasElement;
     protected readonly ctx: CanvasRenderingContext2D;
+    private img: HTMLImageElement;
 
     public constructor(game: Game){
         this.game = game;
+    
     }
 
     public draw(ctx: CanvasRenderingContext2D){}
@@ -32,6 +34,19 @@ class GameScreen{
         ctx.fillStyle = color;
         ctx.textAlign = alignment;
         ctx.fillText(text, xCoordinate, yCoordinate);
+    }
+
+    /**
+     * Loads an image file into the DOM. The image is stored in the img
+     * attribute of this class before it is loaded. This means that this.img
+     * always holds an HTMLImageElement, but it might be empty
+     *
+     * @param {string} source - the name of the image file to load
+     */
+    public loadImage(source: string,  callback: (img: HTMLImageElement) => void) {
+        this.img = new Image();
+        // Now, set the src to start loading the image
+        this.img.src = source;
     }
 
        
