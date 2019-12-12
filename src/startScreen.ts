@@ -22,20 +22,13 @@ class StartScreen extends GameScreen {
         //Add a super constructor which will handle the level when it is drawn
         super(game, canvas, ctx, img, keyboardListener);
 
-        //add the background image for the startscreen
-        const backgroundImage = "./assets/images/background/startscreen.jpg";
-        this.loadImage(backgroundImage, this.drawBackgroundToScreen);
 
 
     }
 
-
-
-
-
     /**
     * method to initialize the screen
-     */
+    */
     public listen(input: KeyboardListener) {
         if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
             this.shouldStartLevel = true
@@ -51,13 +44,12 @@ class StartScreen extends GameScreen {
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
-        this.writeTextToCanvas(ctx, "You", 140, 500, 200);
-        this.writeTextToCanvas(ctx, "PRESS ENTER TO PLAY", 30, 500, 400)
-
-
-
+        const backgroundImage = "./assets/images/background/startscreen.jpg";
+        this.loadImage(backgroundImage, this.drawBackgroundToScreen);
+        this.writeTextToCanvas(ctx, "You", 200, 500, 500);
+        this.writeTextToCanvas(ctx, "PRESS ENTER TO PLAY", 30, 500, 700);
     }
 
-    
+
 }
 

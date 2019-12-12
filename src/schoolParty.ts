@@ -21,9 +21,8 @@ class SchoolParty extends GameScreen {
         //Add a super constructor which will handle the level when it is drawn
         super(game, canvas, ctx, img, keyboardListener);
 
-        //add the background image for the school party level
-        const backgroundImage = "./assets/images/background/SchoolPartyBackground.jpg";
-        this.loadImage(backgroundImage, this.drawBackgroundToScreen);
+        
+       
     }
 
     /**
@@ -36,8 +35,10 @@ class SchoolParty extends GameScreen {
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
-        this.writeTextToCanvas(ctx, "You", 140, 500, 200);
-        this.writeTextToCanvas(ctx, "PRESS ENTER TO PLAY", 30, 500, 400)
+        this.writeTextToCanvas(ctx, "SCENE ONE", 140, 500, 200);
+        this.writeTextToCanvas(ctx, "PRESS ENTER TO CONTINUE", 30, 500, 400);
+        const backgroundImage = "./assets/images/background/SchoolPartyBackground.jpg";
+        this.loadImage(backgroundImage, this.drawBackgroundToScreen);
     }
 
 }

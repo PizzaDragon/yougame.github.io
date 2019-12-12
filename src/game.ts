@@ -45,20 +45,20 @@ class Game {
     public switchScreen() {
         // If the current screen is an instance of the StartScreen class
         // Basically: if the current screen is the start screen
-        // And the user pressed "s", render the level screen
-        // if (
-        //     this.currentScreen instanceof StartScreen
-        //     && this.keyboardListener.isKeyDown(KeyboardListener.KEY_S)
-        // ) {
-        //     this.currentScreen = new LevelScreen(this.canvas, this.ctx, this.keyboardListener);
-        // }
+        // And the user pressed "enter", render the level screen
+        if (
+            this.currentScreen instanceof StartScreen
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ENTER)
+        ) {
+            this.currentScreen = new SchoolParty(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+        }
 
-        // if (
-        //     this.currentScreen instanceof LevelScreen
-        //     && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ESC)
-        // ) {
-        //     this.currentScreen = new TitleScreen(this.canvas, this.ctx);
-        // }
+        if (
+            this.currentScreen instanceof SchoolParty
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ESC)
+        ) {
+            this.currentScreen = new StartScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+        }
     }
 
    
