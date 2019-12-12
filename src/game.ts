@@ -77,7 +77,13 @@ class Game {
             this.currentScreen = new SchoolPartyFollowUpBad(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
         //this switches the screen to the neutral path after the party
-
+        if (
+            this.currentScreen instanceof SchoolPartyFirstDialogue
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)
+        ) {
+            //console.log('you switched your screen to the good option);
+            this.currentScreen = new SchoolPartyFollowUpNeutral(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+        }
         //this switches the screen to the good path after the party
         if (
             this.currentScreen instanceof SchoolPartyFirstDialogue
