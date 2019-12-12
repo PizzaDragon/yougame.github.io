@@ -46,7 +46,7 @@ class GameScreen{
         xCoordinate: number,
         yCoordinate: number,
         alignment: CanvasTextAlign = "center",
-        color: string = "blue",
+        color: string = "white",
     ) {
         ctx.font = `${fontSize}px Minecraft`;
         ctx.fillStyle = color;

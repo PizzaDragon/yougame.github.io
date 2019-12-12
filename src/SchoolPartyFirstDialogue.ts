@@ -1,10 +1,9 @@
 /**
- * Class SchoolParty handles the level of schoolparty
- * in which our main character goes to a party and encounters a boy
+ * Class that handles the first set of dialogue options after the original cutscene in the schoolparty.
  */
 /// <reference path='GameScreen.ts'/>
-class SchoolParty extends GameScreen {
-
+class SchoolPartyFirstDialogue extends GameScreen {
+    
     //add the global attributes
     private shouldStartLevel: boolean = false;
    
@@ -30,16 +29,17 @@ class SchoolParty extends GameScreen {
      * method to initialize the screen
      */
     public listen(input: KeyboardListener) {
-        if (input.isKeyDown(KeyboardListener.KEY_SPACE)) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
             this.shouldStartLevel = true
         }
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
-        this.writeTextToCanvas(ctx, "PARTYSCENE", 140, 500, 200);
-        this.writeTextToCanvas(ctx, 'Je bent op een feestje met je vrienden en wat mensen van school', 50, 800, 360)
-        this.writeTextToCanvas(ctx, "PRESS SPACE TO CONTINUE", 30, 500, 400);
-        this.writeTextToCanvas(ctx, 'PRESS ESC TO EXIT', 30, 500, 450)
+        this.writeTextToCanvas(ctx, 'Je staat te dansen met een jongen en hij gaat tegen je praten', 50, 800, 360)
+        this.writeTextToCanvas(ctx, "hij leunt naar je toe en vraagt je snapchat", 50, 500, 420);
+        this.writeTextToCanvas(ctx, 'je geeft je snap (toets 1)', 30, 500, 460);
+        this.writeTextToCanvas(ctx, 'je zegt niks (toets 2)', 30, 500, 510);
+        this.writeTextToCanvas(ctx, 'je geeft hem je snap niet en wijst hem af (toets 3)', 30, 500, 550);
         // const backgroundImage = "./assets/images/background/SchoolPartyBackground.jpg";
         // this.loadImage(backgroundImage, this.drawBackgroundToScreen);
     }
@@ -59,5 +59,4 @@ class SchoolParty extends GameScreen {
   
     // // ) {
     // // }
-
 }

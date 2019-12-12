@@ -12,6 +12,9 @@
 class KeyboardListener {
     // Some convenient key codes already defined here. If you need a specific
     // keycode, see:https://keycode.info/
+    public static readonly KEY_ONE   = 49;
+    public static readonly KEY_TWO   = 50;
+    public static readonly KEY_THREE = 51;
     public static readonly KEY_ESC   = 27;
     public static readonly KEY_SPACE = 32;
     public static readonly KEY_LEFT  = 37;
@@ -20,6 +23,7 @@ class KeyboardListener {
     public static readonly KEY_DOWN  = 40;
     public static readonly KEY_S     = 83;
     public static readonly KEY_ENTER = 13;
+
 
     // Array that holds the state of all keys
     private keyCodeStates: boolean[];
