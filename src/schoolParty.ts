@@ -36,7 +36,7 @@ class SchoolParty extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.writeTextToCanvas(ctx, "SCENE ONE", 140, 500, 200);
-        this.writeTextToCanvas(ctx, "PRESS ENTER TO CONTINUE", 30, 500, 400);
+        this.writeTextToCanvas(ctx, "PRESS ESC TO CONTINUE", 30, 500, 400);
         const backgroundImage = "./assets/images/background/SchoolPartyBackground.jpg";
         this.loadImage(backgroundImage, this.drawBackgroundToScreen);
     }

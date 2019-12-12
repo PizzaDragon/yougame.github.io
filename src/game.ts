@@ -26,10 +26,12 @@ class Game {
         this.currentScreen = new StartScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
 
         this.loop();
+
+       
     }
 
     private loop = () => {
-        // this.switchScreen()
+         this.switchScreen()
 
          // Clear the canvas
          this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -50,6 +52,7 @@ class Game {
             this.currentScreen instanceof StartScreen
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ENTER)
         ) {
+            //console.log('you switched your screen');
             this.currentScreen = new SchoolParty(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
 
