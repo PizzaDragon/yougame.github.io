@@ -35,10 +35,10 @@ class SchoolParty extends GameScreen {
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
-        // this.writeTextToCanvas(ctx, "SCENE ONE", 140, 500, 200);
-        // this.writeTextToCanvas(ctx, "PRESS ESC TO EXIT", 30, 500, 400);
-        const backgroundImage = "./assets/images/background/SchoolPartyBackground.jpg";
-        this.loadImage(backgroundImage, this.drawBackgroundToScreen);
+        this.writeTextToCanvas(ctx, "SCENE ONE", 140, 500, 200);
+        this.writeTextToCanvas(ctx, "PRESS ESC TO EXIT", 30, 500, 400);
+        // const backgroundImage = "./assets/images/background/SchoolPartyBackground.jpg";
+        // this.loadImage(backgroundImage, this.drawBackgroundToScreen);
     }
 
 }
