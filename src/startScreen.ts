@@ -46,8 +46,8 @@ class StartScreen extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         const backgroundImage = "./assets/images/background/startscreen.jpg";
         this.loadImage(backgroundImage, this.drawBackgroundToScreen);
-        this.writeTextToCanvas(ctx, "You", 200, 500, 500);
-        this.writeTextToCanvas(ctx, "PRESS ENTER TO PLAY", 30, 500, 700);
+        this.writeTextToCanvas(ctx, "You", 200, this.canvas.width/2, 500);
+        this.writeTextToCanvas(ctx, "DRUK OP ENTER OM TE SPELEN", 30, this.canvas.width/2, 700);
     }
 
 

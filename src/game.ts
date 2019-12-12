@@ -27,27 +27,27 @@ class Game {
 
         this.loop();
 
-       
+
     }
 
     private loop = () => {
-         this.switchScreen()
+        this.switchScreen()
 
-         // Clear the canvas
-         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-         // Let the current screen draw itself on the rendering context
-         this.currentScreen.draw(this.ctx);
+        // Clear the canvas
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        // Let the current screen draw itself on the rendering context
+        this.currentScreen.draw(this.ctx);
 
-         // Request the next animation frame
+        // Request the next animation frame
         requestAnimationFrame(this.loop);
 
-        
+
     }
 
     public switchScreen() {
         // If the current screen is an instance of the StartScreen class
         // Basically: if the current screen is the start screen
-        // And the user pressed "enter", render the level screen
+        // And the user pressed "enter", render the first scene screen
         if (
             this.currentScreen instanceof StartScreen
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ENTER)
@@ -68,18 +68,29 @@ class Game {
         ) {
             this.currentScreen = new StartScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
+        //this switches the screen to the bad option
         if (
-            this.currentScreen  instanceof SchoolPartyFirstDialogue
+            this.currentScreen instanceof SchoolPartyFirstDialogue
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)
         ) {
-            //console.log('you switched your screen);
+            //console.log('you switched your screen to the bad option);
             this.currentScreen = new SchoolPartyFollowUpBad(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
+        //this switches the screen to the neutral path after the party
 
-       
+        //this switches the screen to the good path after the party
+        if (
+            this.currentScreen instanceof SchoolPartyFirstDialogue
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_THREE)
+        ) {
+            //console.log('you switched your screen to the good option);
+            this.currentScreen = new SchoolPartyFollowUpGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+        }
+
+
     }
 
-   
+
 }
 
 // This will get an HTML element. I cast this element in de appropriate type using <>
@@ -90,8 +101,8 @@ let init = () => {
 // Add EventListener to load the game whenever the browser is ready
 window.addEventListener("load", init);
 
-    
 
 
-   
+
+
 
