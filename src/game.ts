@@ -45,9 +45,9 @@ class Game {
     }
 
     public switchScreen() {
-        // If the current screen is an instance of the StartScreen class
-        // Basically: if the current screen is the start screen
-        // And the user pressed "enter", render the first scene screen
+        // Here the current screen is the StartScreen, this will be followed up
+        // with the first dialogue option, 
+        // If you press enter on this screen you will continue to the first 'cutscene'
         if (
             this.currentScreen instanceof StartScreen
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ENTER)
@@ -55,6 +55,7 @@ class Game {
             //console.log('you switched your screen');
             this.currentScreen = new SchoolParty(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
+        //Here the screen switches to the first set of dialogue options at the school party.
         if (
             this.currentScreen instanceof SchoolParty
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
@@ -62,13 +63,16 @@ class Game {
             //console.log('you switched your screen);
             this.currentScreen = new SchoolPartyFirstDialogue(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
+        //Here the screen can go back to the title screen by pressing the escape key on your keyboard.
+        //If you continue you cannot go back so if you don't want to play, this is your final return chance.
         if (
             this.currentScreen instanceof SchoolParty
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ESC)
         ) {
             this.currentScreen = new StartScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
-        //this switches the screen to the bad option
+        //This switches the screen to the bad option, 
+        //the bad option will continue to the bad path which you will land in
         if (
             this.currentScreen instanceof SchoolPartyFirstDialogue
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)
@@ -81,7 +85,7 @@ class Game {
             this.currentScreen instanceof SchoolPartyFirstDialogue
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)
         ) {
-            //console.log('you switched your screen to the good option);
+            //console.log('you switched your screen to the neutral option);
             this.currentScreen = new SchoolPartyFollowUpNeutral(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
         //this switches the screen to the good path after the party
