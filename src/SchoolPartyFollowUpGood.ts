@@ -1,10 +1,9 @@
 /**
- * Class SchoolParty handles the level of schoolparty
- * in which our main character goes to a party and encounters a boy
+ * Class that handles the first set of dialogue options after the original cutscene in the schoolparty.
  */
 /// <reference path='GameScreen.ts'/>
-class SchoolParty extends GameScreen {
-
+class SchoolPartyFollowUpGood extends GameScreen {
+    
     //add the global attributes
     private shouldStartLevel: boolean = false;
    
@@ -30,16 +29,17 @@ class SchoolParty extends GameScreen {
      * method to initialize the screen
      */
     public listen(input: KeyboardListener) {
-        if (input.isKeyDown(KeyboardListener.KEY_SPACE)) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
             this.shouldStartLevel = true
         }
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
-        this.writeTextToCanvas(ctx, "FEESTSCENE", 140, this.canvas.width/2, 300);
-        this.writeTextToCanvas(ctx, 'Je bent op een feestje met Emily en wat mensen van school', 50, this.canvas.width/2, 460)
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", 30, this.canvas.width/2, 550);
-        this.writeTextToCanvas(ctx, 'DRUK OP ESCAPE OM HET SPEL TE VERLATEN', 20, 240, 20)
+        this.writeTextToCanvas(ctx, 'Je zegt nee en wijst hem af', 80, this.canvas.width/2, 360)
+        this.writeTextToCanvas(ctx, "Jij: Nee ik ken je nog niet goed genoeg dus ik wil je mijn snap niet geven", 30, this.canvas.width/2, 470);
+        this.writeTextToCanvas(ctx, "Hij: wat? Hoezo niet? We dansen toch al heel de avond, wat doe je stom?", 30, this.canvas.width/2, 500);
+        this.writeTextToCanvas(ctx, "Jij: Ja sorry hoor ik geef mijn snap gewoon niet aan mensen die ik niet ken, is dat een probleem ofzo?", 30, this.canvas.width/2, 530);
+        this.writeTextToCanvas(ctx, "Hij: Ja dat is een probleem ja, je kent me toch? Maar laat maar zitten, rotkind dat je bent ik snap dat je vriendloos bent.", 30, this.canvas.width/2, 560);
         // const backgroundImage = "./assets/images/background/SchoolPartyBackground.jpg";
         // this.loadImage(backgroundImage, this.drawBackgroundToScreen);
     }
@@ -59,5 +59,4 @@ class SchoolParty extends GameScreen {
   
     // // ) {
     // // }
-
 }

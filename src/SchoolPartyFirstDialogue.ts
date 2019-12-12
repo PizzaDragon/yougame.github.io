@@ -1,10 +1,9 @@
 /**
- * Class SchoolParty handles the level of schoolparty
- * in which our main character goes to a party and encounters a boy
+ * Class that handles the first set of dialogue options after the original cutscene in the schoolparty.
  */
 /// <reference path='GameScreen.ts'/>
-class SchoolParty extends GameScreen {
-
+class SchoolPartyFirstDialogue extends GameScreen {
+    
     //add the global attributes
     private shouldStartLevel: boolean = false;
    
@@ -30,16 +29,17 @@ class SchoolParty extends GameScreen {
      * method to initialize the screen
      */
     public listen(input: KeyboardListener) {
-        if (input.isKeyDown(KeyboardListener.KEY_SPACE)) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
             this.shouldStartLevel = true
         }
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
-        this.writeTextToCanvas(ctx, "FEESTSCENE", 140, this.canvas.width/2, 300);
-        this.writeTextToCanvas(ctx, 'Je bent op een feestje met Emily en wat mensen van school', 50, this.canvas.width/2, 460)
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", 30, this.canvas.width/2, 550);
-        this.writeTextToCanvas(ctx, 'DRUK OP ESCAPE OM HET SPEL TE VERLATEN', 20, 240, 20)
+        this.writeTextToCanvas(ctx, 'Je staat te dansen met een jongen en hij gaat tegen je praten', 50, this.canvas.width/2, 360)
+        this.writeTextToCanvas(ctx, "hij leunt naar je toe en vraagt je snapchat", 50, this.canvas.width/2, 420);
+        this.writeTextToCanvas(ctx, 'je geeft je snap (toets 1)', 30, this.canvas.width/2, 460);
+        this.writeTextToCanvas(ctx, 'je zegt niks (toets 2)', 30, this.canvas.width/2, 510);
+        this.writeTextToCanvas(ctx, 'je geeft hem je snap niet en wijst hem af (toets 3)', 30, this.canvas.width/2, 550);
         // const backgroundImage = "./assets/images/background/SchoolPartyBackground.jpg";
         // this.loadImage(backgroundImage, this.drawBackgroundToScreen);
     }
@@ -59,5 +59,4 @@ class SchoolParty extends GameScreen {
   
     // // ) {
     // // }
-
 }
