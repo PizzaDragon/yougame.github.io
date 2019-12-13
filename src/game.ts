@@ -96,8 +96,6 @@ class Game {
             //console.log('you switched your screen to the good option);
             this.currentScreen = new SchoolPartyFollowUpGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
-
-
     }
 
 
