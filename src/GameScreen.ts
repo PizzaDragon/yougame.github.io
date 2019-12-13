@@ -63,8 +63,12 @@ class GameScreen{
      */
     public loadImage(source: string,  callback: (img: HTMLImageElement) => void) {
         this.img = new Image();
+        //console.log(this.img)
         // Now, set the src to start loading the image
         this.img.src = source;
+        //console.log(this.img)
+        //console.log(this.img.src)
+        return this.img
     }
 
     /**

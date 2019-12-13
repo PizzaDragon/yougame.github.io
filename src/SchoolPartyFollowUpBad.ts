@@ -6,6 +6,9 @@ class SchoolPartyFollowUpBad extends GameScreen {
 
     // //add the global attributes
     private shouldStartLevel: boolean = false;
+    private backgroundImage: HTMLImageElement;
+    private characterImage: HTMLImageElement;
+    
 
 
     //Add the constructor
@@ -16,9 +19,26 @@ class SchoolPartyFollowUpBad extends GameScreen {
         img: HTMLImageElement,
         keyboardListener: KeyboardListener
 
+
     ) {
         //Add a super constructor which will handle the level when it is drawn
         super(game, canvas, ctx, img, keyboardListener);
+
+
+
+        //Loads the backgroundImage into the memory
+        this.backgroundImage = new Image();
+        // Now, set the src to start loading the image
+        this.backgroundImage.src =  "./assets/images/background/SchoolPartyBackground.jpg"
+
+        //loads a character image into the memory
+        this.characterImage = new Image();
+        // Now, set the src to start loading the image
+        this.characterImage.src =  "./assets/images/characters/Kees1.png"
+
+
+
+      
 
 
 
@@ -34,6 +54,8 @@ class SchoolPartyFollowUpBad extends GameScreen {
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0);
+        this.ctx.drawImage(this.characterImage, 500, 500)
         this.writeTextToCanvas(ctx, "Je kijkt naar hem, geeft hem een glimlach en geeft hem je snapchat.", 50, this.canvas.width / 2, 200);
         this.writeTextToCanvas(ctx, "Jij: Kijk eens aan, jongen. Met al die spieren die je hersenen pletten ben je hopelijk nog niet te dom om te lezen, hé? ", 30, this.canvas.width / 2, 400);
         this.writeTextToCanvas(ctx, "Hij: Hah! Jij kan praten. Ik kan tenminste de letters in mijn wiskundeopdrachten begrijpen. *typt naam over* ", 30, this.canvas.width / 2, 430);
@@ -45,8 +67,7 @@ class SchoolPartyFollowUpBad extends GameScreen {
         this.writeTextToCanvas(ctx, "Jij: Is goed! Doei!  ", 30, this.canvas.width / 2, 620);
         this.writeTextToCanvas(ctx, "Hij: Doei!  ", 30, this.canvas.width / 2, 650);
 
-        //     const backgroundImage = "./assets/images/background/SchoolPartyBackground.jpg";
-        //     this.loadImage(backgroundImage, this.drawBackgroundToScreen);
+
     }
 
 }

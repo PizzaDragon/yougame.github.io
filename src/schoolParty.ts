@@ -40,8 +40,9 @@ class SchoolParty extends GameScreen {
         this.writeTextToCanvas(ctx, 'Je bent op een feestje met Emily en wat mensen van school', 50, this.canvas.width/2, 460)
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", 30, this.canvas.width/2, 550);
         this.writeTextToCanvas(ctx, 'DRUK OP ESCAPE OM HET SPEL TE VERLATEN', 20, 240, 20)
-        // const backgroundImage = "./assets/images/background/SchoolPartyBackground.jpg";
-        // this.loadImage(backgroundImage, this.drawBackgroundToScreen);
+        const backgroundImage = "./assets/images/background/SchoolPartyBackground.jpg";
+        this.loadImage(backgroundImage, this.drawBackgroundToScreen);
+
     }
 
     //  /**

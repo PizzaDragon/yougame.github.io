@@ -103,6 +103,14 @@ class Game {
 
 }
 
+
+
+
+
+
+
+
+
 // This will get an HTML element. I cast this element in de appropriate type using <>
 let init = () => {
     const You = new Game(document.getElementById("canvas") as HTMLCanvasElement);
