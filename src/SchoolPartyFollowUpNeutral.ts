@@ -35,6 +35,8 @@ class SchoolPartyFollowUpNeutral extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.writeTextToCanvas(ctx, 'Je zegt niks', this.canvas.width/2, 360, 80)
-        this.writeTextToCanvas(ctx, "Emily: Hey, valt deze jongen je soms lastig? Kom, dan gaan we wat te drinken halen.", this.canvas.width/2, 470);
+        this.writeTextToCanvas(ctx, "Emily: Hey, valt deze jongen je soms lastig?", this.canvas.width/2, 470);
+        this.writeTextToCanvas(ctx, "Ja, eigenlijk wel. [toets 1]", this.canvas.width/2, 520);
+        this.writeTextToCanvas(ctx, "Nee hoor. [toets 2]", this.canvas.width/2, 570);
     }
 }
