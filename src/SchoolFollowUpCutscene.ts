@@ -1,5 +1,5 @@
 /// <reference path='GameScreen.ts'/>
-class SchoolPartySecondFollowUpGood extends GameScreen {
+class SchoolPartyFollowUpCutscene extends GameScreen {
     // //add the global attributes
     private shouldStartLevel: boolean = false;
 
@@ -30,10 +30,10 @@ class SchoolPartySecondFollowUpGood extends GameScreen {
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
-        this.writeTextToCanvas(ctx, 'Je zegt ja', 80, this.canvas.width / 2, 360)
-        this.writeTextToCanvas(ctx, "Emily: Oké, kom, dan gaan we wat drinken.", 50, this.canvas.width / 2, 470);
-        this.writeTextToCanvas(ctx, "Druk op Spatie om verder te gaan", 50, this.canvas.width / 2, 550);
+        this.writeTextToCanvas(ctx, 'HIER KOMT NEO S CUTSCENE', 80, this.canvas.width / 2, 360)
+        
 
+        
     }
 
 }

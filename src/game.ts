@@ -103,6 +103,20 @@ class Game {
             //console.log('you switched your screen');
             this.currentScreen = new SchoolPartySecondFollowUpGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
+        if (
+            this.currentScreen instanceof SchoolPartySecondFollowUpGood
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            //console.log('you switched your screen');
+            this.currentScreen = new SchoolPartyDrinkingWithEmily(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+        }
+        if (
+            this.currentScreen instanceof SchoolPartyDrinkingWithEmily
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            //console.log('you switched your screen');
+            this.currentScreen = new SchoolPartyFollowUpCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+        }
     }
 
 
