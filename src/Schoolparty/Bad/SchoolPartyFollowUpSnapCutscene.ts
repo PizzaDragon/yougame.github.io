@@ -2,7 +2,7 @@
  * SchoolPartySnapCutscene handles the follow up from the SchoolPartyFollowUpBad's dialogue option where you give him your snap
  */
 /// <reference path='../../GameScreen.ts'/>
-class SchoolPartySnapCutscene extends GameScreen {
+class SchoolPartyFollowUpSnapCutscene extends GameScreen {
 
     // //add the global attributes
     private shouldStartLevel: boolean = false;
