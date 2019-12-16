@@ -57,34 +57,4 @@ class GameScreen {
         ctx.fillText(text, xCoordinate, yCoordinate);
         
     }
-
-    /**
-     * Loads an image file into the DOM. The image is stored in the img
-     * attribute of this class before it is loaded. This means that this.img
-     * always holds an HTMLImageElement, but it might be empty
-     *
-     * @param {string} source - the name of the image file to load
-     */
-    public loadImage(source: string, callback: (img: HTMLImageElement) => void) {
-        this.img = new Image();
-        //console.log(this.img)
-        // Now, set the src to start loading the image
-        this.img.src = source;
-        //console.log(this.img)
-        //console.log(this.img.src)
-        return this.img
-    }
-
-    /**
-     * method to draw the background image to the current screen
-     */
-    public drawBackgroundToScreen(img: HTMLImageElement) {
-        let x = 0;
-        let y = 0;
-        this.ctx.drawImage(img, x, y);
-    }
-
-
-
-
 }
