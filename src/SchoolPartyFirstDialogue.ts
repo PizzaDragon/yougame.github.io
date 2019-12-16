@@ -35,11 +35,11 @@ class SchoolPartyFirstDialogue extends GameScreen {
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
-        this.writeTextToCanvas(ctx, "*Je staat te dansen met een jongen en hij gaat tegen je praten*", 50, this.canvas.width/2, 360)
-        this.writeTextToCanvas(ctx, "*Hij leunt naar je toe en vraagt je snapchat*", 50, this.canvas.width/2, 420);
-        this.writeTextToCanvas(ctx, "Je geeft je snap(toets 1)", 30, this.canvas.width/2, 460);
-        this.writeTextToCanvas(ctx, "Je zegt niks (toets 2)", 30, this.canvas.width/2, 510);
-        this.writeTextToCanvas(ctx, "Je geeft hem je snap niet en wijst hem af (toets 3)", 30, this.canvas.width/2, 550);
+        this.writeTextToCanvas(ctx, "*Je staat te dansen met een jongen en hij gaat tegen je praten*", this.canvas.width/2, 360, 50)
+        this.writeTextToCanvas(ctx, "*Hij leunt naar je toe en vraagt je snapchat*", this.canvas.width/2, 420, 50);
+        this.writeTextToCanvas(ctx, "Je geeft je snap(toets 1)", this.canvas.width/2, 460, 30);
+        this.writeTextToCanvas(ctx, "Je zegt niks (toets 2)", this.canvas.width/2, 510);
+        this.writeTextToCanvas(ctx, "Je geeft hem je snap niet en wijst hem af (toets 3)", this.canvas.width/2, 550, 30);
         // const backgroundImage = "./assets/images/background/SchoolPartyBackground.jpg";
         // this.loadImage(backgroundImage, this.drawBackgroundToScreen);
     }

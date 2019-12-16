@@ -1,4 +1,4 @@
-class GameScreen{
+class GameScreen {
 
     //Add basic attributes to GameScreen class
     protected readonly game: Game;
@@ -15,20 +15,20 @@ class GameScreen{
         ctx: CanvasRenderingContext2D,
         img: HTMLImageElement,
         keyboardlistener: KeyboardListener
-        ){
+    ) {
         this.game = game;
         this.canvas = canvas;
         this.ctx = ctx;
         this.img = img;
         this.keyboardListener = keyboardlistener;
-    
+
     }
 
     /**
      * 
      * method to draw the canvas to the screen
      */
-    public draw(ctx:CanvasRenderingContext2D){}
+    public draw(ctx: CanvasRenderingContext2D) { }
 
     /**
      * Writes text to the canvas
@@ -42,9 +42,9 @@ class GameScreen{
     protected writeTextToCanvas(
         ctx: CanvasRenderingContext2D,
         text: string,
-        fontSize: number = 20,
         xCoordinate: number,
         yCoordinate: number,
+        fontSize: number = 30,
         alignment: CanvasTextAlign = "center",
         color: string = "white",
     ) {
@@ -61,7 +61,7 @@ class GameScreen{
      *
      * @param {string} source - the name of the image file to load
      */
-    public loadImage(source: string,  callback: (img: HTMLImageElement) => void) {
+    public loadImage(source: string, callback: (img: HTMLImageElement) => void) {
         this.img = new Image();
         //console.log(this.img)
         // Now, set the src to start loading the image
@@ -80,7 +80,7 @@ class GameScreen{
         this.ctx.drawImage(img, x, y);
     }
 
-       
+
 
 
 }
