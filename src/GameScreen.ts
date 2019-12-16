@@ -28,7 +28,9 @@ class GameScreen {
      * 
      * method to draw the canvas to the screen
      */
-    public draw(ctx: CanvasRenderingContext2D) { }
+    public draw(ctx: CanvasRenderingContext2D) { 
+        
+    }
 
     /**
      * Writes text to the canvas

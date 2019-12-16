@@ -6,6 +6,7 @@ class SchoolPartyFollowUpGoodPartThree extends GameScreen {
 
     //add the global attributes
     private shouldStartLevel: boolean = false;
+    private backgroundImage: HTMLImageElement;
 
 
 
@@ -20,7 +21,10 @@ class SchoolPartyFollowUpGoodPartThree extends GameScreen {
     ) {
         //Add a super constructor which will handle the level when it is drawn
         super(game, canvas, ctx, img, keyboardListener);
-
+        //Loads the backgroundImage into the memory
+        this.backgroundImage = new Image();
+        //Now, set the src to start loading the image
+        this.backgroundImage.src = './assets/images/background/SchoolPartyBackground.jpg'
 
 
     }
@@ -35,6 +39,7 @@ class SchoolPartyFollowUpGoodPartThree extends GameScreen {
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
 
 
 
