@@ -99,6 +99,7 @@ class Game {
             //console.log('you switched your screen to the good option);
             this.currentScreen = new SchoolPartyFollowUpGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
+        //this switches the screen to the good option
         if (
             this.currentScreen instanceof SchoolPartyFollowUpNeutral
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)
@@ -120,6 +121,25 @@ class Game {
             //console.log('you switched your screen');
             this.currentScreen = new SchoolPartyFollowUpCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
+
+       /**
+        * These next if statements will follow up the good scenario in schoolparty
+        */
+
+       //This if-statement will take you to the next dialogue tree option if you first choose
+       //not to give your snapchat
+        if (
+            this.currentScreen instanceof SchoolPartyFollowUpGood
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            // console.log('you switched screens');
+            this.currentScreen = new SchoolPartyFollowUpGoodPartTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+        }
+
+        //This if-statement will take you to the screen if you choose to give him your snapchat
+        //The scene where you actually give him your snapchat, no dialogue just an image of you giving your snapchat.
+
+
     }
 
     private delay() {
