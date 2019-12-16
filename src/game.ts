@@ -53,9 +53,10 @@ class Game {
     }
 
     public switchScreen() {
-        // Here the current screen is the StartScreen, this will be followed up
-        // with the first dialogue option, 
-        // If you press enter on this screen you will continue to the first 'cutscene'
+        /**
+         * These first few if statements will take you from the startscreen 
+         * into the game it self.
+         */
         if (
             this.currentScreen instanceof StartScreen
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ENTER)
@@ -63,14 +64,7 @@ class Game {
             //console.log('you switched your screen');
             this.currentScreen = new SchoolParty(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
-        //Here the screen switches to the first set of dialogue options at the school party.
-        if (
-            this.currentScreen instanceof SchoolParty
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
-        ) {
-            //console.log('you switched your screen);
-            this.currentScreen = new SchoolPartyFirstDialogue(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-        }
+
         //Here the screen can go back to the title screen by pressing the escape key on your keyboard.
         //If you continue you cannot go back so if you don't want to play, this is your final return chance.
         if (
@@ -79,8 +73,23 @@ class Game {
         ) {
             this.currentScreen = new StartScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
-        //This switches the screen to the bad option, 
-        //the bad option will continue to the bad path which you will land in
+
+        /**
+         * in this screen you can choose 1, 2 or 3,
+         * 1 takes you into the bad path, if you want to look at this in code it is in the bad map of Schoolparty
+         * 2 takes you into the neutral path, if you want to look at this in code it is in the neutral map of SchoolParty
+         * 3 takes you into the good path, if you want to look at this in code it is in the good map of SchoolParty
+         */
+        if (
+            this.currentScreen instanceof SchoolParty
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            //console.log('you switched your screen);
+            this.currentScreen = new SchoolPartyFirstDialogue(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+        }
+
+        //This option let's you press one to go into the bad dialogue path
+        //the screen will switch to SchoolPartyFollowUpBad
         if (
             this.currentScreen instanceof SchoolPartyFirstDialogue
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)
@@ -88,7 +97,9 @@ class Game {
             //console.log('you switched your screen to the bad option);
             this.currentScreen = new SchoolPartyFollowUpBad(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
-        //this switches the screen to the neutral path after the party
+
+        //This option let's you press two to go into the neutral dialogue path
+        //the screen will switch to SchoolPartyFollowUpNeutral
         if (
             this.currentScreen instanceof SchoolPartyFirstDialogue
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)
@@ -96,7 +107,9 @@ class Game {
             //console.log('you switched your screen to the neutral option);
             this.currentScreen = new SchoolPartyFollowUpNeutral(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
-        //this switches the screen to the good path after the party
+
+        //This option let's you press three to go into the good dialogue path
+        //the screen will switch to SchoolPartyFollowUpGood
         if (
             this.currentScreen instanceof SchoolPartyFirstDialogue
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_THREE)
@@ -104,7 +117,13 @@ class Game {
             //console.log('you switched your screen to the good option);
             this.currentScreen = new SchoolPartyFollowUpGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
-        //this switches the screen to the good option
+
+        /**
+         * These next if statements will follow up the neutral choice 
+         * when you first select the neutral dialogue option
+         */
+        //This if statement will take you into the next dialogue tree option if you
+        //choose to ignore him
         if (
             this.currentScreen instanceof SchoolPartyFollowUpNeutral
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)
@@ -130,9 +149,9 @@ class Game {
         }
 
         /**
-         * These next if statements will follow up the good scenario in schoolparty
+         * These next if statements will follow up the good choice
+         * when you first select the good dialogue option
          */
-
         //This if-statement will take you to the next dialogue tree option if you first choose
         //not to give your snapchat
         if (
@@ -143,14 +162,15 @@ class Game {
             this.currentScreen = new SchoolPartyFollowUpGoodPartTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
 
-        //This if-statement will take you to the screen if you choose to give him your snapchat
+        //This if-statement will take you to the screen if you choose to give him your snapchat after you have 
+        //chosen not to
         //The scene where you actually give him your snapchat, no dialogue just an image of you giving your snapchat.
-        if(
+        if (
             this.currentScreen instanceof SchoolPartyFollowUpGoodPartTwo
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
         ) {
-        //console.log('you switched screens');
-        this.currentScreen = new SchoolPartySnapCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            //console.log('you switched screens');
+            this.currentScreen = new SchoolPartySnapCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
 
 
