@@ -42,9 +42,9 @@ class GameScreen {
     protected writeTextToCanvas(
         ctx: CanvasRenderingContext2D,
         text: string,
-        fontSize: number = 20,
         xCoordinate: number,
         yCoordinate: number,
+        fontSize: number = 30,
         alignment: CanvasTextAlign = "center",
         color: string = "white",
         outline: string = "black",

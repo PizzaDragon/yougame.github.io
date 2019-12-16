@@ -7,7 +7,8 @@ class SchoolParty extends GameScreen {
 
     //add the global attributes
     private shouldStartLevel: boolean = false;
-   
+    private backgroundImage: HTMLImageElement
+    private characterImage: HTMLImageElement
 
 
     //Add the constructor
@@ -21,6 +22,16 @@ class SchoolParty extends GameScreen {
     ) {
         //Add a super constructor which will handle the level when it is drawn
         super(game, canvas, ctx, img, keyboardListener);
+
+        //Loads the backgroundImage into the memory
+        this.backgroundImage = new Image();
+        //Now, set the src to start loading the image
+        this.backgroundImage.src = './assets/images/background/SchoolPartyBackground.jpg'
+
+        //loads a character image into the memory
+        this.characterImage = new Image();
+        // Now, set the src to start loading the image
+        this.characterImage.src =  "./assets/images/characters/Kees1.png"
 
         
        
@@ -36,10 +47,12 @@ class SchoolParty extends GameScreen {
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
-        this.writeTextToCanvas(ctx, "FEESTSCENE", 140, this.canvas.width/2, 300);
-        this.writeTextToCanvas(ctx, 'Je bent op een feestje met Emily en wat mensen van school', 50, this.canvas.width/2, 460)
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", 30, this.canvas.width/2, 550);
-        this.writeTextToCanvas(ctx, 'DRUK OP ESCAPE OM HET SPEL TE VERLATEN', 20, 240, 20)
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.characterImage, 0, 0)
+        this.writeTextToCanvas(ctx, "FEESTSCENE", this.canvas.width/2, 300, 140);
+        this.writeTextToCanvas(ctx, 'Je bent op een feestje met Emily en wat mensen van school', this.canvas.width/2, 460, 50)
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, 550, 30);
+        this.writeTextToCanvas(ctx, 'DRUK OP ESCAPE OM HET SPEL TE VERLATEN', 240, 20, 20)
         const backgroundImage = "./assets/images/background/SchoolPartyBackground.jpg";
         this.loadImage(backgroundImage, this.drawBackgroundToScreen);
 

@@ -25,6 +25,8 @@ class Game {
         this.keyboardListener = new KeyboardListener();
         this.currentScreen = new StartScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
 
+        document.getElementById('body').style.maxWidth = "this.canvas.width";
+
         this.loop();
 
 
