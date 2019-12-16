@@ -1,7 +1,7 @@
 /**
  * SchoolPartyFollowUpBad handles the follow up from the schoolparty
  */
-/// <reference path='GameScreen.ts'/>
+/// <reference path='../../GameScreen.ts'/>
 class SchoolPartyFollowUpBad extends GameScreen {
 
     // //add the global attributes

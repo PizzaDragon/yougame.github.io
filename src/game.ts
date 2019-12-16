@@ -28,7 +28,7 @@ class Game {
         document.getElementById('body').style.maxWidth = "this.canvas.width";
 
         this.loop();
-        
+
 
 
     }
@@ -105,29 +105,29 @@ class Game {
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)
         ) {
             //console.log('you switched your screen');
-            this.currentScreen = new SchoolPartySecondFollowUpGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.currentScreen = new SchoolPartyFollowUpNeutralPartTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
         if (
-            this.currentScreen instanceof SchoolPartySecondFollowUpGood
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)  
+            this.currentScreen instanceof SchoolPartyFollowUpNeutralPartTwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
         ) {
             //console.log('you switched your screen');
-            this.currentScreen = new SchoolPartyDrinkingWithEmily(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.currentScreen = new SchoolPartyFollowUpNeutralPartThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
         if (
-            this.currentScreen instanceof SchoolPartyDrinkingWithEmily
+            this.currentScreen instanceof SchoolPartyFollowUpNeutralPartThree
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay() === 144
         ) {
             //console.log('you switched your screen');
-            this.currentScreen = new SchoolPartyFollowUpCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.currentScreen = new SchoolPartyFollowUpBadCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
 
-       /**
-        * These next if statements will follow up the good scenario in schoolparty
-        */
+        /**
+         * These next if statements will follow up the good scenario in schoolparty
+         */
 
-       //This if-statement will take you to the next dialogue tree option if you first choose
-       //not to give your snapchat
+        //This if-statement will take you to the next dialogue tree option if you first choose
+        //not to give your snapchat
         if (
             this.currentScreen instanceof SchoolPartyFollowUpGood
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
@@ -138,6 +138,13 @@ class Game {
 
         //This if-statement will take you to the screen if you choose to give him your snapchat
         //The scene where you actually give him your snapchat, no dialogue just an image of you giving your snapchat.
+        if(
+            this.currentScreen instanceof SchoolPartyFollowUpGoodPartTwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+        //console.log('you switched screens');
+        this.currentScreen = new SchoolPartySnapCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+        }
 
 
     }
@@ -145,7 +152,7 @@ class Game {
     private delay() {
         for (let i = 0; i < 144; i++) {
             return i;
-            
+
         }
         return this.delay;
     }

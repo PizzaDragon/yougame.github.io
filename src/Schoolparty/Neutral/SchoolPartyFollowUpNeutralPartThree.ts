@@ -1,5 +1,5 @@
-/// <reference path='GameScreen.ts'/>
-class SchoolPartyDrinkingWithEmily extends GameScreen {
+/// <reference path='../../GameScreen.ts'/>
+class SchoolPartyFollowUpNeutralPartThree extends GameScreen {
     // //add the global attributes
     private shouldStartLevel: boolean = false;
 

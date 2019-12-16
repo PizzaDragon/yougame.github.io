@@ -1,12 +1,12 @@
 /**
  * Class that handles the first set of dialogue options after the original cutscene in the schoolparty.
  */
-/// <reference path='GameScreen.ts'/>
-class SchoolPartyFollowUpGood extends GameScreen {
-
+/// <reference path='../GameScreen.ts'/>
+class SchoolPartyFirstDialogue extends GameScreen {
+    
     //add the global attributes
     private shouldStartLevel: boolean = false;
-
+   
 
 
     //Add the constructor
@@ -21,8 +21,8 @@ class SchoolPartyFollowUpGood extends GameScreen {
         //Add a super constructor which will handle the level when it is drawn
         super(game, canvas, ctx, img, keyboardListener);
 
-
-
+        
+       
     }
 
     /**
@@ -35,16 +35,11 @@ class SchoolPartyFollowUpGood extends GameScreen {
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
-        // if(this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE))
-        this.writeTextToCanvas(ctx, "Je zegt nee en wijst hem af", this.canvas.width / 2, 360, 80);
-        this.writeTextToCanvas(ctx, "Jij: Nee, ik ken je nog niet goed genoeg, dus ik wil je mijn snap niet geven", this.canvas.width / 2, 470);
-        this.writeTextToCanvas(ctx, "Hij: Wat? Hoezo niet? We dansen toch al heel de avond, wat doe je stom?", this.canvas.width / 2, 500);
-        this.writeTextToCanvas(ctx, "Jij: Ja sorry hoor, ik geef mijn snap gewoon niet aan mensen die ik niet ken, is dat een probleem ofzo?", this.canvas.width / 2, 530);
-        this.writeTextToCanvas(ctx, "Hij: Ja, dat is een probleem ja, je kent me toch? Maar laat maar zitten, rotkind dat je bent. Ik snap dat je vriendloos bent.", this.canvas.width / 2, 560);
-       
-       
-       
-       
+        this.writeTextToCanvas(ctx, "*Je staat te dansen met een jongen en hij gaat tegen je praten*", this.canvas.width/2, 360, 50)
+        this.writeTextToCanvas(ctx, "*Hij leunt naar je toe en vraagt je snapchat*", this.canvas.width/2, 420, 50);
+        this.writeTextToCanvas(ctx, "Je geeft je snap(toets 1)", this.canvas.width/2, 460, 30);
+        this.writeTextToCanvas(ctx, "Je zegt niks (toets 2)", this.canvas.width/2, 510);
+        this.writeTextToCanvas(ctx, "Je geeft hem je snap niet en wijst hem af (toets 3)", this.canvas.width/2, 550, 30);
         // const backgroundImage = "./assets/images/background/SchoolPartyBackground.jpg";
         // this.loadImage(backgroundImage, this.drawBackgroundToScreen);
     }
@@ -55,13 +50,13 @@ class SchoolPartyFollowUpGood extends GameScreen {
     //  * @param dialogueOptionOne option one which will go to the correct path
     //  * @param dialogueOptionTwo option two which will go to the neutral path
     //  * @param dialogueOptionthree option three which will go to the bad path
-
+     
     //  */
     // // protected selectDialogueOptions(
     // //     dialogue: string,
     // //     dialogue: string,
     // //     dialogue: string,
-
+  
     // // ) {
     // // }
 }
