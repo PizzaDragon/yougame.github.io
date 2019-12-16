@@ -58,7 +58,7 @@ class KeyboardListener {
      * @param {number} keyCode the keyCode to check
      * @returns {boolean} `true` when the specified key is currently pressed
      */
-    public isKeyPreaa(keyCode: number): boolean {
+    public isKeyPress(keyCode: number): boolean {
         return this.keyCodeStates[keyCode] === true;
     }
 
