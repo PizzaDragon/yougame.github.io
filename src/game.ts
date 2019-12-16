@@ -28,6 +28,7 @@ class Game {
         document.getElementById('body').style.maxWidth = "this.canvas.width";
 
         this.loop();
+        
 
 
     }
@@ -108,14 +109,14 @@ class Game {
         }
         if (
             this.currentScreen instanceof SchoolPartySecondFollowUpGood
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)  
         ) {
             //console.log('you switched your screen');
             this.currentScreen = new SchoolPartyDrinkingWithEmily(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
         if (
             this.currentScreen instanceof SchoolPartyDrinkingWithEmily
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay() === 144
         ) {
             //console.log('you switched your screen');
             this.currentScreen = new SchoolPartyFollowUpCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
@@ -139,6 +140,14 @@ class Game {
         //The scene where you actually give him your snapchat, no dialogue just an image of you giving your snapchat.
 
 
+    }
+
+    private delay() {
+        for (let i = 0; i < 144; i++) {
+            return i;
+            
+        }
+        return this.delay;
     }
 
 

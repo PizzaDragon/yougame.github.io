@@ -61,10 +61,10 @@ class SchoolPartyFollowUpGoodPartTwo extends GameScreen {
         this.ctx.drawImage(this.youCharacterImage, 200, 500);
 
         //This handles the dialogue in the screen
-        this.writeTextToCanvas(ctx, "Je kijkt raar op, ik, een loser? Heb ik wel de goede keuze gemaakt?", 50, this.canvas.width / 2, 200);
-        this.writeTextToCanvas(ctx, "Ga naar hem, bied je excuses aan en geef je snapchat (toets 1) ", 30, this.canvas.width / 2, 400);
-        this.writeTextToCanvas(ctx, "Nee, ik vertrouw hem echt niet (toets 2). ", 30, this.canvas.width / 2, 430);
-        this.writeTextToCanvas(ctx, "Jij: Oke, ik geef hem mijn snap, als ik hem niet mag verwijder ik hem gewoon (toets 3)", 30, this.canvas.width / 2, 460);
+        this.writeTextToCanvas(ctx, "Je kijkt raar op, ik, een loser? Heb ik wel de goede keuze gemaakt?", this.canvas.width / 2, 200);
+        this.writeTextToCanvas(ctx, "Ga naar hem, bied je excuses aan en geef je snapchat (toets 1) ", this.canvas.width / 2, 400);
+        this.writeTextToCanvas(ctx, "Nee, ik vertrouw hem echt niet (toets 2). ", this.canvas.width / 2, 430);
+        this.writeTextToCanvas(ctx, "Jij: Oke, ik geef hem mijn snap, als ik hem niet mag verwijder ik hem gewoon (toets 3)", this.canvas.width / 2, 460);
 
 
 
