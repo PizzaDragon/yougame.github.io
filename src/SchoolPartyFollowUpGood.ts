@@ -36,7 +36,7 @@ class SchoolPartyFollowUpGood extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         // if(this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE))
-        this.writeTextToCanvas(ctx, "Je zegt nee en wijst hem af", 80, this.canvas.width / 2, 360);
+        this.writeTextToCanvas(ctx, "Je zegt nee en wijst hem af", this.canvas.width / 2, 360, 80);
         this.writeTextToCanvas(ctx, "Jij: Nee, ik ken je nog niet goed genoeg, dus ik wil je mijn snap niet geven", this.canvas.width / 2, 470);
         this.writeTextToCanvas(ctx, "Hij: Wat? Hoezo niet? We dansen toch al heel de avond, wat doe je stom?", this.canvas.width / 2, 500);
         this.writeTextToCanvas(ctx, "Jij: Ja sorry hoor, ik geef mijn snap gewoon niet aan mensen die ik niet ken, is dat een probleem ofzo?", this.canvas.width / 2, 530);
