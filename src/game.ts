@@ -8,6 +8,7 @@ class Game {
     private readonly ctx: CanvasRenderingContext2D;
     private readonly game: Game;
     private readonly img: HTMLImageElement;
+    private delay: number
 
     //Handles screen events
     private currentScreen: GameScreen;
@@ -43,6 +44,10 @@ class Game {
 
         // Request the next animation frame
         requestAnimationFrame(this.loop);
+
+        if (this.delay > 0) {
+            this.delay++
+        }
 
 
     }
@@ -132,13 +137,15 @@ class Game {
         ) {
             //console.log('you switched your screen');
             this.currentScreen = new SchoolPartyFollowUpNeutralPartThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1
         }
         if (
             this.currentScreen instanceof SchoolPartyFollowUpNeutralPartThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay() === 144
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 144
         ) {
             //console.log('you switched your screen');
             this.currentScreen = new SchoolPartyFollowUpBadCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 0
         }
 
         /**
@@ -168,16 +175,6 @@ class Game {
 
 
     }
-
-    private delay() {
-        for (let i = 0; i < 144; i++) {
-            return i;
-
-        }
-        return this.delay;
-    }
-
-
 }
 
 
