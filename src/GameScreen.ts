@@ -47,11 +47,15 @@ class GameScreen {
         fontSize: number = 30,
         alignment: CanvasTextAlign = "center",
         color: string = "white",
+        outline: string = "black",
     ) {
-        ctx.font = `${fontSize}px Minecraft`;
+        ctx.font = `${fontSize}px Helvetica`;
+        ctx.strokeStyle = outline;
         ctx.fillStyle = color;
         ctx.textAlign = alignment;
+        ctx.strokeText(text, xCoordinate, yCoordinate);
         ctx.fillText(text, xCoordinate, yCoordinate);
+        
     }
 
     /**

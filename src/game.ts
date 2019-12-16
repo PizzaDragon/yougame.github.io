@@ -98,6 +98,13 @@ class Game {
             //console.log('you switched your screen to the good option);
             this.currentScreen = new SchoolPartyFollowUpGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
+        if (
+            this.currentScreen instanceof SchoolPartyFollowUpNeutral
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)
+        ) {
+            //console.log('you switched your screen');
+            this.currentScreen = new SchoolPartySecondFollowUpGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+        }
     }
 
 
