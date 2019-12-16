@@ -2,7 +2,7 @@
  * HomeSceneGood handles the follow up from the good option in schoolparty
  */
 /// <reference path='GameScreen.ts'/>
-class HomeSceneGood extends GameScreen {
+class SchoolPartyFollowUpGoodPartTwo extends GameScreen {
 
     // //add the global attributes
     private shouldStartLevel: boolean = false;
