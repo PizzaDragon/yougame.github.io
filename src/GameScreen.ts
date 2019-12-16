@@ -46,8 +46,8 @@ class GameScreen {
         xCoordinate: number,
         yCoordinate: number,
         alignment: CanvasTextAlign = "center",
-        color: string = "black",
-        outline: string = "white",
+        color: string = "white",
+        outline: string = "black",
     ) {
         ctx.font = `${fontSize}px Helvetica`;
         ctx.strokeStyle = outline;
