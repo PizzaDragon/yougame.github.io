@@ -54,8 +54,7 @@ class SchoolPartyFollowUpBad extends GameScreen {
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
-        this.ctx.drawImage(this.backgroundImage, 0, 0);
-        this.ctx.drawImage(this.characterImage, 500, 500)
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
         this.writeTextToCanvas(ctx, "Je kijkt naar hem, geeft hem een glimlach en geeft hem je snapchat.", this.canvas.width / 2, 200, 50);
         this.writeTextToCanvas(ctx, "Jij: Je mag hem alleen hebben als je belooft dat je niet zal lachen ", this.canvas.width / 2, 400, 30);
         this.writeTextToCanvas(ctx, "Hij: Ja oke, ik beloof dat ik niet zal lachen. ", this.canvas.width / 2, 430, 30);
