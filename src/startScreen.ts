@@ -75,10 +75,12 @@ class StartScreen extends GameScreen {
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
+        //This is ugly but it gives an idea
+
         //write the image functions
-        // this.ctx.drawImage(this.characterImage, this.canvas.width / 2 - this.characterImage.width / 2, this.canvas.height / 2 - this.characterImage.height / 2);
-        // this.ctx.drawImage(this.snapchatImage, 0, 0);
-        // this.ctx.drawImage(this.instagramImage, 1500, 0);
+        this.ctx.drawImage(this.characterImage, this.canvas.width / 2 - this.characterImage.width / 2, this.canvas.height / 2 - this.characterImage.height / 2);
+        this.ctx.drawImage(this.snapchatImage, 0, 0);
+        this.ctx.drawImage(this.instagramImage, 1500, 0);
 
         //write the text functions
         this.writeTextToCanvas(ctx, "You", 200, this.canvas.width / 2 , 500);
