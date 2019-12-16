@@ -35,37 +35,15 @@ class SchoolPartyFollowUpGoodPartThree extends GameScreen {
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
-        
-        
-        
+
+
+
         // Text methods in the canvas
         this.writeTextToCanvas(ctx, "Je loopt naar hem toe en probeert je excuses aan te bieden", 80, this.canvas.width / 2, 360);
         this.writeTextToCanvas(ctx, "Jij: Hey sorry, het spijt me, ik reageerde te snel, wil je alsnog mijn snap?", 30, this.canvas.width / 2, 360);
         this.writeTextToCanvas(ctx, "Hij: hmmmm, weet ik niet hoor, even goed over nadenken...", 30, this.canvas.width / 2, 360);
         this.writeTextToCanvas(ctx, "Jij: a komop, alsjeblieft", 30, this.canvas.width / 2, 360);
         this.writeTextToCanvas(ctx, "Hij: Oké dan, hier, voeg me maar toe", 30, this.canvas.width / 2, 360);
-        
-        
-       
-       
-       
-        // const backgroundImage = "./assets/images/background/SchoolPartyBackground.jpg";
-        // this.loadImage(backgroundImage, this.drawBackgroundToScreen);
+
     }
-
-    //  /**
-    //  * constructs a function to handle the dialogue options
-    //  * 
-    //  * @param dialogueOptionOne option one which will go to the correct path
-    //  * @param dialogueOptionTwo option two which will go to the neutral path
-    //  * @param dialogueOptionthree option three which will go to the bad path
-
-    //  */
-    // // protected selectDialogueOptions(
-    // //     dialogue: string,
-    // //     dialogue: string,
-    // //     dialogue: string,
-
-    // // ) {
-    // // }
 }

@@ -31,10 +31,10 @@ class SchoolParty extends GameScreen {
         //loads a character image into the memory
         this.characterImage = new Image();
         // Now, set the src to start loading the image
-        this.characterImage.src =  "./assets/images/characters/Kees1.png"
+        this.characterImage.src = "./assets/images/characters/Kees1.png"
 
-        
-       
+
+
     }
 
     /**
@@ -49,29 +49,12 @@ class SchoolParty extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.characterImage, 0, 0)
-        this.writeTextToCanvas(ctx, "FEESTSCENE", this.canvas.width/2, 300, 140);
-        this.writeTextToCanvas(ctx, 'Je bent op een feestje met Emily en wat mensen van school', this.canvas.width/2, 460, 50)
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, 550, 30);
+        this.writeTextToCanvas(ctx, "FEESTSCENE", this.canvas.width / 2, 300, 140);
+        this.writeTextToCanvas(ctx, 'Je bent op een feestje met Emily en wat mensen van school', this.canvas.width / 2, 460, 50)
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, 550, 30);
         this.writeTextToCanvas(ctx, 'DRUK OP ESCAPE OM HET SPEL TE VERLATEN', 240, 20, 20)
         const backgroundImage = "./assets/images/background/SchoolPartyBackground.jpg";
         this.loadImage(backgroundImage, this.drawBackgroundToScreen);
 
     }
-
-    //  /**
-    //  * constructs a function to handle the dialogue options
-    //  * 
-    //  * @param dialogueOptionOne option one which will go to the correct path
-    //  * @param dialogueOptionTwo option two which will go to the neutral path
-    //  * @param dialogueOptionthree option three which will go to the bad path
-     
-    //  */
-    // // protected selectDialogueOptions(
-    // //     dialogue: string,
-    // //     dialogue: string,
-    // //     dialogue: string,
-  
-    // // ) {
-    // // }
-
 }
