@@ -32,7 +32,7 @@ class SchoolPartyDrinkingWithEmily extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         this.writeTextToCanvas(ctx, 'Nadat je wat gedronken hebt met Emily, stuurt je moeder een berichtje.', this.canvas.width / 2, 360)
         this.writeTextToCanvas(ctx, 'Ze staat te wachten om naar huis te gaan.', this.canvas.width / 2, 380)
-        this.writeTextToCanvas(ctx, 'Druk op enter om verder te gaan', this.canvas.width / 2, 420)
+        this.writeTextToCanvas(ctx, 'Druk op spatie om verder te gaan', this.canvas.width / 2, 420)
 
 
     }

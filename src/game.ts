@@ -108,7 +108,7 @@ class Game {
         }
         if (
             this.currentScreen instanceof SchoolPartySecondFollowUpGood
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)  
         ) {
             //console.log('you switched your screen');
             this.currentScreen = new SchoolPartyDrinkingWithEmily(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
