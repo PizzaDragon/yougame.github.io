@@ -56,21 +56,12 @@ class SchoolPartyFollowUpBad extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0);
         this.ctx.drawImage(this.characterImage, 500, 500)
-<<<<<<< HEAD
         this.writeTextToCanvas(ctx, "Je kijkt naar hem, geeft hem een glimlach en geeft hem je snapchat.", this.canvas.width / 2, 200, 50);
         this.writeTextToCanvas(ctx, "Jij: Je mag hem alleen hebben als je belooft dat je niet zal lachen ", this.canvas.width / 2, 400, 30);
         this.writeTextToCanvas(ctx, "Hij: Ja oke, ik beloof dat ik niet zal lachen. ", this.canvas.width / 2, 430, 30);
         this.writeTextToCanvas(ctx, "Jij: Oke vooruit dan maar, alsjeblieft", this.canvas.width / 2, 460, 30);
         this.writeTextToCanvas(ctx, "Jij: Ey maar mn ma is er dus ik ga naar huis", this.canvas.width / 2, 490, 30);
         this.writeTextToCanvas(ctx, "Hij: Ja sgoed, spreek je op snap", this.canvas.width / 2, 520, 30);
-=======
-        this.writeTextToCanvas(ctx, "Je kijkt naar hem, geeft hem een glimlach en geeft hem je snapchat.", 50, this.canvas.width / 2, 200);
-        this.writeTextToCanvas(ctx, "Jij: Je mag hem alleen hebben als je belooft dat je niet zal lachen ", 30, this.canvas.width / 2, 400);
-        this.writeTextToCanvas(ctx, "Hij: Ja oke, ik beloof dat ik niet zal lachen. ", 30, this.canvas.width / 2, 430);
-        this.writeTextToCanvas(ctx, "Jij: Oke vooruit dan maar, alsjeblieft", 30, this.canvas.width / 2, 460);
-        this.writeTextToCanvas(ctx, "Jij: Hey maar mijn moeder is er dus ik ga naar huis", 30, this.canvas.width / 2, 490);
-        this.writeTextToCanvas(ctx, "Hij: Ja is goed, ik spreek je op snap", 30, this.canvas.width / 2, 520);
->>>>>>> 236ed2c574d045bacb8827e5cf7c301fcb24590a
         
 
     }
