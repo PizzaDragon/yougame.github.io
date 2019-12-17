@@ -18,6 +18,7 @@ If you want to remove something from the repository, use:
 2: git commit -am "Remove file"
 3: git push
 
-build is never pushed exept when we have to push it to master
+build is never pushed exept when we have to push it to make it work on the students their chromebooks
+
 
 code created by Evan Verdoorn, Leslie Scherbeijn, Calvin Hannewijk and Neo McNeese. Four first year IT-students at HZ-University of Applied Sciences.
