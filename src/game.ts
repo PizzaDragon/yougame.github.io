@@ -97,6 +97,7 @@ class Game {
         ) {
             //console.log('you switched your screen to the bad option);
             this.currentScreen = new SchoolPartyFollowUpBad(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
         }
 
         //This option let's you press two to go into the neutral dialogue path
@@ -107,6 +108,7 @@ class Game {
         ) {
             //console.log('you switched your screen to the neutral option);
             this.currentScreen = new SchoolPartyFollowUpNeutral(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
         }
 
         //This option let's you press three to go into the good dialogue path
@@ -147,6 +149,22 @@ class Game {
         ) {
             //console.log('you switched your screen');
             this.currentScreen = new SchoolPartyFollowUpBadCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 0
+        }
+        if (
+            this.currentScreen instanceof SchoolPartyFollowUpNeutral
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 144
+        ) {
+            //console.log('you switched your screen');
+            this.currentScreen = new SchoolPartyFollowUpNeutralBad1(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 0
+        }
+        if (
+            (this.currentScreen instanceof SchoolPartyFollowUpNeutralBad1 || this.currentScreen instanceof SchoolPartyFirstDialogue)
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 144
+        ) {
+            //console.log('you switched your screen');
+            this.currentScreen = new SchoolPartyFollowUpBad(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 0
         }
 
