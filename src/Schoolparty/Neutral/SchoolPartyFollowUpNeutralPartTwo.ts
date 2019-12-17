@@ -47,7 +47,7 @@ class SchoolPartyFollowUpNeutralPartTwo extends GameScreen {
         this.writeTextToCanvas(ctx, 'Je zegt ja', this.canvas.width / 2, 60, 80)
         this.ctx.drawImage(this.emilyImage, -350, 0,)
         this.ctx.drawImage(this.youImage, 0, 0,)
-        this.ctx.drawImage(this.dialogueBar, 0 , this.canvas.height / 1.25)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
         this.writeTextToCanvas(ctx, "Emily: Oké, kom, dan gaan we wat drinken.", this.canvas.width / 2, 670);
         this.writeTextToCanvas(ctx, "Druk op Spatie om verder te gaan", this.canvas.width / 2, 710);
 
