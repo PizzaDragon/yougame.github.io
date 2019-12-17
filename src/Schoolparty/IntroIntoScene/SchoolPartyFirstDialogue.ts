@@ -1,7 +1,7 @@
 /**
  * Class that handles the first set of dialogue options after the original cutscene in the schoolparty.
  */
-/// <reference path='../GameScreen.ts'/>
+/// <reference path='../../GameScreen.ts'/>
 class SchoolPartyFirstDialogue extends GameScreen {
     
     //add the global attributes
