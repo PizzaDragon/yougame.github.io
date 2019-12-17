@@ -59,7 +59,7 @@ class SchoolPartyFollowUpBad extends GameScreen {
         this.writeTextToCanvas(ctx, "Jij: Je mag hem alleen hebben als je belooft dat je niet zal lachen ", this.canvas.width / 2, 400, 30);
         this.writeTextToCanvas(ctx, "Hij: Ja oke, ik beloof dat ik niet zal lachen. ", this.canvas.width / 2, 430, 30);
         this.writeTextToCanvas(ctx, "Jij: Oke vooruit dan maar, alsjeblieft", this.canvas.width / 2, 460, 30);
-        this.writeTextToCanvas(ctx, "Jij: Ey maar mn ma is er dus ik ga naar huis", this.canvas.width / 2, 490, 30);
+        this.writeTextToCanvas(ctx, "Jij: Hey maar mijn ma is er dus ik ga naar huis", this.canvas.width / 2, 490, 30);
         this.writeTextToCanvas(ctx, "Hij: Ja sgoed, spreek je op snap", this.canvas.width / 2, 520, 30);
         
 
