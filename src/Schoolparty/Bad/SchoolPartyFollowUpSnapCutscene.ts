@@ -49,7 +49,7 @@ class SchoolPartyFollowUpSnapCutscene extends GameScreen {
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
-        this.ctx.drawImage(this.backgroundImage, 0, 0);
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
         this.writeTextToCanvas(ctx, "Hij voegt je toe.", 50, this.canvas.width / 2, 200);
         
 

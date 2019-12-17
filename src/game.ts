@@ -74,7 +74,7 @@ class Game {
             this.currentScreen = new StartScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
 
-        
+
         /**
          * in this screen you can choose 1, 2 or 3,
          * 1 takes you into the bad path, if you want to look at this in code it is in the bad map of Schoolparty
@@ -150,7 +150,7 @@ class Game {
             this.delay = 0
         }
 
-        
+
 
         /**
          * These next if statements will follow up the good choice
@@ -164,18 +164,66 @@ class Game {
         ) {
             // console.log('you switched screens');
             this.currentScreen = new SchoolPartyFollowUpGoodPartTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            
+
         }
         //This if-statement will take you to the screen if you choose to give him your snapchat after you have 
         //chosen not to,
         //This scene will take you straight to the bad cutscene which is followed by a dialogue option in the bad path.
         if (
             this.currentScreen instanceof SchoolPartyFollowUpGoodPartTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) 
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)
+        ) {
+            //console.log('you switched screens');
+            this.currentScreen = new SchoolPartyFollowUpGoodPartThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+        }
+        //Now, this scene will take you to your the scene where you give him your snap
+        if(
+            this.currentScreen instanceof SchoolPartyFollowUpGoodPartThree
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
         ) {
             //console.log('you switched screens');
             this.currentScreen = new SchoolPartyFollowUpSnapCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            
+        }
+
+        //This if-statement will take you to the screen if you choose to not give him 
+        //your snapchat by pressing 2 on your screen
+        //It will take you to a cutscene with your mother.
+        if (
+            this.currentScreen instanceof SchoolPartyFollowUpGoodPartTwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)
+        ) {
+            //console.log('you switched screens');
+            this.currentScreen = new SchoolPartyFollowUpGoodPartFour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+        }
+        //now, this scene will take you to the cutscene where you are driving in the car
+        if (
+            this.currentScreen instanceof SchoolPartyFollowUpGoodPartFour
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            //console.log('you switched screens');
+            this.currentScreen = new SchoolPartyFollowUpBadCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+        } 4
+
+
+        //This if statement will take you to the screen if you choose to give him your snapchat after you have
+        //chosen not to,
+        //here you regret that you did not give him
+        //so you think, meh whats the worst what could happen
+        //so you apologize
+        if (
+            this.currentScreen instanceof SchoolPartyFollowUpGoodPartTwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_THREE)
+        ) {
+            // console.log('you switched screens');
+            this.currentScreen = new SchoolPartyFollowUpGoodPartThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+        }
+        //now, this scene will take you to you giving your snap
+        if(
+            this.currentScreen instanceof SchoolPartyFollowUpGoodPartThree
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            //console.log('you switched screens');
+            this.currentScreen = new SchoolPartyFollowUpSnapCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
         
 
