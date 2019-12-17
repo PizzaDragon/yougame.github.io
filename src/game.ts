@@ -165,8 +165,8 @@ class Game {
             
         }
         //This if-statement will take you to the screen if you choose to give him your snapchat after you have 
-        //chosen not to
-        //The scene where you actually give him your snapchat, no dialogue just an image of you giving your snapchat.
+        //chosen not to,
+        //This scene will take you straight to the bad cutscene which is followed by a dialogue option in the bad path.
         if (
             this.currentScreen instanceof SchoolPartyFollowUpGoodPartTwo
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) 
