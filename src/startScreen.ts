@@ -8,6 +8,8 @@ class StartScreen extends GameScreen {
     //adds basic attributes to class
     private shouldStartLevel: boolean = false;
     private backgroundImage: HTMLImageElement;
+    private characterImage: HTMLImageElement
+    private keesImage: HTMLImageElement;
    
 
 
@@ -26,8 +28,9 @@ class StartScreen extends GameScreen {
 
         //Loads the backgroundImage into the memory
         this.backgroundImage = new Image();
-        //Now, set the src to start loading the image
         this.backgroundImage.src = './assets/images/background/startscreen2.jpg'
+
+        //Now, set the src to start loading the image
     }
 
     /**
@@ -52,6 +55,7 @@ class StartScreen extends GameScreen {
 
         //write the image functions
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
+      
 
         //write the text functions
         this.writeTextToCanvas(ctx, "You", this.canvas.width / 2 , 500, 200);

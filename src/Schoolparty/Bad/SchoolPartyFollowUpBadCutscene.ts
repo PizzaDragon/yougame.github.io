@@ -9,6 +9,7 @@ class SchoolPartyFollowUpBadCutscene extends GameScreen {
     private backgroundImage: HTMLImageElement;
     private moederCharacterImage: HTMLImageElement;
     private youCharacterImage: HTMLImageElement;
+    private dialogueBar: HTMLImageElement;
 
     
 
@@ -44,6 +45,10 @@ class SchoolPartyFollowUpBadCutscene extends GameScreen {
         //Now, set the src to start loading the image
         this.youCharacterImage.src = './assets/images/characters/karakter2.png'
 
+        this.dialogueBar = new Image()
+        this.dialogueBar.src = "http://www.zumbadancela.com/wp-content/themes/complexity-2/complexity-2/layout/images/style/bg/glossy-black.png";
+
+
 
 
       
@@ -63,7 +68,8 @@ class SchoolPartyFollowUpBadCutscene extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Je moeder rijdt je naar huis.", this.canvas.width / 2, this.canvas.height / 4, 100);
+        this.ctx.drawImage(this.dialogueBar, 0 , this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
+        this.writeTextToCanvas(ctx, "Je moeder rijdt je naar huis.", this.canvas.width / 2, this.canvas.height - 90);
         
 
     }

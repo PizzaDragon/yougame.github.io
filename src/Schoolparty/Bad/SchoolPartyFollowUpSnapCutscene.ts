@@ -7,6 +7,7 @@ class SchoolPartyFollowUpSnapCutscene extends GameScreen {
     // //add the global attributes
     private shouldStartLevel: boolean = false;
     private backgroundImage: HTMLImageElement;
+    private dialogueBar: HTMLImageElement;
 
     
 
@@ -31,6 +32,10 @@ class SchoolPartyFollowUpSnapCutscene extends GameScreen {
         // Now, set the src to start loading the image
         this.backgroundImage.src =  "./assets/images/attributes/SnapchatToegevoegd.png"
 
+        this.dialogueBar = new Image()
+        this.dialogueBar.src = "http://www.zumbadancela.com/wp-content/themes/complexity-2/complexity-2/layout/images/style/bg/glossy-black.png";
+
+
 
 
       
@@ -50,7 +55,9 @@ class SchoolPartyFollowUpSnapCutscene extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Hij voegt je toe.", 50, this.canvas.width / 2, 200);
+        this.ctx.drawImage(this.dialogueBar, 0 , this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
+        this.writeTextToCanvas(ctx, "Hij voegt je toe.", this.canvas.width / 2, this.canvas.height -90);
+        this.writeTextToCanvas(ctx, "Druk op spatie om verder te gaan", this.canvas.width / 2, this.canvas.height -50);
         
 
     }
