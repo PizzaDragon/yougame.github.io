@@ -29,7 +29,7 @@ class SchoolPartyFollowUpBadCutscene extends GameScreen {
         //Loads the backgroundImage into the memory
         this.backgroundImage = new Image();
         // Now, set the src to start loading the image
-        this.backgroundImage.src =  "./assets/images/gifs/CarDrivingAtNight.gif"
+        this.backgroundImage.src =  "./assets/images/attributes/GeparkeerdeAuto.jpg"
 
 
 
