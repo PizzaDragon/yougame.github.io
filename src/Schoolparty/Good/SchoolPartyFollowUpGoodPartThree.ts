@@ -6,9 +6,11 @@ class SchoolPartyFollowUpGoodPartThree extends GameScreen {
 
     //add the global attributes
     private shouldStartLevel: boolean = false;
-    private readonly backgroundImage: HTMLImageElement;
-    private readonly keesCharacterImage: HTMLImageElement;
-    private readonly youCharacterImage: HTMLImageElement;
+    private backgroundImage: HTMLImageElement;
+    private keesImage: HTMLImageElement;
+    private youImage: HTMLImageElement;
+    private dialogueBar: HTMLImageElement;
+
 
 
 
@@ -22,21 +24,16 @@ class SchoolPartyFollowUpGoodPartThree extends GameScreen {
 
     ) {
         super(game, canvas, ctx, img, keyboardListener)
-        //Loads the backgroundImage into the memory
-        this.backgroundImage = new Image();
-        // Now, set the src to start loading the image
-        this.backgroundImage.src = "./assets/images/background/SchoolPartyBackground.jpg"
-
-        //Loads the character image into the memory
-        this.keesCharacterImage = new Image();
-        //Now, set the src to start loading the image
-        this.keesCharacterImage.src = './assets/images/characters/Kees1.png'
-
-        //Loads the character image into the memory
-        this.youCharacterImage = new Image();
-        //Now, set the src to start loading the image
-        this.youCharacterImage.src = './assets/images/characters/karakter2.png'
-
+       //Loads the backgroundImage into the memory
+       this.backgroundImage = new Image();
+       this.keesImage = new Image();
+       this.youImage = new Image();
+       this.dialogueBar = new Image()
+       //Now, set the src to start loading the image
+       this.backgroundImage.src = './assets/images/background/SchoolPartyBackground.jpg';
+       this.keesImage.src = "./assets/images/characters/kees1.png";
+       this.youImage.src = "./assets/images/characters/karakter2.png";
+       this.dialogueBar.src = "http://www.zumbadancela.com/wp-content/themes/complexity-2/complexity-2/layout/images/style/bg/glossy-black.png";
 
     }
 
@@ -52,8 +49,9 @@ class SchoolPartyFollowUpGoodPartThree extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         //Images into the DOM
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.keesCharacterImage, 500, 500);
-        this.ctx.drawImage(this.youCharacterImage, 200, 500);
+        this.ctx.drawImage(this.keesImage, -350, 0,)
+        this.ctx.drawImage(this.youImage, 0, 0,)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 
 
         // Text methods in the canvas
