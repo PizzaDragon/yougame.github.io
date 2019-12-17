@@ -74,6 +74,7 @@ class Game {
             this.currentScreen = new StartScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
 
+        
         /**
          * in this screen you can choose 1, 2 or 3,
          * 1 takes you into the bad path, if you want to look at this in code it is in the bad map of Schoolparty
@@ -117,6 +118,7 @@ class Game {
             //console.log('you switched your screen to the good option);
             this.currentScreen = new SchoolPartyFollowUpGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
+
 
         /**
          * These next if statements will follow up the neutral choice 
