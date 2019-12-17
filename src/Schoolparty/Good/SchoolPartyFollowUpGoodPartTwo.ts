@@ -57,7 +57,7 @@ class SchoolPartyFollowUpGoodPartTwo extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         //This handles the images in the screen.
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.keesCharacterImage, 500, 500);
+       // this.ctx.drawImage(this.keesCharacterImage, 500, 500);
         this.ctx.drawImage(this.youCharacterImage, 200, 500);
 
         //This handles the dialogue in the screen

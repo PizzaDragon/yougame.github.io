@@ -53,7 +53,7 @@ class Game {
     }
 
     public switchScreen() {
-        
+
         /**
          * These first few if statements will take you from the startscreen 
          * into the game it self.
@@ -99,6 +99,22 @@ class Game {
             //console.log('you switched your screen to the bad option);
             this.currentScreen = new SchoolPartyFollowUpBad(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1;
+        }
+        //now, you branch to the scene where you give him your snapchat
+        if(
+            this.currentScreen instanceof SchoolPartyFollowUpBad
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            this.currentScreen = new SchoolPartyFollowUpSnapCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1
+        }
+        //Now you go into the scene where you get in the car with your mom
+        if(
+            this.currentScreen instanceof SchoolPartyFollowUpSnapCutscene
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 144
+        ) {
+            this.currentScreen = new SchoolPartyFollowUpBadCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 0
         }
 
         //This option let's you press two to go into the neutral dialogue path

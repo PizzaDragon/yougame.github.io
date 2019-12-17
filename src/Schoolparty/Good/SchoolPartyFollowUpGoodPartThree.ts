@@ -6,7 +6,9 @@ class SchoolPartyFollowUpGoodPartThree extends GameScreen {
 
     //add the global attributes
     private shouldStartLevel: boolean = false;
-    private backgroundImage: HTMLImageElement;
+    private readonly backgroundImage: HTMLImageElement;
+    private readonly keesCharacterImage: HTMLImageElement;
+    private readonly youCharacterImage: HTMLImageElement;
 
 
 
@@ -19,12 +21,21 @@ class SchoolPartyFollowUpGoodPartThree extends GameScreen {
         keyboardListener: KeyboardListener
 
     ) {
-        //Add a super constructor which will handle the level when it is drawn
-        super(game, canvas, ctx, img, keyboardListener);
+        super(game, canvas, ctx, img, keyboardListener)
         //Loads the backgroundImage into the memory
         this.backgroundImage = new Image();
+        // Now, set the src to start loading the image
+        this.backgroundImage.src = "./assets/images/background/SchoolPartyBackground.jpg"
+
+        //Loads the character image into the memory
+        this.keesCharacterImage = new Image();
         //Now, set the src to start loading the image
-        this.backgroundImage.src = './assets/images/background/SchoolPartyBackground.jpg'
+        this.keesCharacterImage.src = './assets/images/characters/Kees1.png'
+
+        //Loads the character image into the memory
+        this.youCharacterImage = new Image();
+        //Now, set the src to start loading the image
+        this.youCharacterImage.src = './assets/images/characters/karakter2.png'
 
 
     }
@@ -39,16 +50,18 @@ class SchoolPartyFollowUpGoodPartThree extends GameScreen {
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
+        //Images into the DOM
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
-
+        this.ctx.drawImage(this.keesCharacterImage, 500, 500);
+        this.ctx.drawImage(this.youCharacterImage, 200, 500);
 
 
         // Text methods in the canvas
-        this.writeTextToCanvas(ctx, "Je loopt naar hem toe en probeert je excuses aan te bieden", 80, this.canvas.width / 2, 360);
-        this.writeTextToCanvas(ctx, "Jij: Hey sorry, het spijt me, ik reageerde te snel, wil je alsnog mijn snap?", 30, this.canvas.width / 2, 360);
-        this.writeTextToCanvas(ctx, "Hij: hmmmm, weet ik niet hoor, even goed over nadenken...", 30, this.canvas.width / 2, 360);
-        this.writeTextToCanvas(ctx, "Jij: a komop, alsjeblieft", 30, this.canvas.width / 2, 360);
-        this.writeTextToCanvas(ctx, "Hij: Oké dan, hier, voeg me maar toe", 30, this.canvas.width / 2, 360);
+        this.writeTextToCanvas(ctx, "Je loopt naar hem toe en probeert je excuses aan te bieden", this.canvas.width / 2, 360);
+        this.writeTextToCanvas(ctx, "Jij: Hey sorry, het spijt me, ik reageerde te snel, wil je alsnog mijn snap?",  this.canvas.width / 2, 390);
+        this.writeTextToCanvas(ctx, "Hij: hmmmm, weet ik niet hoor, even goed over nadenken...",  this.canvas.width / 2, 420);
+        this.writeTextToCanvas(ctx, "Jij: a komop, alsjeblieft",  this.canvas.width / 2, 450);
+        this.writeTextToCanvas(ctx, "Hij: Oké dan, hier, voeg me maar toe",  this.canvas.width / 2, 480);
 
     }
 }

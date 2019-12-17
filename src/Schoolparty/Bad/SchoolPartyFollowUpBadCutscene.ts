@@ -49,8 +49,8 @@ class SchoolPartyFollowUpBadCutscene extends GameScreen {
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
-        this.ctx.drawImage(this.backgroundImage, 0, 0);
-        this.writeTextToCanvas(ctx, "Je moeder rijdt je naar huis.", 50, this.canvas.width / 2, 200);
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Je moeder rijdt je naar huis.", this.canvas.width / 2, this.canvas.height / 4, 100);
         
 
     }
