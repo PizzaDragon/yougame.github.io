@@ -219,6 +219,14 @@ class Game {
         ) {
             //console.log('you switched screens');
             this.currentScreen = new SchoolPartyFollowUpSnapCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1; 
+        }
+        if(
+            this.currentScreen instanceof SchoolPartyFollowUpSnapCutscene
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 144
+        ) {
+            this.currentScreen = new SchoolPartyFollowUpBadCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener)
+            this.delay = 0;
         }
 
         //This if-statement will take you to the screen if you choose to not give him 
@@ -252,14 +260,16 @@ class Game {
         ) {
             // console.log('you switched screens');
             this.currentScreen = new SchoolPartyFollowUpGoodPartThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
         }
         //now, this scene will take you to you giving your snap
         if(
             this.currentScreen instanceof SchoolPartyFollowUpGoodPartThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 144
         ) {
             //console.log('you switched screens');
             this.currentScreen = new SchoolPartyFollowUpSnapCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 0;
         }
         
 
