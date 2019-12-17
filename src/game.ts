@@ -53,6 +53,7 @@ class Game {
     }
 
     public switchScreen() {
+        
         /**
          * These first few if statements will take you from the startscreen 
          * into the game it self.
@@ -160,8 +161,9 @@ class Game {
             this.delay = 0
         }
         if (
-            (this.currentScreen instanceof SchoolPartyFollowUpNeutralBad1 || this.currentScreen instanceof SchoolPartyFirstDialogue)
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 144
+
+            this.currentScreen instanceof SchoolPartyFollowUpNeutralBad1 
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
         ) {
             //console.log('you switched your screen');
             this.currentScreen = new SchoolPartyFollowUpBad(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
