@@ -271,6 +271,20 @@ class Game {
             this.currentScreen = new SchoolPartyFollowUpSnapCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 0;
         }
+
+
+
+
+
+
+
+
+        /**
+         * These next options will handle the evenst
+         * after the schoolparty 
+         * so these wil be the if statements
+         * for the home dialogue
+         */
         
 
 
