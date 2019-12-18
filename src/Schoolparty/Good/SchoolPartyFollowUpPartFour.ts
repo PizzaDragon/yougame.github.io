@@ -64,8 +64,9 @@ class SchoolPartyFollowUpGoodPartFour extends GameScreen {
         this.writeTextToCanvas(ctx, "Jij: Meh was wel leuk, er was één zo'n gast bij die mij om mijn snapchat vroeg", this.canvas.width / 2, 470);
         this.writeTextToCanvas(ctx, "Mama: Heb je hem gegeven aan hem?", this.canvas.width / 2, 500);
         this.writeTextToCanvas(ctx, "Nee, heb hem niet gegeven, kende hem nog maar net en ik vertrouwde hem niet zo erg", this.canvas.width / 2, 530);
-        this.writeTextToCanvas(ctx, "Mama: A joh, weetje, je kan hem altijd geven, het maakt niet zo veel uit of je zoiets aan iemand geeft, zolang je er maar verstandig mee omgaat. ",  this.canvas.width / 2, 560);
-        this.writeTextToCanvas(ctx, "Jij: O serieus? Dat wist ik niet, goed om te weten hahaha", this.canvas.width / 2, 590);
+        this.writeTextToCanvas(ctx, "Mama: A joh, weetje, je kan hem altijd geven, het maakt niet zo veel uit of je zoiets aan iemand geeft, ",  this.canvas.width / 2, 560);
+        this.writeTextToCanvas(ctx, "zolang je er maar verstandig mee omgaat.", this.canvas.width/2, 590)
+        this.writeTextToCanvas(ctx, "Jij: O serieus? Dat wist ik niet, goed om te weten hahaha", this.canvas.width / 2, 630);
 
 
     }
