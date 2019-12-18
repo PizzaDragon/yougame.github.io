@@ -101,7 +101,7 @@ class Game {
             this.delay = 1;
         }
         //now, you branch to the scene where you give him your snapchat
-        if(
+        if (
             this.currentScreen instanceof SchoolPartyFollowUpBad
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
         ) {
@@ -109,12 +109,13 @@ class Game {
             this.delay = 1
         }
         //Now you go into the scene where you get in the car with your mom
-        if(
+        if (
             this.currentScreen instanceof SchoolPartyFollowUpSnapCutscene
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new SchoolPartyEndingBad(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 0
+            this.delay = 0;
+            this.delay = 1;
         }
 
         //This option let's you press two to go into the neutral dialogue path
@@ -178,7 +179,7 @@ class Game {
         }
         if (
 
-            this.currentScreen instanceof SchoolPartyFollowUpNeutralBad1 
+            this.currentScreen instanceof SchoolPartyFollowUpNeutralBad1
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
         ) {
             //console.log('you switched your screen');
@@ -213,15 +214,15 @@ class Game {
             this.currentScreen = new SchoolPartyFollowUpGoodPartThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
         //Now, this scene will take you to your the scene where you give him your snap
-        if(
+        if (
             this.currentScreen instanceof SchoolPartyFollowUpGoodPartThree
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
         ) {
             //console.log('you switched screens');
             this.currentScreen = new SchoolPartyFollowUpSnapCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 1; 
+            this.delay = 1;
         }
-        if(
+        if (
             this.currentScreen instanceof SchoolPartyFollowUpSnapCutscene
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
@@ -263,7 +264,7 @@ class Game {
             this.delay = 1;
         }
         //now, this scene will take you to you giving your snap
-        if(
+        if (
             this.currentScreen instanceof SchoolPartyFollowUpGoodPartThree
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
@@ -285,30 +286,31 @@ class Game {
          * so these wil be the if statements
          * for the home dialogue
          */
-        
-         //This is the beginning of the bad homeScenario
-         if(
-             this.currentScreen instanceof SchoolPartyEndingBad
-             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
-         ) {
-             this.currentScreen = new IntroSceneBad(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-         }
 
-         //This is the beginning of the Neutral HomeScenario
-         if(
-             this.currentScreen instanceof SchoolPartyEndingNeutral
-             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
-         ) {
-             this.currentScreen = new IntroSceneNeutral(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-         }
+        //This is the beginning of the bad homeScenario
+        if (
+            this.currentScreen instanceof SchoolPartyEndingBad
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new IntroSceneBad(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 0;
+        }
 
-         //This is the beginning of the Good HomeScenario
-         if(
-             this.currentScreen instanceof SchoolPartyEndingGood
-             &&this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
-         ) {
-             this.currentScreen = new IntroSceneGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-         }
+        //This is the beginning of the Neutral HomeScenario
+        if (
+            this.currentScreen instanceof SchoolPartyEndingNeutral
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            this.currentScreen = new IntroSceneNeutral(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+        }
+
+        //This is the beginning of the Good HomeScenario
+        if (
+            this.currentScreen instanceof SchoolPartyEndingGood
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            this.currentScreen = new IntroSceneGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+        }
 
 
     }

@@ -47,8 +47,8 @@ class SchoolPartyFirstDialogue extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.25, this.canvas.width, this.canvas.height)
-        this.writeTextToCanvas(ctx, "*Je staat te dansen met een jongen en hij gaat tegen je praten*", this.canvas.width / 2, 360, 50)
-        this.writeTextToCanvas(ctx, "*Hij leunt naar je toe en vraagt je snapchat*", this.canvas.width / 2, 420, 50);
+        this.writeTextToCanvas(ctx, "*Je staat te dansen met een jongen en hij gaat tegen je praten*", this.canvas.width / 2, this.canvas.height/2-20, 50)
+        this.writeTextToCanvas(ctx, "*Hij leunt naar je toe en vraagt je snapchat*", this.canvas.width / 2, this.canvas.height/2 + 20, 50);
         this.writeTextToCanvas(ctx, "Je geeft je snap(toets 1)", this.canvas.width / 2, this.canvas.height-110);
         this.writeTextToCanvas(ctx, "Je zegt niks (toets 2)", this.canvas.width / 2, this.canvas.height-70);
         this.writeTextToCanvas(ctx, "Je geeft hem je snap niet en wijst hem af (toets 3)", this.canvas.width / 2, this.canvas.height - 30);
