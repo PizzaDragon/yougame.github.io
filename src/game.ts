@@ -113,7 +113,7 @@ class Game {
             this.currentScreen instanceof SchoolPartyFollowUpSnapCutscene
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 144
         ) {
-            this.currentScreen = new SchoolPartyFollowUpBadCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.currentScreen = new SchoolPartyEndingBad(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 0
         }
 
@@ -165,7 +165,7 @@ class Game {
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 144
         ) {
             //console.log('you switched your screen');
-            this.currentScreen = new SchoolPartyFollowUpBadCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.currentScreen = new SchoolPartyEndingNeutral(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 0
         }
         if (
@@ -225,7 +225,7 @@ class Game {
             this.currentScreen instanceof SchoolPartyFollowUpSnapCutscene
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 144
         ) {
-            this.currentScreen = new SchoolPartyFollowUpBadCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener)
+            this.currentScreen = new SchoolPartyEndingGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener)
             this.delay = 0;
         }
 
@@ -245,7 +245,7 @@ class Game {
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
         ) {
             //console.log('you switched screens');
-            this.currentScreen = new SchoolPartyFollowUpBadCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.currentScreen = new SchoolPartyEndingGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         } 4
 
 
