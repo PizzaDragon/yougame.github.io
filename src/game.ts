@@ -286,6 +286,13 @@ class Game {
          * for the home dialogue
          */
         
+         //This is the beginning of the homeScenario
+        //  if(
+        //      this.currentScreen instanceof SchoolPartyFollowUpBadCutscene
+        //      && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        //  ) {
+        //      this.currentScreen = new 
+        //  }
 
 
     }
