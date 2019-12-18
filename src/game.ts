@@ -168,6 +168,7 @@ class Game {
             //console.log('you switched your screen');
             this.currentScreen = new SchoolPartyEndingNeutral(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 0
+            this.delay = 1
         }
         if (
             this.currentScreen instanceof SchoolPartyFollowUpNeutral
@@ -228,6 +229,7 @@ class Game {
         ) {
             this.currentScreen = new SchoolPartyEndingGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener)
             this.delay = 0;
+            this.delay = 1;
         }
 
         //This if-statement will take you to the screen if you choose to not give him 
@@ -247,7 +249,7 @@ class Game {
         ) {
             //console.log('you switched screens');
             this.currentScreen = new SchoolPartyEndingGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-        } 4
+        } 
 
 
         //This if statement will take you to the screen if you choose to give him your snapchat after you have
@@ -299,17 +301,19 @@ class Game {
         //This is the beginning of the Neutral HomeScenario
         if (
             this.currentScreen instanceof SchoolPartyEndingNeutral
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new IntroSceneNeutral(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 0;
         }
 
         //This is the beginning of the Good HomeScenario
         if (
             this.currentScreen instanceof SchoolPartyEndingGood
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new IntroSceneGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 0;
         }
 
 

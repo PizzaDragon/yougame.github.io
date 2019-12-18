@@ -32,7 +32,7 @@ class SchoolPartyFollowUpNeutral extends GameScreen {
         this.backgroundImage.src = './assets/images/background/SchoolPartyBackground.jpg';
         this.emilyImage.src = "./assets/images/characters/emily1.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
-        this.dialogueBar.src = "http://www.zumbadancela.com/wp-content/themes/complexity-2/complexity-2/layout/images/style/bg/glossy-black.png";
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
 
 
     }
@@ -48,12 +48,12 @@ class SchoolPartyFollowUpNeutral extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.emilyImage, -350, 0,)
+        this.ctx.drawImage(this.emilyImage, -400, 0,)
         this.ctx.drawImage(this.youImage, 0, 0,)
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
-        this.writeTextToCanvas(ctx, 'Je zegt niks', this.canvas.width / 2, 60, 80)
-        this.writeTextToCanvas(ctx, "Emily: Hey, valt deze jongen je soms lastig?", this.canvas.width / 2, 630);
-        this.writeTextToCanvas(ctx, "Ja, eigenlijk wel. [toets 1]", this.canvas.width / 2, 670);
-        this.writeTextToCanvas(ctx, "Nee hoor. [toets 2]", this.canvas.width / 2, 710);
+        this.writeTextToCanvas(ctx, 'Je zegt niks', this.canvas.width / 2, this.canvas.height/2, 50)
+        this.writeTextToCanvas(ctx, "Emily: Hey, valt deze jongen je soms lastig?", this.canvas.width / 2, this.canvas.height - 110);
+        this.writeTextToCanvas(ctx, "Ja, eigenlijk wel. (toets 1)", this.canvas.width / 2, this.canvas.height - 70);
+        this.writeTextToCanvas(ctx, "Nee hoor. (toets 2)", this.canvas.width / 2, this.canvas.height - 30);
     }
 }
