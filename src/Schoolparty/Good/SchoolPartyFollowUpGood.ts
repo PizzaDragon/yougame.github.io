@@ -71,19 +71,5 @@ class SchoolPartyFollowUpGood extends GameScreen {
         // this.loadImage(backgroundImage, this.drawBackgroundToScreen);
     }
 
-    //  /**
-    //  * constructs a function to handle the dialogue options
-    //  * 
-    //  * @param dialogueOptionOne option one which will go to the correct path
-    //  * @param dialogueOptionTwo option two which will go to the neutral path
-    //  * @param dialogueOptionthree option three which will go to the bad path
-
-    //  */
-    // // protected selectDialogueOptions(
-    // //     dialogue: string,
-    // //     dialogue: string,
-    // //     dialogue: string,
-
-    // // ) {
-    // // }
+   
 }
