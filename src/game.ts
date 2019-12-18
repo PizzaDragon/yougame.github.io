@@ -111,7 +111,7 @@ class Game {
         //Now you go into the scene where you get in the car with your mom
         if(
             this.currentScreen instanceof SchoolPartyFollowUpSnapCutscene
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 144
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new SchoolPartyEndingBad(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 0
@@ -162,7 +162,7 @@ class Game {
         }
         if (
             this.currentScreen instanceof SchoolPartyFollowUpNeutralPartThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 144
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             //console.log('you switched your screen');
             this.currentScreen = new SchoolPartyEndingNeutral(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
@@ -170,7 +170,7 @@ class Game {
         }
         if (
             this.currentScreen instanceof SchoolPartyFollowUpNeutral
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 144
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
         ) {
             //console.log('you switched your screen');
             this.currentScreen = new SchoolPartyFollowUpNeutralBad1(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
@@ -223,7 +223,7 @@ class Game {
         }
         if(
             this.currentScreen instanceof SchoolPartyFollowUpSnapCutscene
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 144
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new SchoolPartyEndingGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener)
             this.delay = 0;
@@ -265,7 +265,7 @@ class Game {
         //now, this scene will take you to you giving your snap
         if(
             this.currentScreen instanceof SchoolPartyFollowUpGoodPartThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 144
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             //console.log('you switched screens');
             this.currentScreen = new SchoolPartyFollowUpSnapCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
