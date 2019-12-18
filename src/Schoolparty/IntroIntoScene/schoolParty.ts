@@ -8,8 +8,7 @@ class SchoolParty extends GameScreen {
     //add the global attributes
     private shouldStartLevel: boolean = false;
     private backgroundImage: HTMLImageElement
-    private characterImage: HTMLImageElement
-
+    private dialogueBar: HTMLImageElement;
 
     //Add the constructor
     public constructor(
@@ -28,13 +27,8 @@ class SchoolParty extends GameScreen {
         //Now, set the src to start loading the image
         this.backgroundImage.src = './assets/images/background/SchoolPartyBackground.jpg'
 
-        //loads a character image into the memory
-        this.characterImage = new Image();
-        // Now, set the src to start loading the image
-        this.characterImage.src = "./assets/images/characters/Kees1.png"
-
-
-
+        this.dialogueBar = new Image()
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png"
     }
 
     /**
@@ -48,10 +42,10 @@ class SchoolParty extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.characterImage, 0, 0)
-        this.writeTextToCanvas(ctx, "FEESTSCENE", this.canvas.width / 2, 300, 140);
-        this.writeTextToCanvas(ctx, 'Je bent op een feestje met Emily en wat mensen van school', this.canvas.width / 2, 460, 50)
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, 550, 30);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.25, this.canvas.width, this.canvas.height)
+        this.writeTextToCanvas(ctx, "FEESTSCENE", this.canvas.width / 2, this.canvas.height/2, 140);
+        this.writeTextToCanvas(ctx, 'Je bent op een feestje met Emily en wat mensen van school', this.canvas.width / 2, this.canvas.height - 100)
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 40);
         this.writeTextToCanvas(ctx, 'DRUK OP ESCAPE OM HET SPEL TE VERLATEN', 240, 20, 20)
     }
 }
