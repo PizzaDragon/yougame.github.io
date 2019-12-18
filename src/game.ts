@@ -286,13 +286,29 @@ class Game {
          * for the home dialogue
          */
         
-         //This is the beginning of the homeScenario
-        //  if(
-        //      this.currentScreen instanceof SchoolPartyFollowUpBadCutscene
-        //      && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
-        //  ) {
-        //      this.currentScreen = new 
-        //  }
+         //This is the beginning of the bad homeScenario
+         if(
+             this.currentScreen instanceof SchoolPartyEndingBad
+             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+         ) {
+             this.currentScreen = new IntroSceneBad(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+         }
+
+         //This is the beginning of the Neutral HomeScenario
+         if(
+             this.currentScreen instanceof SchoolPartyEndingNeutral
+             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+         ) {
+             this.currentScreen = new IntroSceneNeutral(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+         }
+
+         //This is the beginning of the Good HomeScenario
+         if(
+             this.currentScreen instanceof SchoolPartyEndingGood
+             &&this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+         ) {
+             this.currentScreen = new IntroSceneGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+         }
 
 
     }
