@@ -295,7 +295,16 @@ class Game {
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new IntroSceneBad(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 0;
+            this.delay = 1;
+        }
+
+        //This is the follow up cutscene in the bad path of the home scenario
+        if(
+            this.currentScreen instanceof IntroSceneBad
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadFollowUpOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 0; 
         }
 
         //This is the beginning of the Neutral HomeScenario
