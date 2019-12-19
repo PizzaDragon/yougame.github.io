@@ -11,7 +11,7 @@ class SchoolPartyEndingNeutral extends GameScreen {
     private youCharacterImage: HTMLImageElement;
     private dialogueBar: HTMLImageElement;
 
-    
+
 
 
     //Add the constructor
@@ -32,7 +32,7 @@ class SchoolPartyEndingNeutral extends GameScreen {
         //Loads the backgroundImage into the memory
         this.backgroundImage = new Image();
         // Now, set the src to start loading the image
-        this.backgroundImage.src =  "./assets/images/attributes/RARRI.png"
+        this.backgroundImage.src = "./assets/images/attributes/RARRI.png"
 
         this.dialogueBar = new Image()
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
@@ -40,7 +40,7 @@ class SchoolPartyEndingNeutral extends GameScreen {
 
 
 
-      
+
 
 
 
@@ -57,10 +57,10 @@ class SchoolPartyEndingNeutral extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.dialogueBar, 0 , this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
         this.writeTextToCanvas(ctx, "Je moeder rijdt je naar huis.", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height - 50);
-        
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
+
 
     }
 
