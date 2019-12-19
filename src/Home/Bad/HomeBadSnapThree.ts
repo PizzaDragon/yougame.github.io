@@ -1,5 +1,5 @@
 /// <reference path = '../../GameScreen.ts' />
-class HomeBadFollowUpThree extends GameScreen {
+class HomeBadSnapThree extends GameScreen {
 
     //add the global attributes
     private shouldStartLevel: boolean = false;

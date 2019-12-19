@@ -1,5 +1,5 @@
 /// <reference path = '../../GameScreen.ts' />
-class HomeBadFollowUpSeven extends GameScreen {
+class HomeBadSnapFive extends GameScreen {
 
     //add the global attributes
     private shouldStartLevel: boolean = false;
@@ -36,7 +36,7 @@ class HomeBadFollowUpSeven extends GameScreen {
         this.keesImage.src = "./assets/images/characters/kees1.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
-        this.snapchatImage.src = "./assets/images/snapchat/snap7.png"
+        this.snapchatImage.src = "./assets/images/snapchat/snap5.png"
     }
    
     /**

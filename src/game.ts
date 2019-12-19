@@ -303,52 +303,59 @@ class Game {
         //each time you press the Space key,
         //the scene progresses.
         if(
+            this.currentScreen instanceof HomeNeutralFollowUpOne
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)
+        ) {
+            this.currentScreen = new HomeBadSnapOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1; 
+        }
+        if(
             this.currentScreen instanceof IntroSceneBad
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
-            this.currentScreen = new HomeBadFollowUpOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.currentScreen = new HomeBadSnapOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1; 
         }
         if(
-            this.currentScreen instanceof HomeBadFollowUpOne
+            this.currentScreen instanceof HomeBadSnapOne
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
-            this.currentScreen = new HomeBadFollowUpTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.currentScreen = new HomeBadSnapTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1; 
         }
         if(
-            this.currentScreen instanceof HomeBadFollowUpTwo
+            this.currentScreen instanceof HomeBadSnapTwo
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
-            this.currentScreen = new HomeBadFollowUpThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.currentScreen = new HomeBadSnapThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1; 
         }
         if(
-            this.currentScreen instanceof HomeBadFollowUpThree
+            this.currentScreen instanceof HomeBadSnapThree
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
-            this.currentScreen = new HomeBadFollowUpFour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.currentScreen = new HomeBadSnapFour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1; 
         }
         if(
-            this.currentScreen instanceof HomeBadFollowUpFour
+            this.currentScreen instanceof HomeBadSnapFour
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
-            this.currentScreen = new HomeBadFollowUpFive(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.currentScreen = new HomeBadSnapFive(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1; 
         }
         if(
-            this.currentScreen instanceof HomeBadFollowUpFive
+            this.currentScreen instanceof HomeBadSnapFive
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
-            this.currentScreen = new HomeBadFollowUpSix(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.currentScreen = new HomeBadSnapSix(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1; 
         }
         if(
-            this.currentScreen instanceof HomeBadFollowUpSix
+            this.currentScreen instanceof HomeBadSnapSix
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
-            this.currentScreen = new HomeBadFollowUpSeven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.currentScreen = new HomeBadSnapSeven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1; 
         }
 

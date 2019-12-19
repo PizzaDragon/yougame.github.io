@@ -1,3 +1,4 @@
+
 /**
  * SchoolPartyFollowUpCutscene handles the follow up from the SchoolPartyFollowUpBad
  */
