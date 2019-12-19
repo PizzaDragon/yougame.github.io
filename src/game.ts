@@ -299,13 +299,59 @@ class Game {
         }
 
         //This is the follow up cutscene in the bad path of the home scenario
+        //This is where you snap with him
+        //each time you press the Space key,
+        //the scene progresses.
         if(
             this.currentScreen instanceof IntroSceneBad
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new HomeBadFollowUpOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 0; 
+            this.delay = 1; 
         }
+        if(
+            this.currentScreen instanceof HomeBadFollowUpOne
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadFollowUpTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1; 
+        }
+        if(
+            this.currentScreen instanceof HomeBadFollowUpTwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadFollowUpThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1; 
+        }
+        if(
+            this.currentScreen instanceof HomeBadFollowUpThree
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadFollowUpFour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1; 
+        }
+        if(
+            this.currentScreen instanceof HomeBadFollowUpFour
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadFollowUpFive(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1; 
+        }
+        if(
+            this.currentScreen instanceof HomeBadFollowUpFive
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadFollowUpSix(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1; 
+        }
+        if(
+            this.currentScreen instanceof HomeBadFollowUpSix
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadFollowUpSeven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1; 
+        }
+
 
         //This is the beginning of the Neutral HomeScenario
         if (
