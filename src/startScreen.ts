@@ -58,8 +58,8 @@ class StartScreen extends GameScreen {
       
 
         //write the text functions
-        this.writeTextToCanvas(ctx, "You", this.canvas.width / 2 , 500, 200);
-        this.writeTextToCanvas(ctx, "DRUK OP ENTER OM TE SPELEN", this.canvas.width / 2, 700, 30);
+        this.writeTextToCanvas(ctx, "You", this.canvas.width / 2 , this.canvas.height/2 -40, 200);
+        this.writeTextToCanvas(ctx, "DRUK OP ENTER OM TE SPELEN", this.canvas.width / 2, this.canvas.height/2 + 40);
     }
 
 

@@ -48,7 +48,7 @@ class HomeNeutralEnding extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         //Loads images into the DOM
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/5);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.25, this.canvas.width, this.canvas.height);
         this.writeTextToCanvas(ctx, "Nadat je heel de avond met Kees gesnapt hebt, besluit je te gaan slapen.", this.canvas.width/2, this.canvas.height - 410);
         this.writeTextToCanvas(ctx, "Je spreekt hem morgen op school wel weer.", this.canvas.width/2, this.canvas.height - 370);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height - 320);

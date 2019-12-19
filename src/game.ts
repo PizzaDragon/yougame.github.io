@@ -249,6 +249,7 @@ class Game {
         ) {
             //console.log('you switched screens');
             this.currentScreen = new SchoolPartyEndingGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
         }
 
 
@@ -444,7 +445,9 @@ class Game {
         ) {
             this.currentScreen = new IntroSceneGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 0;
+            this.delay = 1;
         }
+        
 
 
     }

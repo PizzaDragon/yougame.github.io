@@ -38,7 +38,7 @@ class SchoolPartyFollowUpGoodPartTwo extends GameScreen {
        this.backgroundImage.src = './assets/images/background/SchoolPartyBackground.jpg';
        this.keesImage.src = "./assets/images/characters/kees1.png";
        this.youImage.src = "./assets/images/characters/karakter2.png";
-       this.dialogueBar.src = "http://www.zumbadancela.com/wp-content/themes/complexity-2/complexity-2/layout/images/style/bg/glossy-black.png";
+       this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
     }
 
     /**
@@ -57,13 +57,10 @@ class SchoolPartyFollowUpGoodPartTwo extends GameScreen {
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 
         //This handles the dialogue in the screen
-        this.writeTextToCanvas(ctx, "Je kijkt raar op, ik, een loser? Heb ik wel de goede keuze gemaakt?", this.canvas.width / 2, 200);
-        this.writeTextToCanvas(ctx, "Ga naar hem, bied je excuses aan en geef je snapchat (toets 1) ", this.canvas.width / 2, 400);
-        this.writeTextToCanvas(ctx, "Nee, ik vertrouw hem echt niet (toets 2). ", this.canvas.width / 2, 430);
-        this.writeTextToCanvas(ctx, "Jij: Oke, ik geef hem mijn snap, als ik hem niet mag verwijder ik hem gewoon (toets 3)", this.canvas.width / 2, 460);
-
-
-
+        this.writeTextToCanvas(ctx, "Je kijkt raar op, ik, een loser? Heb ik wel de goede keuze gemaakt?", this.canvas.width / 2, this.canvas.height/2, 50);
+        this.writeTextToCanvas(ctx, "Ga naar hem, bied je excuses aan en geef je snapchat (toets 1) ", this.canvas.width / 2, this.canvas.height -120);
+        this.writeTextToCanvas(ctx, "Nee, ik vertrouw hem echt niet (toets 2). ", this.canvas.width / 2, this.canvas.height -80);
+        this.writeTextToCanvas(ctx, "Jij: Oke, ik geef hem mijn snap, als ik hem niet mag verwijder ik hem gewoon (toets 3)", this.canvas.width / 2, this.canvas.height -40);
     }
 
 }

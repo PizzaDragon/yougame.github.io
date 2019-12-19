@@ -42,7 +42,7 @@ class HomeSceneGood extends GameScreen {
         this.youCharacterImage.src = './assets/images/characters/karakter2.png'
 
         this.dialogueBar = new Image()
-        this.dialogueBar.src = "http://www.zumbadancela.com/wp-content/themes/complexity-2/complexity-2/layout/images/style/bg/glossy-black.png";
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
 
 
 
@@ -65,10 +65,10 @@ class HomeSceneGood extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.dialogueBar, 0 , this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
-        this.writeTextToCanvas(ctx, "Jij: Eindelijk thuis... ", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Jij: Heb ik al mijn huiswerk eigenlijk al af? Oh, wacht. Dat was al klaar gisteren.", this.canvas.width/2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "Jij: Ik kan beter wat voor mezelf doen, ik verveel me dood. Snapchat tijd!", this.canvas.width/2, this.canvas.height - 10);        
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height + 30);
+        this.writeTextToCanvas(ctx, "Jij: Eindelijk thuis... ", this.canvas.width / 2, this.canvas.height - 150);
+        this.writeTextToCanvas(ctx, "Jij: Heb ik al mijn huiswerk eigenlijk al af? Oh, wacht. Dat was al klaar gisteren.", this.canvas.width/2, this.canvas.height - 110);
+        this.writeTextToCanvas(ctx, "Jij: Ik kan beter wat voor mezelf doen, ik verveel me dood. Snapchat tijd!", this.canvas.width/2, this.canvas.height - 70);        
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height -30);
     }
 
 }
