@@ -1,5 +1,5 @@
 /// <reference path='../../GameScreen.ts'/>
-class HomeNeutralSnapOne extends GameScreen {
+class HomeNeutralSnapThree extends GameScreen {
 
     //add the global attributes
     private shouldStartLevel: boolean = false;
@@ -31,7 +31,7 @@ class HomeNeutralSnapOne extends GameScreen {
         this.dialogueBar = new Image()
         //Now, set the src to start loading the image
         this.backgroundImage.src = './assets/images/background/homeBedroom2.png';
-        this.snapImage.src = "./assets/images/attributes/snap1.png";
+        this.snapImage.src = "./assets/images/attributes/snap3.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png"
     }
