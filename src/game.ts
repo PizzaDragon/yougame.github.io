@@ -445,7 +445,9 @@ class Game {
         ) {
             this.currentScreen = new IntroSceneGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 0;
+            this.delay = 1;
         }
+        
 
 
     }

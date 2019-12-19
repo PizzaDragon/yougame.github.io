@@ -42,7 +42,7 @@ class HomeSceneGoodSecondCut extends GameScreen {
         this.youCharacterImage.src = './assets/images/characters/karakter2.png'
 
         this.dialogueBar = new Image()
-        this.dialogueBar.src = "http://www.zumbadancela.com/wp-content/themes/complexity-2/complexity-2/layout/images/style/bg/glossy-black.png";
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
 
 
 

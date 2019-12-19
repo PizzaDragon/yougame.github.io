@@ -51,10 +51,10 @@ class HomeNeutralFollowUpOne extends GameScreen {
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "Je ziet dat Kees je toegevoegd heeft op Snapchat.", this.canvas.width / 2, this.canvas.height - 120);
-        this.writeTextToCanvas(ctx, "Oh, dat is Kees van het feestje, laat ik hem ook toevoegen. [Toets 1]", this.canvas.width/2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Je besluit de melding te negeren. [Toets 2]", this.canvas.width/2, this.canvas.height - 60);
-        this.writeTextToCanvas(ctx, "Je besluit zijn Snapchat te blokkeren. [Toets 3]", this.canvas.width/2, this.canvas.height - 30);
+        this.writeTextToCanvas(ctx, "Je ziet dat Kees je toegevoegd heeft op Snapchat.", this.canvas.width / 2, this.canvas.height - 150);
+        this.writeTextToCanvas(ctx, "Oh, dat is Kees van het feestje, laat ik hem ook toevoegen. (Toets 1)", this.canvas.width/2, this.canvas.height - 110);
+        this.writeTextToCanvas(ctx, "Je besluit de melding te negeren. (Toets 2)", this.canvas.width/2, this.canvas.height - 70);
+        this.writeTextToCanvas(ctx, "Je besluit zijn Snapchat te blokkeren. (Toets 3)", this.canvas.width/2, this.canvas.height - 30);
     }
 
 }

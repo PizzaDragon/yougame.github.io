@@ -52,9 +52,9 @@ class HomeBadDialogueOne extends GameScreen {
 
       //Loads text into the DOM
       //Add snapchat screenshots where he asks for nudes instead of text, in the dialogue bar, add the yes or no options.
-      this.writeTextToCanvas(ctx, "Kees vraagt om nudes.", this.canvas.width / 2, this.canvas.height - 120);
-      this.writeTextToCanvas(ctx, "Ja. (Toets 1)", this.canvas.width/2, this.canvas.height - 90);
-      this.writeTextToCanvas(ctx, "Nee. (Toets 2)", this.canvas.width/2, this.canvas.height - 60);
+      this.writeTextToCanvas(ctx, "Kees vraagt om nudes.", this.canvas.width / 2, this.canvas.height -120,);
+      this.writeTextToCanvas(ctx, "Ja. (Toets 1)", this.canvas.width/2, this.canvas.height - 80);
+      this.writeTextToCanvas(ctx, "Nee. (Toets 2)", this.canvas.width/2, this.canvas.height - 40);
      
   }
 
