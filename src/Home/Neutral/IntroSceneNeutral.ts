@@ -52,8 +52,7 @@ class IntroSceneNeutral extends GameScreen {
 
         //Loads text into the DOM
         this.writeTextToCanvas(ctx, "Je bent op je kamer en je start snapchat op", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Je ziet dat Kees je toegevoegd heeft op Snapchat.", this.canvas.width / 2, this.canvas.height - 80);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 
 }

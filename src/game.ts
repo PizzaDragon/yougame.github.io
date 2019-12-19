@@ -249,7 +249,7 @@ class Game {
         ) {
             //console.log('you switched screens');
             this.currentScreen = new SchoolPartyEndingGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-        } 
+        }
 
 
         //This if statement will take you to the screen if you choose to give him your snapchat after you have
@@ -304,6 +304,27 @@ class Game {
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new IntroSceneNeutral(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof IntroSceneNeutral
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeNeutralFollowUpOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeNeutralFollowUpOne
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeNeutralFollowUpTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeNeutralFollowUpTwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeNeutralSnapOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 0;
         }
 
