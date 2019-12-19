@@ -1,5 +1,5 @@
 /// <reference path='../../GameScreen.ts'/>
-class HomeNeutralSnapOne extends GameScreen {
+class HomeNeutralEnding extends GameScreen {
 
     //add the global attributes
     private shouldStartLevel: boolean = false;
@@ -31,7 +31,7 @@ class HomeNeutralSnapOne extends GameScreen {
         this.dialogueBar = new Image()
         //Now, set the src to start loading the image
         this.backgroundImage.src = './assets/images/background/homeBedroom2.png';
-        this.snapImage.src = "./assets/images/attributes/snap1.png";
+        this.snapImage.src = "./assets/images/attributes/snap4.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png"
     }
@@ -48,8 +48,9 @@ class HomeNeutralSnapOne extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         //Loads images into the DOM
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapImage, this.canvas.width/2 - this.snapImage.width/2, this.canvas.height/2 - this.snapImage.height/3);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "Nadat je heel de avond met Kees gesnapt hebt, besluit je te gaan slapen.", this.canvas.width/2, this.canvas.height - 600);
+        this.writeTextToCanvas(ctx, "Je spreekt hem morgen op school wel weer.", this.canvas.width/2, this.canvas.height - 550);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height - 480);
 
        
         
