@@ -358,6 +358,25 @@ class Game {
             this.currentScreen = new HomeBadSnapSeven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1; 
         }
+        if(
+            this.currentScreen instanceof HomeBadSnapSeven
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadDialogueOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1; 
+        }
+
+        //This is the point where you get a choice
+        //Give your nudes 
+        //or don't give your nudes
+        //If you give them you will continue on the bad path
+        //If you don't you will go to the neutral path
+        if(
+            this.currentScreen instanceof HomeBadDialogueOne
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)
+        ) {
+            this.currentScreen = new HomeNeutralEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+        }
 
 
         //This is the beginning of the Neutral HomeScenario
