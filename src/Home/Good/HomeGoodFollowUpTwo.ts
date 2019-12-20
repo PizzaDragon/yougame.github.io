@@ -2,7 +2,7 @@
  * SchoolPartyFollowUpCutscene handles the follow up from the SchoolPartyFollowUpBad
  */
 /// <reference path='../../GameScreen.ts'/>
-class HomeSceneGood extends GameScreen {
+class HomeGoodFollowUpTwo extends GameScreen {
 
     // //add the global attributes
     private shouldStartLevel: boolean = false;
@@ -65,10 +65,8 @@ class HomeSceneGood extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.dialogueBar, 0 , this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
-        this.writeTextToCanvas(ctx, "Jij: Eindelijk thuis... ", this.canvas.width / 2, this.canvas.height - 150);
-        this.writeTextToCanvas(ctx, "Jij: Heb ik al mijn huiswerk eigenlijk al af? Oh, wacht. Dat was al klaar gisteren.", this.canvas.width/2, this.canvas.height - 110);
-        this.writeTextToCanvas(ctx, "Jij: Ik kan beter wat voor mezelf doen, ik verveel me dood. Snapchat tijd!", this.canvas.width/2, this.canvas.height - 70);        
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height -30);
+        this.writeTextToCanvas(ctx, "3 UUR LATER", this.canvas.width / 2, this.canvas.height - 90);
+
     }
 
 }
