@@ -303,68 +303,68 @@ class Game {
         //This is where you snap with him
         //each time you press the Space key,
         //the scene progresses.
-        if(
+        if (
             this.currentScreen instanceof HomeNeutralFollowUpOne
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)
         ) {
             this.currentScreen = new HomeBadSnapOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 1; 
+            this.delay = 1;
         }
-        if(
+        if (
             this.currentScreen instanceof IntroSceneBad
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new HomeBadSnapOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 1; 
+            this.delay = 1;
         }
-        if(
+        if (
             this.currentScreen instanceof HomeBadSnapOne
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new HomeBadSnapTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 1; 
+            this.delay = 1;
         }
-        if(
+        if (
             this.currentScreen instanceof HomeBadSnapTwo
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new HomeBadSnapThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 1; 
+            this.delay = 1;
         }
-        if(
+        if (
             this.currentScreen instanceof HomeBadSnapThree
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new HomeBadSnapFour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 1; 
+            this.delay = 1;
         }
-        if(
+        if (
             this.currentScreen instanceof HomeBadSnapFour
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new HomeBadSnapFive(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 1; 
+            this.delay = 1;
         }
-        if(
+        if (
             this.currentScreen instanceof HomeBadSnapFive
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new HomeBadSnapSix(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 1; 
+            this.delay = 1;
         }
-        if(
+        if (
             this.currentScreen instanceof HomeBadSnapSix
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new HomeBadSnapSeven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 1; 
+            this.delay = 1;
         }
-        if(
+        if (
             this.currentScreen instanceof HomeBadSnapSeven
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new HomeBadDialogueOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 1; 
+            this.delay = 1;
         }
 
         //This is the point where you get a choice
@@ -372,7 +372,7 @@ class Game {
         //or don't give your nudes
         //If you give them you will continue on the bad path
         //If you don't you will go to the neutral path
-        if(
+        if (
             this.currentScreen instanceof HomeBadDialogueOne
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)
         ) {
@@ -444,10 +444,37 @@ class Game {
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new IntroSceneGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 0;
             this.delay = 1;
         }
-        
+        if (
+            this.currentScreen instanceof IntroSceneGood
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeGoodFollowUpOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeGoodFollowUpOne
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeGoodFollowUpTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof HomeGoodFollowUpTwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeGoodDialogueOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 0
+        }
+        //This if statement will take you to the good ending
+        if (this.currentScreen instanceof HomeGoodDialogueOne
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)
+        ) {
+            this.currentScreen = new HomeGoodEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+        }
+
+
+
 
 
     }
