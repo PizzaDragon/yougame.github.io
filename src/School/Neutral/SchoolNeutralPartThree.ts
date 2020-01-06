@@ -1,5 +1,5 @@
 /// <reference path='../../GameScreen.ts'/>
-class SchoolNeutralPartTwo extends GameScreen {
+class SchoolNeutralPartThree extends GameScreen {
 
     // //add the global attributes
     private shouldStartLevel: boolean = false;
@@ -55,9 +55,9 @@ class SchoolNeutralPartTwo extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.25, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Kees: Hey karakter, wat was het leuk he gister op het feestje.", this.canvas.width / 2, this.canvas.height - 90,);
-        this.writeTextToCanvas(ctx, "Karakter: Ja zeker.", this.canvas.width / 2, this.canvas.height - 70,);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "Kees: Hey, uhm, wil je vanavond met me naar de bioscoop? Er draait een erg leuke film.", this.canvas.width / 2, this.canvas.height - 90,);
+        this.writeTextToCanvas(ctx, "Ja hoor, lijkt me leuk. [toets 1]", this.canvas.width / 2, this.canvas.height - 70,);
+        this.writeTextToCanvas(ctx, "Nee, eigenlijk liever niet. [toets 2]", this.canvas.width / 2, this.canvas.height - 50);
 
 
     }
