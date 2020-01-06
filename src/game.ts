@@ -403,6 +403,69 @@ class Game {
             this.currentScreen = new HomeBadSnapThirteen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1;
         }
+        if (
+            this.currentScreen instanceof HomeBadSnapThirteen
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapFourteen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapFourteen
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapFifteen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapFifteen
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapSixteen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapSixteen
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapSeventeen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapSeventeen
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapEightteen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapEightteen
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapNineteen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapNineteen
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapTwenty(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapTwenty
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapTwentyone(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapTwentyone
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadDialogueOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
+        }
 
 
         //This is the point where you get a choice
