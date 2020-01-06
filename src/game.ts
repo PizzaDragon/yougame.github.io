@@ -361,11 +361,11 @@ class Game {
             this.currentScreen = new HomeBadSnapSeven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1;
         }
-        if (
+         if (
             this.currentScreen instanceof HomeBadSnapSeven
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
-            this.currentScreen = new HomeBadDialogueOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.currentScreen = new HomeBadSnapEight(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1;
         }
 
