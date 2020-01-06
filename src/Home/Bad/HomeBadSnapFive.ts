@@ -51,7 +51,7 @@ class HomeBadSnapFive extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         //Loads images into the DOM
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 2 - this.snapchatImage.width / 2, this.canvas.height / 2 - this.snapchatImage.height / 3)
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 2 - this.snapchatImage.width / 2, this.canvas.height / 2 - this.snapchatImage.height / 3);
         
         
        
