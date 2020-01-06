@@ -1,5 +1,5 @@
 /// <reference path='../../GameScreen.ts'/>
-class IntroSceneGood extends GameScreen {
+class HomeIntroScene extends GameScreen {
 
     //add the global attributes
     private shouldStartLevel: boolean = false;

@@ -8,7 +8,8 @@ class Game {
     private readonly ctx: CanvasRenderingContext2D;
     private readonly game: Game;
     private readonly img: HTMLImageElement;
-    private delay: number
+    private delay: number;
+    private score: number;
 
     //Handles screen events
     private currentScreen: GameScreen;
@@ -113,9 +114,9 @@ class Game {
             this.currentScreen instanceof SchoolPartyFollowUpSnapCutscene
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
-            this.currentScreen = new SchoolPartyEndingBad(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 0;
+            this.currentScreen = new SchoolPartyEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1;
+            this.score = 0;
         }
 
         //This option let's you press two to go into the neutral dialogue path
@@ -166,9 +167,9 @@ class Game {
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             //console.log('you switched your screen');
-            this.currentScreen = new SchoolPartyEndingNeutral(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 0
-            this.delay = 1
+            this.currentScreen = new SchoolPartyEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
+            this.score = 50;
         }
         if (
             this.currentScreen instanceof SchoolPartyFollowUpNeutral
@@ -227,9 +228,9 @@ class Game {
             this.currentScreen instanceof SchoolPartyFollowUpSnapCutscene
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
-            this.currentScreen = new SchoolPartyEndingGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener)
-            this.delay = 0;
+            this.currentScreen = new SchoolPartyEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener)
             this.delay = 1;
+            this.score = 100;
         }
 
         //This if-statement will take you to the screen if you choose to not give him 
@@ -248,8 +249,9 @@ class Game {
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
         ) {
             //console.log('you switched screens');
-            this.currentScreen = new SchoolPartyEndingGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.currentScreen = new SchoolPartyEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1;
+            this.score = 100;
         }
 
 
@@ -292,10 +294,10 @@ class Game {
 
         //This is the beginning of the bad homeScenario
         if (
-            this.currentScreen instanceof SchoolPartyEndingBad
+            this.currentScreen instanceof SchoolPartyEnding
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
-            this.currentScreen = new IntroSceneBad(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.currentScreen = new HomeIntroScene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1;
         }
 
@@ -311,8 +313,8 @@ class Game {
             this.delay = 1;
         }
         if (
-            this.currentScreen instanceof IntroSceneBad
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            this.currentScreen instanceof HomeIntroScene
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60 && this.score == 0
         ) {
             this.currentScreen = new HomeBadSnapOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1;
@@ -418,15 +420,8 @@ class Game {
 
         //This is the beginning of the Neutral HomeScenario
         if (
-            this.currentScreen instanceof SchoolPartyEndingNeutral
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
-        ) {
-            this.currentScreen = new IntroSceneNeutral(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 1;
-        }
-        if (
-            this.currentScreen instanceof IntroSceneNeutral
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            this.currentScreen instanceof HomeIntroScene
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60 && this.score == 50
         ) {
             this.currentScreen = new HomeNeutralFollowUpOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1;
@@ -476,15 +471,8 @@ class Game {
 
         //This is the beginning of the Good HomeScenario
         if (
-            this.currentScreen instanceof SchoolPartyEndingGood
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
-        ) {
-            this.currentScreen = new IntroSceneGood(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 1;
-        }
-        if (
-            this.currentScreen instanceof IntroSceneGood
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            this.currentScreen instanceof HomeIntroScene
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60 && this.score == 100
         ) {
             this.currentScreen = new HomeGoodFollowUpOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1;

@@ -2,7 +2,7 @@
  * SchoolPartyFollowUpCutscene handles the follow up from the SchoolPartyFollowUpBad
  */
 /// <reference path='../../GameScreen.ts'/>
-class SchoolPartyEndingBad extends GameScreen {
+class SchoolPartyEnding extends GameScreen {
 
     // //add the global attributes
     private shouldStartLevel: boolean = false;
