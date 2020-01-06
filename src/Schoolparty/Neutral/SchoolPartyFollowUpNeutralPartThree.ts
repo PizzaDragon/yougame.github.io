@@ -46,8 +46,8 @@ class SchoolPartyFollowUpNeutralPartThree extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.emilyImage, -400, 0,)
-        this.ctx.drawImage(this.youImage, 0, 0,)
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
         this.writeTextToCanvas(ctx, 'Nadat je wat gedronken hebt met Emily, stuurt je moeder een berichtje.', this.canvas.width / 2, this.canvas.height - 110)
         this.writeTextToCanvas(ctx, 'Ze staat te wachten om naar huis te gaan.', this.canvas.width / 2, this.canvas.height - 70)
