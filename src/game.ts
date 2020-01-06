@@ -575,6 +575,20 @@ class Game {
             this.currentScreen = new SchoolNeutralPartOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1
         }
+       
+        if (this.currentScreen instanceof SchoolNeutralPartOne
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new SchoolNeutralPartTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1
+        }
+       
+        if (this.currentScreen instanceof SchoolNeutralPartTwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new SchoolNeutralPartThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1
+        }
 
 
 
