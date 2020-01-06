@@ -52,8 +52,8 @@ class HomeNeutralFollowUpTwo extends GameScreen {
 
         //Loads text into the DOM
         this.writeTextToCanvas(ctx, "Nadat je een tijdje in je bed ligt krijg je opeens een berichtje op Snapchat van Kees", this.canvas.width / 2, this.canvas.height - 120);
-        this.writeTextToCanvas(ctx, "Hmm, misschien ga ik toch met hem chatten, hij leek wel aardig op het feestje dus. [Toets 1]", this.canvas.width/2, this.canvas.height - 80);
-        this.writeTextToCanvas(ctx, "Je besluit het berichtje te negeren. [Toets 2]", this.canvas.width/2, this.canvas.height - 40);
+        this.writeTextToCanvas(ctx, "Hmm, misschien ga ik toch met hem chatten, hij leek wel aardig op het feestje dus. (Toets 1)", this.canvas.width/2, this.canvas.height - 80);
+        this.writeTextToCanvas(ctx, "Je besluit het berichtje te negeren. (Toets 2)", this.canvas.width/2, this.canvas.height - 40);
         
     }
 
