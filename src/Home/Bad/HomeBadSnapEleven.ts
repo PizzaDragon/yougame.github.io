@@ -1,5 +1,5 @@
 /// <reference path = '../../GameScreen.ts' />
-class HomeBadSnapEight extends GameScreen {
+class HomeBadSnapEleven extends GameScreen {
 
     //add the global attributes
     private shouldStartLevel: boolean = false;
@@ -8,10 +8,10 @@ class HomeBadSnapEight extends GameScreen {
     private youImage: HTMLImageElement;
     private dialogueBar: HTMLImageElement;
     private snapchatImage: HTMLImageElement;
-
-
-
-
+   
+   
+   
+   
     //Add the constructor
     public constructor(
         game: Game,
@@ -19,12 +19,12 @@ class HomeBadSnapEight extends GameScreen {
         ctx: CanvasRenderingContext2D,
         img: HTMLImageElement,
         keyboardListener: KeyboardListener
-
+   
     ) {
         //Add a super constructor which will handle the level when it is drawn
         super(game, canvas, ctx, img, keyboardListener);
-
-
+   
+   
         //Loads the backgroundImage into the memory
         this.backgroundImage = new Image();
         this.keesImage = new Image();
@@ -36,9 +36,9 @@ class HomeBadSnapEight extends GameScreen {
         this.keesImage.src = "./assets/images/characters/kees1.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
-        this.snapchatImage.src = "./assets/images/snapchat/snap8.png"
+        this.snapchatImage.src = "./assets/images/snapchat/snap11.png"
     }
-
+   
     /**
      * method to initialize the screen
      */
@@ -47,16 +47,13 @@ class HomeBadSnapEight extends GameScreen {
             this.shouldStartLevel = true
         }
     }
-
+   
     public draw(ctx: CanvasRenderingContext2D) {
         //Loads images into the DOM
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height)
-
-
-
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width/3, 0, this.canvas.width/3, this.canvas.height)        
+        
+       
+   
     }
-
-
-
-}
+ }
