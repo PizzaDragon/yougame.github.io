@@ -412,9 +412,10 @@ class Game {
         //If you don't you will go to the neutral path
         if (
             this.currentScreen instanceof HomeBadDialogueOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
         ) {
             this.currentScreen = new HomeNeutralEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1
         }
 
 
@@ -466,7 +467,7 @@ class Game {
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new HomeNeutralEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
-            this.delay = 0;
+            this.delay = 1;
         }
 
         //This is the beginning of the Good HomeScenario
@@ -496,6 +497,23 @@ class Game {
         ) {
             this.currentScreen = new HomeGoodEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
+
+         /**
+         * These next options will handle the evenst
+         * after the home dialogue 
+         * so these wil be the if statements
+         * for the school dialogue
+         */
+
+        //This is the beginning of the neutral school path
+        if (this.currentScreen instanceof HomeNeutralEnding
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new SchoolNeutralPartOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1
+        }
+
+
 
 
 
