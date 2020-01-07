@@ -58,13 +58,13 @@ class SchoolPartyFollowUpGoodPartFive extends GameScreen {
 
 
         // Text methods in the canvas
-        this.writeTextToCanvas(ctx, "Mama: Hey, hoe was het feestje?", this.canvas.width / 2, this.canvas.height/2-120);
-        this.writeTextToCanvas(ctx, "Jij: Meh was wel leuk, er was één zo'n gast bij die mij om mijn snapchat vroeg", this.canvas.width / 2, this.canvas.height/2-80);
-        this.writeTextToCanvas(ctx, "Mama: Heb je hem gegeven aan hem?", this.canvas.width / 2, this.canvas.height/2 -40);
-        this.writeTextToCanvas(ctx, "Nee, heb hem niet gegeven, kende hem nog maar net en ik vertrouwde hem niet zo erg", this.canvas.width / 2, this.canvas.height/2);
-        this.writeTextToCanvas(ctx, "Mama: A joh, weetje, je kan hem altijd geven, het maakt niet zo veel uit of je zoiets aan iemand geeft, ",  this.canvas.width / 2, this.canvas.height/2+40);
+        this.writeTextToCanvas(ctx, `Mama: Hey ${this.name}, hoe was het feestje?`, this.canvas.width / 2, this.canvas.height/2-120);
+        this.writeTextToCanvas(ctx, `${this.name}: Meh was wel leuk, er was één zo'n gast bij die mij om mijn snapchat vroeg`, this.canvas.width / 2, this.canvas.height/2-80);
+        this.writeTextToCanvas(ctx, "Mama: Heb je het gegeven aan hem?", this.canvas.width / 2, this.canvas.height/2 -40);
+        this.writeTextToCanvas(ctx, `${this.name}: Nee, heb hem niet gegeven, kende hem nog maar net en ik vertrouwde hem niet zo erg`, this.canvas.width / 2, this.canvas.height/2);
+        this.writeTextToCanvas(ctx, "Mama: Ah joh, weet je, je kan hem altijd geven. Het maakt niet zo veel uit, of je zoiets aan iemand geeft, ",  this.canvas.width / 2, this.canvas.height/2+40);
         this.writeTextToCanvas(ctx, "zolang je er maar verstandig mee omgaat.", this.canvas.width/2, this.canvas.height/2+80)
-        this.writeTextToCanvas(ctx, "Jij: O serieus? Dat wist ik niet, goed om te weten hahaha", this.canvas.width / 2, this.canvas.height/2+120);
+        this.writeTextToCanvas(ctx, `${this.name}: Oh, serieus? Dat wist ik niet, goed om te weten`, this.canvas.width / 2, this.canvas.height/2+120);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height -50);
 
 

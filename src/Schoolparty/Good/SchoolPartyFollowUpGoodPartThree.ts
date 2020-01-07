@@ -56,9 +56,9 @@ class SchoolPartyFollowUpGoodPartThree extends GameScreen {
 
         // Text methods in the canvas
         this.writeTextToCanvas(ctx, "Je loopt naar hem toe en probeert je excuses aan te bieden", this.canvas.width / 2, this.canvas.height/2, 50);
-        this.writeTextToCanvas(ctx, "Jij: Hey sorry, het spijt me, ik reageerde te snel, wil je alsnog mijn snap?", this.canvas.width / 2, this.canvas.height -190);
+        this.writeTextToCanvas(ctx, `${this.name}: Hey sorry, het spijt me, ik reageerde te snel, wil je alsnog mijn snap?`, this.canvas.width / 2, this.canvas.height -190);
         this.writeTextToCanvas(ctx, "Hij: hmmmm, weet ik niet hoor, even goed over nadenken...", this.canvas.width / 2, this.canvas.height -150);
-        this.writeTextToCanvas(ctx, "Jij: a komop, alsjeblieft", this.canvas.width / 2, this.canvas.height -110);
+        this.writeTextToCanvas(ctx, `${this.name}: a kom op, alsjeblieft`, this.canvas.width / 2, this.canvas.height -110);
         this.writeTextToCanvas(ctx, "Hij: Oké dan, hier, voeg me maar toe", this.canvas.width / 2, this.canvas.height -70);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height -30);
     }

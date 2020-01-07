@@ -61,7 +61,7 @@ class SchoolPartyFollowUpGoodPartTwo extends GameScreen {
         this.writeTextToCanvas(ctx, "Heb ik wel de goede keuze gemaakt?", this.canvas.width / 2, this.canvas.height/2+30, 50);
         this.writeTextToCanvas(ctx, "Ga naar hem, bied je excuses aan en geef je snapchat (toets 1) ", this.canvas.width / 2, this.canvas.height -120);
         this.writeTextToCanvas(ctx, "Nee, ik vertrouw hem echt niet (toets 2). ", this.canvas.width / 2, this.canvas.height -80);
-        this.writeTextToCanvas(ctx, "Jij: Oke, ik geef hem mijn snap, als ik hem niet mag verwijder ik hem gewoon (toets 3)", this.canvas.width / 2, this.canvas.height -40);
+        this.writeTextToCanvas(ctx, "ik geef hem mijn snap, als ik hem niet mag verwijder ik hem gewoon (toets 3)", this.canvas.width / 2, this.canvas.height -40);
     }
 
 }

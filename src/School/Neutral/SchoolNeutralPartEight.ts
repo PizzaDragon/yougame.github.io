@@ -1,5 +1,5 @@
 /// <reference path='../../GameScreen.ts'/>
-class SchoolNeutralPartSix extends GameScreen {
+class SchoolNeutralPartEight extends GameScreen {
 
     // //add the global attributes
     private shouldStartLevel: boolean = false;
@@ -7,7 +7,6 @@ class SchoolNeutralPartSix extends GameScreen {
     private emilyImage: HTMLImageElement;
     private youImage: HTMLImageElement;
     private dialogueBar: HTMLImageElement;
-
 
 
 
@@ -63,14 +62,12 @@ class SchoolNeutralPartSix extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.50, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Jij en Emily komen Kees tegen op straat.", this.canvas.width / 2, this.canvas.height - 210,);
-        this.writeTextToCanvas(ctx, `Kees: ${this.name}, ik heb je niet meer gezien op school vandaag,`, this.canvas.width / 2, this.canvas.height - 170,);
-        this.writeTextToCanvas(ctx, "maar heb je zin om vanavond mee naar de bar te gaan?", this.canvas.width / 2, this.canvas.height - 130,);
-        this.writeTextToCanvas(ctx, "Nee, ik ga liever niet naar de bar. (toets 1)", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Je zegt niks. (toets 2)", this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "Uhm, ja hoor. (toets 3)", this.canvas.width / 2, this.canvas.height - 10);
-
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Emily: Kom je bij mij thuis leren? Het wordt wel eens tijd hahaha.", this.canvas.width / 2, this.canvas.height - 130,);
+        this.writeTextToCanvas(ctx, "Ja, denk dat dat wel slim is. (toets 1)", this.canvas.width / 2, this.canvas.height - 90,);
+        this.writeTextToCanvas(ctx, "Nee, ik ga liever in m'n eentje leren. (toets 2)", this.canvas.width / 2, this.canvas.height - 50,);
+        this.writeTextToCanvas(ctx, "Je besluit terug naar Kees te gaan om te zeggen dat je toch naar de bar gaat. (toets 3)", this.canvas.width / 2, this.canvas.height - 10,);
+       
 
     }
 
