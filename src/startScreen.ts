@@ -10,6 +10,7 @@ class StartScreen extends GameScreen {
     private backgroundImage: HTMLImageElement;
     private characterImage: HTMLImageElement
     private keesImage: HTMLImageElement;
+    private dialogueBar: HTMLImageElement;
    
 
 
@@ -20,15 +21,18 @@ class StartScreen extends GameScreen {
         canvas: HTMLCanvasElement,
         ctx: CanvasRenderingContext2D,
         img: HTMLImageElement,
-        keyboardListener: KeyboardListener
-
+        keyboardListener: KeyboardListener,
+        name: string
     ) {
         //Add a super constructor which will handle the level when it is drawn
-        super(game, canvas, ctx, img, keyboardListener);
+        super(game, canvas, ctx, img, keyboardListener, name);
 
         //Loads the backgroundImage into the memory
         this.backgroundImage = new Image();
         this.backgroundImage.src = './assets/images/background/startscreen2.jpg'
+
+        this.dialogueBar = new Image()
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
 
         //Now, set the src to start loading the image
     }
@@ -41,14 +45,7 @@ class StartScreen extends GameScreen {
             this.shouldStartLevel = true
         }
     }
-    /**
-     * method to handle detect if the game should switch screens.
-     */
-    public adjust(game: Game) {
-        if (this.shouldStartLevel) {
-            game.switchScreen();
-        }
-    }
+    
 
     public draw(ctx: CanvasRenderingContext2D) {
         //This is ugly but it gives an idea
@@ -56,12 +53,11 @@ class StartScreen extends GameScreen {
         //write the image functions
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
       
+        this.ctx.drawImage(this.dialogueBar, 0 , this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 
         //write the text functions
         this.writeTextToCanvas(ctx, "You", this.canvas.width / 2 , this.canvas.height/2 -40, 200);
-        this.writeTextToCanvas(ctx, "DRUK OP ENTER OM TE SPELEN", this.canvas.width / 2, this.canvas.height/2 + 40);
+        this.writeTextToCanvas(ctx, "DRUK OP ENTER OM TE SPELEN", this.canvas.width / 2, this.canvas.height - 50);
     }
-
-
 }
 

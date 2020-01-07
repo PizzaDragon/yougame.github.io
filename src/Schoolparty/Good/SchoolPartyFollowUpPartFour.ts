@@ -22,11 +22,11 @@ class SchoolPartyFollowUpGoodPartFour extends GameScreen {
         canvas: HTMLCanvasElement,
         ctx: CanvasRenderingContext2D,
         img: HTMLImageElement,
-        keyboardListener: KeyboardListener
-
+        keyboardListener: KeyboardListener,
+        name: string
     ) {
         //Add a super constructor which will handle the level when it is drawn
-        super(game, canvas, ctx, img, keyboardListener);
+        super(game, canvas, ctx, img, keyboardListener, name);
         
          //Loads the backgroundImage into the memory
         this.backgroundImage = new Image();

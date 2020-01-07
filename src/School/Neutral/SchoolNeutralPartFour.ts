@@ -17,12 +17,12 @@ class SchoolNeutralPartFour extends GameScreen {
         canvas: HTMLCanvasElement,
         ctx: CanvasRenderingContext2D,
         img: HTMLImageElement,
-        keyboardListener: KeyboardListener
-
+        keyboardListener: KeyboardListener,
+        name: string
 
     ) {
         //Add a super constructor which will handle the level when it is drawn
-        super(game, canvas, ctx, img, keyboardListener);
+        super(game, canvas, ctx, img, keyboardListener, name);
 
 
 
@@ -65,9 +65,9 @@ class SchoolNeutralPartFour extends GameScreen {
         this.ctx.drawImage(this.emilyImage, -400, 0,)
         this.ctx.drawImage(this.youImage, 0, 0,)
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.25, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Karakter: Is dat wel zo'n slim idee Emily? We zijn pas 13.", this.canvas.width / 2, this.canvas.height - 130,);
+        this.writeTextToCanvas(ctx, `${this.name}: Is dat wel zo'n slim idee Emily? We zijn pas 13.`, this.canvas.width / 2, this.canvas.height - 130,);
         this.writeTextToCanvas(ctx, "Emily: Tja, ik denk dat je gelijk hebt. Ik had sowieso al niet zo veel zin, daarom vroeg ik jou mee.", this.canvas.width / 2, this.canvas.height - 90,);
-        this.writeTextToCanvas(ctx, "Karakter: Gelukkig, ik dacht even dat je het oneens met me zou zijn.", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, `${this.name}: Gelukkig, ik dacht even dat je het oneens met me zou zijn.`, this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 10);
 
 
