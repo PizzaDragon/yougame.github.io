@@ -48,14 +48,16 @@ class SchoolGoodPart1 extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         //Loads images into the DOM
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "De eerste les van vandaag is wiskunde, waarbij je naast Emily zit.", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Emily: Zo, gisteren was wel een leuk feestje, toch?", this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "Jij: Dat was het zeker.", this.canvas.width / 2, this.canvas.height - 10);
-        this.writeTextToCanvas(ctx, "Emily: Hé, na schooltijd kunnen we nog wel iets anders doen als gisteren zo leuk was.", this.canvas.width/2, this.canvas.height + 30);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height + 70);
+        this.writeTextToCanvas(ctx, "De eerste les van vandaag is wiskunde, waarbij je naast Emily zit.", this.canvas.width / 2, this.canvas.height/2);
+        this.writeTextToCanvas(ctx, "Emily: Zo, gisteren was wel een leuk feestje, toch?", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, `${this.name}: Dat was het zeker.`, this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Emily: Hé, na schooltijd kunnen we nog wel iets anders doen als gisteren zo leuk was.", this.canvas.width/2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height - 10);
     }
 
 }

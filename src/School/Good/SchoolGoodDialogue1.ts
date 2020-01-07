@@ -48,14 +48,16 @@ class SchoolGoodDialogue1 extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         //Loads images into the DOM
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.35, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "Emily: Zie, ik heb een goede vriendschap met een paar ouderejaars.", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Emily: Na school gaan we naar de bar en ze vonden het fijn als misschien jij meeging.", this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "Emily: Leuk toch? Die coole gasten zien ons wel zitten, hoor. Wil je graag mee?", this.canvas.width / 2, this.canvas.height - 10);
-        this.writeTextToCanvas(ctx, "Besluit om met Emily mee te gaan (Toets 1)", this.canvas.width/2, this.canvas.height + 30);
-        this.writeTextToCanvas(ctx, "Besluit om niet met Emily mee te gaan (Toets 2)", this.canvas.width/2, this.canvas.height + 70);
+        this.writeTextToCanvas(ctx, "Emily: Zie, ik heb een goede vriendschap met een paar ouderejaars.", this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "Emily: Na school gaan we naar de bar en ze vonden het fijn als misschien jij meeging.", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Emily: Leuk toch? Die coole gasten zien ons wel zitten, hoor. Wil je graag mee?", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Besluit om met Emily mee te gaan (Toets 1)", this.canvas.width/2, this.canvas.height -50);
+        this.writeTextToCanvas(ctx, "Besluit om niet met Emily mee te gaan (Toets 2)", this.canvas.width/2, this.canvas.height -10);
     }
 
 }

@@ -45,10 +45,10 @@ class SchoolGoodIntro extends GameScreen {
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "Je wordt wakker, rolt over en staat op.", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Je maakt je klaar voor school en even later vertrek je.", this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "Je komt aan op school.", this.canvas.width / 2, this.canvas.height - 10);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height + 30);
+        this.writeTextToCanvas(ctx, "Je wordt wakker, rolt over en staat op.", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Je maakt je klaar voor school en even later vertrek je.", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Je komt aan op school.", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height - 10);
     }
 
 }

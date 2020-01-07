@@ -48,15 +48,19 @@ class SchoolGoodDialogue1Part3 extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         //Loads images into the DOM
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.7, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "Jij: Misschien zijn we hier te ver mee gegaan.", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Jij: We doen 100.000 dingen per dag, en geen enkel ding is productief.", this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "Jij: We letten nooit op in de les, we doen weinig huiswerk, we leren nooit...", this.canvas.width / 2, this.canvas.height - 10);
-        this.writeTextToCanvas(ctx, "Jij: Wij zijn slordig en onvoorzichtig geworden, en we doen niks anders dan bij ouderejaars hangen.", this.canvas.width/2, this.canvas.height + 30);
-        this.writeTextToCanvas(ctx, "Emily: ...Ja. We zouden zeker een stuk meer aan school moeten doen. Laten we dan samen thuis studeren voor de toetsweek in plaats van naar een bar gaan.", this.canvas.width/2, this.canvas.height + 70);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height + 110);
+        this.writeTextToCanvas(ctx, `${this.name}: Misschien zijn we hier te ver mee gegaan.`, this.canvas.width / 2, this.canvas.height - 290);
+        this.writeTextToCanvas(ctx, `${this.name}: We doen 100.000 dingen per dag, en geen enkel ding is productief.`, this.canvas.width / 2, this.canvas.height - 250);
+        this.writeTextToCanvas(ctx, `${this.name}: We letten nooit op in de les, we doen weinig huiswerk, we leren nooit...`, this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, `${this.name}: Wij zijn slordig en onvoorzichtig geworden`, this.canvas.width/2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, `en we doen niks anders dan bij ouderejaars hangen.`, this.canvas.width/2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Emily: ...Ja. We zouden zeker een stuk meer aan school moeten doen.", this.canvas.width/2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Laten we dan samen thuis studeren voor de toetsweek in plaats van naar een bar gaan.", this.canvas.width/2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height -10);
     }
 
 }
