@@ -25,7 +25,7 @@ class SchoolParty extends GameScreen {
         //Loads the backgroundImage into the memory
         this.backgroundImage = new Image();
         //Now, set the src to start loading the image
-        this.backgroundImage.src = './assets/images/background/SchoolPartyBackground.jpg'
+        this.backgroundImage.src = './assets/images/background/partybackground.jpg'
 
         this.dialogueBar = new Image()
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png"
