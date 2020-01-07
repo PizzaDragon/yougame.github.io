@@ -633,6 +633,13 @@ class Game {
             this.delay = 1
         }
 
+        if (this.currentScreen instanceof SchoolNeutralPartFour
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new SchoolNeutralPartFive(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1
+        }
+
 
 
 
