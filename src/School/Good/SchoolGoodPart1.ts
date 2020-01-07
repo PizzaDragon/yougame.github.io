@@ -1,9 +1,11 @@
 /// <reference path='../../GameScreen.ts'/>
-class SchoolGoodIntro extends GameScreen {
+class SchoolGoodPart1 extends GameScreen {
 
     //add the global attributes
     private shouldStartLevel: boolean = false;
     private backgroundImage: HTMLImageElement;
+    private emilyImage: HTMLImageElement;
+    private youImage: HTMLImageElement;
     private dialogueBar: HTMLImageElement;
 
 
@@ -24,9 +26,13 @@ class SchoolGoodIntro extends GameScreen {
 
         //Loads the backgroundImage into the memory
         this.backgroundImage = new Image();
+        this.emilyImage = new Image();
+        this.youImage = new Image();
         this.dialogueBar = new Image()
         //Now, set the src to start loading the image
-        this.backgroundImage.src = './assets/images/background/frontofschoolbackground.jpg';
+        this.backgroundImage.src = './assets/images/background/klaslokaal1.jpg';
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
+        this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png"
     }
 
@@ -45,10 +51,11 @@ class SchoolGoodIntro extends GameScreen {
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "Je wordt wakker, rolt over en staat op.", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Je maakt je klaar voor school en even later vertrek je.", this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "Je komt aan op school.", this.canvas.width / 2, this.canvas.height - 10);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height + 30);
+        this.writeTextToCanvas(ctx, "De eerste les van vandaag is wiskunde, waarbij je naast Emily zit.", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Emily: Zo, gisteren was wel een leuk feestje, toch?", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "Jij: Dat was het zeker.", this.canvas.width / 2, this.canvas.height - 10);
+        this.writeTextToCanvas(ctx, "Emily: Hé, na schooltijd kunnen we nog wel iets anders doen als gisteren zo leuk was.", this.canvas.width/2, this.canvas.height + 30);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height + 70);
     }
 
 }

@@ -490,30 +490,30 @@ class Game {
             this.delay = 1;
         }
         //These if statements continue the bad path until you get another option
-        
 
 
 
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //This is the point where you get a choice
         //Give your nudes 
         //or don't give your nudes
@@ -607,12 +607,12 @@ class Game {
             this.currentScreen = new HomeGoodEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
         }
 
-         /**
-         * These next options will handle the evenst
-         * after the home dialogue 
-         * so these wil be the if statements
-         * for the school dialogue
-         */
+        /**
+        * These next options will handle the evenst
+        * after the home dialogue 
+        * so these wil be the if statements
+        * for the school dialogue
+        */
 
         //This is the beginning of the neutral school path
         if (this.currentScreen instanceof HomeNeutralEnding
@@ -621,21 +621,21 @@ class Game {
             this.currentScreen = new SchoolNeutralPartOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
-       
+
         if (this.currentScreen instanceof SchoolNeutralPartOne
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new SchoolNeutralPartTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
-       
+
         if (this.currentScreen instanceof SchoolNeutralPartTwo
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new SchoolNeutralPartThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
-       
+
         if (this.currentScreen instanceof SchoolNeutralPartThree
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
         ) {
@@ -643,11 +643,26 @@ class Game {
             this.delay = 1
         }
 
+        if (this.currentScreen instanceof SchoolNeutralPartFour
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new SchoolNeutralPartFive(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
 
+        if (this.currentScreen instanceof SchoolNeutralPartFive
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new SchoolNeutralPartSix(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
 
-
-
-
+        if (this.currentScreen instanceof SchoolNeutralPartSix
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
+        ) {
+            this.currentScreen = new SchoolNeutralPartSeven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
 
     }
 
