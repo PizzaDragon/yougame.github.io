@@ -459,6 +459,9 @@ class Game {
             this.currentScreen = new HomeBadSnapTwentyone(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1;
         }
+        // This is the point you select the option to send
+        // nudes, which is the bad option and will keep you 
+        //on the bad path
         if (
             this.currentScreen instanceof HomeBadSnapTwentyone
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
@@ -466,8 +469,31 @@ class Game {
             this.currentScreen = new HomeBadDialogueOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
             this.delay = 1;
         }
+        //These if statements continue the bad path until you get another option
+        
 
 
+
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
         //This is the point where you get a choice
         //Give your nudes 
         //or don't give your nudes
