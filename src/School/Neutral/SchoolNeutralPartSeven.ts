@@ -64,9 +64,9 @@ class SchoolNeutralPartSeven extends GameScreen {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.25, this.canvas.width, this.canvas.height);
         this.writeTextToCanvas(ctx, "Emily: Nee Kees, wij hebben nog een toets morgen.", this.canvas.width / 2, this.canvas.height - 130,);
-        this.writeTextToCanvas(ctx, "Kees: Oh, oké, laat maar zitten dan.", this.canvas.width / 2, this.canvas.height - 130,);
-        this.writeTextToCanvas(ctx, "Kees loopt weg en jij en Emily lopen weer terug naar huis.", this.canvas.width / 2, this.canvas.height - 130,);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 130,);
+        this.writeTextToCanvas(ctx, "Kees: Oh, oké, laat maar zitten dan.", this.canvas.width / 2, this.canvas.height - 90,);
+        this.writeTextToCanvas(ctx, "Kees loopt weg en jij en Emily lopen weer terug naar huis.", this.canvas.width / 2, this.canvas.height - 50,);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 10,);
        
 
     }

@@ -62,11 +62,12 @@ class SchoolNeutralPartSix extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.25, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Jij en Emily komen Kees tegen op straat.", this.canvas.width / 2, this.canvas.height - 130,);
-        this.writeTextToCanvas(ctx, "Kees: Hey karakter, ik heb je niet meer gezien op school vandaag, maar heb je zin om vanvond mee naar de bar te gaan?", this.canvas.width / 2, this.canvas.height - 130,);
-        this.writeTextToCanvas(ctx, "Nee, ik ga liever niet naar de bar. (toets 1)", this.canvas.width / 2, this.canvas.height - 10);
-        this.writeTextToCanvas(ctx, "Je zegt niks. (toets 2)", this.canvas.width / 2, this.canvas.height - 10);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.50, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Jij en Emily komen Kees tegen op straat.", this.canvas.width / 2, this.canvas.height - 210,);
+        this.writeTextToCanvas(ctx, "Kees: Hey karakter, ik heb je niet meer gezien op school vandaag,", this.canvas.width / 2, this.canvas.height - 170,);
+        this.writeTextToCanvas(ctx, "maar heb je zin om vanavond mee naar de bar te gaan?", this.canvas.width / 2, this.canvas.height - 130,);
+        this.writeTextToCanvas(ctx, "Nee, ik ga liever niet naar de bar. (toets 1)", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Je zegt niks. (toets 2)", this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "Uhm, ja hoor. (toets 3)", this.canvas.width / 2, this.canvas.height - 10);
 
 
