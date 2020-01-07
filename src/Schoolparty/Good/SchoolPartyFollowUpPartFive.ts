@@ -4,7 +4,7 @@
  * this class handles if the option is selected where you refuse to give him your snapchat
  */
 /// <reference path='../../GameScreen.ts'/>
-class SchoolPartyFollowUpGoodPartFour extends GameScreen {
+class SchoolPartyFollowUpGoodPartFive extends GameScreen {
 
     //add the global attributes
     private shouldStartLevel: boolean = false;
@@ -34,7 +34,7 @@ class SchoolPartyFollowUpGoodPartFour extends GameScreen {
         this.youImage = new Image();
         this.dialogueBar = new Image()
         //Now, set the src to start loading the image
-        this.backgroundImage.src = './assets/images/background/SchoolPartyBackground.jpg';
+        this.backgroundImage.src = './assets/images/background/RARRI.jpg';
         this.momImage.src = "./assets/images/characters/moeder1.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
@@ -54,14 +54,19 @@ class SchoolPartyFollowUpGoodPartFour extends GameScreen {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.momImage, -400, 0,)
         this.ctx.drawImage(this.youImage, 0, 0,)
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.65, this.canvas.width, this.canvas.height)
 
 
         // Text methods in the canvas
-        this.writeTextToCanvas(ctx, "Je besluit ervoor om je snapchat toch niet te geven,", this.canvas.width / 2, this.canvas.height/2 -60, 50);
-        this.writeTextToCanvas(ctx, "op dat punt stuurt je ma je een appje dat ze buiten staat", this.canvas.width / 2, this.canvas.height/2, 50);
-        this.writeTextToCanvas(ctx, "Je stapt in de auto", this.canvas.width / 2, this.canvas.height/2 +60, 50);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height-60)
-        
+        this.writeTextToCanvas(ctx, "Mama: Hey, hoe was het feestje?", this.canvas.width / 2, this.canvas.height -310);
+        this.writeTextToCanvas(ctx, "Jij: Meh was wel leuk, er was één zo'n gast bij die mij om mijn snapchat vroeg", this.canvas.width / 2, this.canvas.height -270);
+        this.writeTextToCanvas(ctx, "Mama: Heb je hem gegeven aan hem?", this.canvas.width / 2, this.canvas.height -230);
+        this.writeTextToCanvas(ctx, "Nee, heb hem niet gegeven, kende hem nog maar net en ik vertrouwde hem niet zo erg", this.canvas.width / 2, this.canvas.height -190);
+        this.writeTextToCanvas(ctx, "Mama: A joh, weetje, je kan hem altijd geven, het maakt niet zo veel uit of je zoiets aan iemand geeft, ",  this.canvas.width / 2, this.canvas.height -150);
+        this.writeTextToCanvas(ctx, "zolang je er maar verstandig mee omgaat.", this.canvas.width/2, this.canvas.height -110)
+        this.writeTextToCanvas(ctx, "Jij: O serieus? Dat wist ik niet, goed om te weten hahaha", this.canvas.width / 2, this.canvas.height -70);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height -30);
+
+
     }
 }
