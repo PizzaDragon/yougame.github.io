@@ -20,10 +20,10 @@ class SchoolPartyFollowUpGoodPartThree extends GameScreen {
         canvas: HTMLCanvasElement,
         ctx: CanvasRenderingContext2D,
         img: HTMLImageElement,
-        keyboardListener: KeyboardListener
-
+        keyboardListener: KeyboardListener,
+        name: string
     ) {
-        super(game, canvas, ctx, img, keyboardListener)
+        super(game, canvas, ctx, img, keyboardListener, name)
         //Loads the backgroundImage into the memory
         this.backgroundImage = new Image();
         this.keesImage = new Image();

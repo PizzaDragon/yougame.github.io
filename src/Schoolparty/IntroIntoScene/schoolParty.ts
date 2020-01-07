@@ -16,11 +16,11 @@ class SchoolParty extends GameScreen {
         canvas: HTMLCanvasElement,
         ctx: CanvasRenderingContext2D,
         img: HTMLImageElement,
-        keyboardListener: KeyboardListener
-
+        keyboardListener: KeyboardListener,
+        name: string
     ) {
         //Add a super constructor which will handle the level when it is drawn
-        super(game, canvas, ctx, img, keyboardListener);
+        super(game, canvas, ctx, img, keyboardListener, name);
 
         //Loads the backgroundImage into the memory
         this.backgroundImage = new Image();
@@ -44,8 +44,8 @@ class SchoolParty extends GameScreen {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.25, this.canvas.width, this.canvas.height)
         this.writeTextToCanvas(ctx, "FEESTSCENE", this.canvas.width / 2, this.canvas.height/2, 140);
-        this.writeTextToCanvas(ctx, 'Je bent op een feestje met Emily en wat mensen van school', this.canvas.width / 2, this.canvas.height - 100)
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 40);
+        this.writeTextToCanvas(ctx, 'Je bent op een feestje met Emily en wat mensen van school', this.canvas.width / 2, this.canvas.height - 90)
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, 'DRUK OP ESCAPE OM HET SPEL TE VERLATEN', 240, 20, 20)
     }
 }

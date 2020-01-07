@@ -17,12 +17,12 @@ class SchoolNeutralPartSix extends GameScreen {
         canvas: HTMLCanvasElement,
         ctx: CanvasRenderingContext2D,
         img: HTMLImageElement,
-        keyboardListener: KeyboardListener
-
+        keyboardListener: KeyboardListener,
+        name: string
 
     ) {
         //Add a super constructor which will handle the level when it is drawn
-        super(game, canvas, ctx, img, keyboardListener);
+        super(game, canvas, ctx, img, keyboardListener, name);
 
 
 

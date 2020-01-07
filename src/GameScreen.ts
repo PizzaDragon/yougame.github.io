@@ -6,6 +6,7 @@ class GameScreen {
     protected readonly ctx: CanvasRenderingContext2D;
     protected img: HTMLImageElement;
     protected keyboardListener: KeyboardListener
+    protected name: string;
 
 
     //Add the global constructor
@@ -14,14 +15,16 @@ class GameScreen {
         canvas: HTMLCanvasElement,
         ctx: CanvasRenderingContext2D,
         img: HTMLImageElement,
-        keyboardlistener: KeyboardListener
+        keyboardlistener: KeyboardListener,
+        name: string
     ) {
         this.game = game;
         this.canvas = canvas;
         this.ctx = ctx;
         this.img = img;
         this.keyboardListener = keyboardlistener;
-
+        this.name = name;
+        
     }
 
     /**
