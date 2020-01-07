@@ -57,10 +57,11 @@ class SchoolPartyFollowUpGood extends GameScreen {
 
         //Loads text into the DOM
         this.writeTextToCanvas(ctx, "Je zegt nee en wijst hem af", this.canvas.width / 2, this.canvas.height/2, 50);
-        this.writeTextToCanvas(ctx, "Jij: Nee, ik ken je nog niet goed genoeg, dus ik wil je mijn snap niet geven", this.canvas.width / 2, this.canvas.height-190);
-        this.writeTextToCanvas(ctx, "Hij: Wat? Hoezo niet? We dansen toch al heel de avond, wat doe je stom?", this.canvas.width / 2, this.canvas.height - 150);
-        this.writeTextToCanvas(ctx, "Jij: Ja sorry hoor, ik geef mijn snap gewoon niet aan mensen die ik niet ken, is dat een probleem ofzo?", this.canvas.width / 2, this.canvas.height - 110);
-        this.writeTextToCanvas(ctx, "Hij: Ja, dat is een probleem ja, je kent me toch? Maar laat maar zitten, rotkind dat je bent. Ik snap dat je vriendloos bent.", this.canvas.width / 2, this.canvas.height - 70);
+        this.writeTextToCanvas(ctx, "Jij: Nee, ik ken je nog niet goed genoeg, dus ik wil je mijn snap niet geven", this.canvas.width / 2, this.canvas.height-230);
+        this.writeTextToCanvas(ctx, "Hij: Wat? Hoezo niet? We dansen toch al heel de avond, wat doe je stom?", this.canvas.width / 2, this.canvas.height - 190);
+        this.writeTextToCanvas(ctx, "Jij: Ja sorry hoor, ik geef mijn snap gewoon niet aan mensen die ik niet ken, is dat een probleem ofzo?", this.canvas.width / 2, this.canvas.height - 150);
+        this.writeTextToCanvas(ctx, "Hij: Ja, dat is een probleem ja, je kent me toch? Maar laat maar zitten, rotkind dat je bent.", this.canvas.width / 2, this.canvas.height - 110);
+        this.writeTextToCanvas(ctx, "Ik snap dat je vriendloos bent.", this.canvas.width / 2, this.canvas.height - 70);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 30);
     }
 

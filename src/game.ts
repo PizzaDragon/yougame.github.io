@@ -243,10 +243,20 @@ class Game {
             //console.log('you switched screens');
             this.currentScreen = new SchoolPartyFollowUpGoodPartFour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
         }
-        //now, this scene will take you to the cutscene where you are driving in the car
+        //this scene will take you to the conservation with your mom
         if (
             this.currentScreen instanceof SchoolPartyFollowUpGoodPartFour
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            //console.log('you switched screens');
+            this.currentScreen = new SchoolPartyFollowUpGoodPartFive(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
+            this.delay = 1;
+        }
+
+        //now, this scene will take you to the cutscene where you are driving in the car
+        if (
+            this.currentScreen instanceof SchoolPartyFollowUpGoodPartFive
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             //console.log('you switched screens');
             this.currentScreen = new SchoolPartyEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener);
