@@ -4,7 +4,7 @@ class SchoolNeutralPartFour extends GameScreen {
     // //add the global attributes
     private shouldStartLevel: boolean = false;
     private backgroundImage: HTMLImageElement;
-    private keesImage: HTMLImageElement;
+    private emilyImage: HTMLImageElement;
     private youImage: HTMLImageElement;
     private dialogueBar: HTMLImageElement;
 
@@ -34,8 +34,8 @@ class SchoolNeutralPartFour extends GameScreen {
         this.dialogueBar = new Image()
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
 
-        this.keesImage = new Image()
-        this.keesImage.src = "./assets/images/characters/kees1.png";
+        this.emilyImage = new Image()
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
 
         this.youImage = new Image()
         this.youImage.src = "./assets/images/characters/karakter2.png";
@@ -62,12 +62,12 @@ class SchoolNeutralPartFour extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.keesImage, -400, 0,)
+        this.ctx.drawImage(this.emilyImage, -400, 0,)
         this.ctx.drawImage(this.youImage, 0, 0,)
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.25, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Karakter: Ja, lijkt me super leuk! Hoe laat gaan we?", this.canvas.width / 2, this.canvas.height - 130,);
-        this.writeTextToCanvas(ctx, "Kees: De film begint om 20.00.", this.canvas.width / 2, this.canvas.height - 90,);
-        this.writeTextToCanvas(ctx, "Karakter: Oké, dan zie ik je dan.", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "Karakter: Is dat wel zo'n slim idee Emily? We zijn pas 13.", this.canvas.width / 2, this.canvas.height - 130,);
+        this.writeTextToCanvas(ctx, "Emily: Tja, ik denk dat je gelijk hebt. Ik had sowieso al niet zo veel zin, daarom vroeg ik jou mee.", this.canvas.width / 2, this.canvas.height - 90,);
+        this.writeTextToCanvas(ctx, "Karakter: Gelukkig, ik dacht even dat je het oneens met me zou zijn.", this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 10);
 
 
