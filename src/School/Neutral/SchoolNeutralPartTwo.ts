@@ -55,8 +55,10 @@ class SchoolNeutralPartTwo extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.25, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Kees: Hey karakter, wat was het leuk he gister op het feestje.", this.canvas.width / 2, this.canvas.height - 120,);
-        this.writeTextToCanvas(ctx, "Karakter: Ja zeker.", this.canvas.width / 2, this.canvas.height - 80,);
+        this.writeTextToCanvas(ctx, "Emily: Hey karakter, wat was het leuk he gister op het feestje.", this.canvas.width / 2, this.canvas.height - 120,);
+        this.writeTextToCanvas(ctx, "Karakter: Ja zeker, ik heb later die avond ook nog met Kees gesnapped.", this.canvas.width / 2, this.canvas.height - 80,);
+        this.writeTextToCanvas(ctx, "Emily: Oh ja, Kees... ik vind hem een beetje raar, maar ik ken hem niet zo goed dus misschien is hij wel anders dan ik in gedachten heb.", this.canvas.width / 2, this.canvas.height - 80,);
+        this.writeTextToCanvas(ctx, "Karakter: Tja...", this.canvas.width / 2, this.canvas.height - 80,);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 40);
 
 

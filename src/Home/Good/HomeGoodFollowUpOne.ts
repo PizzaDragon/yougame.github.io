@@ -66,7 +66,7 @@ class HomeGoodFollowUpOne extends GameScreen {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.dialogueBar, 0 , this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
         this.writeTextToCanvas(ctx, "Je zegt welterusten tegen je ouders beneden en je gaat naar je kamer ", this.canvas.width / 2, this.canvas.height - 150);
-        this.writeTextToCanvas(ctx, "Jij: O ja, ik moet Emily nog de foto's van het feestje sturen ", this.canvas.width/2, this.canvas.height - 110);
+        this.writeTextToCanvas(ctx, "Jij: O ja, ik moet Emily nog de foto's van het feestje sturen", this.canvas.width/2, this.canvas.height - 110);
         this.writeTextToCanvas(ctx, "Jij: Ik verveel me dood. Snapchat tijd!", this.canvas.width/2, this.canvas.height - 70);        
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height -30);
     }

@@ -54,7 +54,7 @@ class SchoolNeutralPartOne extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Je komt aan op school en ziet Kees lopen.", this.canvas.width / 2, this.canvas.height - 450, 30);
+        this.writeTextToCanvas(ctx, "Je komt aan op school en ziet Emily lopen.", this.canvas.width / 2, this.canvas.height - 450, 30);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 400);
 
 
