@@ -490,6 +490,20 @@ class Game {
             this.delay = 1;
         }
         //These if statements continue the bad path until you get another option
+        if (
+            this.currentScreen instanceof HomeBadDialogueOne
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapTwentytwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapTwentytwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapTwentythree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
 
 
 
