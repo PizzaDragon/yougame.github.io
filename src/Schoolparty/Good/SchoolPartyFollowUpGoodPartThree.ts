@@ -30,7 +30,7 @@ class SchoolPartyFollowUpGoodPartThree extends GameScreen {
         this.youImage = new Image();
         this.dialogueBar = new Image()
         //Now, set the src to start loading the image
-        this.backgroundImage.src = './assets/images/background/SchoolPartyBackground.jpg';
+        this.backgroundImage.src = './assets/images/background/partybackground.jpg';
         this.keesImage.src = "./assets/images/characters/kees1.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
