@@ -664,6 +664,20 @@ class Game {
             this.delay = 1
         }
 
+        if (this.currentScreen instanceof SchoolNeutralPartSeven
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new SchoolNeutralPartEight(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+
+        if (this.currentScreen instanceof SchoolNeutralPartEight
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
+        ) {
+            this.currentScreen = new NeutralEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+
     }
 
     public nameInput() {
