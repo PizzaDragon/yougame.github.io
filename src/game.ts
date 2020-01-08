@@ -527,6 +527,107 @@ class Game {
             this.currentScreen = new HomeBadSnapTwentysix(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
+        if (
+            this.currentScreen instanceof HomeBadSnapTwentysix
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomebadPartOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        //This is the scenario where
+        //you tell your parents
+        //you have send nudes to Kees
+        if (
+            this.currentScreen instanceof HomebadPartOne
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadPartTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+
+        //This is the scenario where you don't tell 
+        //your parents
+        if (
+            this.currentScreen instanceof HomebadPartOne
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapTwentyseven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapTwentyseven
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapTwentyeight(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapTwentyeight
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapTwentynine(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapTwentynine
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapThirty(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapThirty
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapThirtyone(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapThirtyone
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapThirtytwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapThirtytwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapThirtythree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapThirtythree
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapThirtyfour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapThirtyfour
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapThirtyfive(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapThirtyfive
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapThirtysix(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        //This next one is the dialogue where you decide if you
+        //pay or not
+        if (
+            this.currentScreen instanceof HomeBadSnapThirtysix
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadDialogueTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+
+
 
 
 
