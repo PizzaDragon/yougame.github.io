@@ -989,11 +989,11 @@ class HomebadPartOne extends GameScreen {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.youImage, 0, 0);
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.40, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, `${this.name}: Onee, hij heeft een screenshot gemaakt. Wat nu?`, this.canvas.width / 2, this.canvas.height - 180);
-        this.writeTextToCanvas(ctx, `${this.name}: Moet ik dit aan mijn ouders vertellen?`, this.canvas.width / 2, this.canvas.height - 150);
-        this.writeTextToCanvas(ctx, `${this.name}: Of moet ik het laten gaan en afwachten?`, this.canvas.width / 2, this.canvas.height - 120);
-        this.writeTextToCanvas(ctx, "Vertel het je ouders (toets 1)", this.canvas.width / 2, this.canvas.height - 80);
-        this.writeTextToCanvas(ctx, "Vertel het je ouders niet (toets 2)", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, `${this.name}: Onee, hij heeft een screenshot gemaakt. Wat nu?`, this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, `${this.name}: Moet ik dit aan mijn ouders vertellen?`, this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, `${this.name}: Of moet ik het laten gaan en afwachten?`, this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Vertel het je ouders (toets 1)", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "Vertel het je ouders niet (toets 2)", this.canvas.width / 2, this.canvas.height - 10);
     }
 }
 class HomeBadPartThree extends GameScreen {
@@ -1021,16 +1021,16 @@ class HomeBadPartThree extends GameScreen {
         this.ctx.drawImage(this.momImage, -400, 0);
         this.ctx.drawImage(this.youImage, 0, 0);
         this.ctx.drawImage(this.dadImage, -550, 0);
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, `Mama: Verdorie ${this.name}, dat is nu echt het stomste dat je kan doen.`, this.canvas.width / 2, this.canvas.height / 2 - 120);
-        this.writeTextToCanvas(ctx, `${this.name}: Ja, ik weet het, ik was stom maar ik weet niet hoe`, this.canvas.width / 2, this.canvas.height / 2 - 80);
-        this.writeTextToCanvas(ctx, "ik dit moet oplossen", this.canvas.width / 2, this.canvas.height / 2 - 40);
-        this.writeTextToCanvas(ctx, `Mama: ${this.name}, ja. Lastig, wat denk jij lieverd?`, this.canvas.width / 2, this.canvas.height / 2);
-        this.writeTextToCanvas(ctx, "Papa: Ja, gewoon in zijn beloop laten denk ik. Meer kunnen we ook niet doen.", this.canvas.width / 2, this.canvas.height / 2 + 40);
-        this.writeTextToCanvas(ctx, `Het zal allemaal wel goed komen neem ik aan.`, this.canvas.width / 2, this.canvas.height / 2 + 80);
-        this.writeTextToCanvas(ctx, `${this.name}: Weet je het zeker? Is dat het slimste?`, this.canvas.width / 2, this.canvas.height / 2 + 120);
-        this.writeTextToCanvas(ctx, `Papa: Meer kunnen we niet doen toch?`, this.canvas.width / 2, this.canvas.height / 2 + 160);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.9, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, `Mama: Verdorie, ${this.name}, dat is nu echt het stomste dat je kan doen.`, this.canvas.width / 2, this.canvas.height - 330);
+        this.writeTextToCanvas(ctx, `${this.name}: Ja, ik weet het, ik was stom maar ik weet niet hoe`, this.canvas.width / 2, this.canvas.height - 290);
+        this.writeTextToCanvas(ctx, "ik dit moet oplossen", this.canvas.width / 2, this.canvas.height - 250);
+        this.writeTextToCanvas(ctx, `Mama: ${this.name}, ja. Lastig, wat denk jij lieverd?`, this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, "Papa: Ja, gewoon in zijn beloop laten denk ik. Meer kunnen we ook niet doen.", this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, `Het zal allemaal wel goed komen neem ik aan.`, this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, `${this.name}: Weet je het zeker? Is dat het slimste?`, this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, `Papa: Meer kunnen we niet doen toch?`, this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
     }
 }
 class HomeBadPartTwo extends GameScreen {
@@ -1055,15 +1055,15 @@ class HomeBadPartTwo extends GameScreen {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.momImage, -400, 0);
         this.ctx.drawImage(this.youImage, 0, 0);
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, `Mama: Hey ${this.name}, hoe gaat het?`, this.canvas.width / 2, this.canvas.height / 2 - 120);
-        this.writeTextToCanvas(ctx, `${this.name}: Niet zo goed eigenlijk, er is wat gebeurt`, this.canvas.width / 2, this.canvas.height / 2 - 80);
-        this.writeTextToCanvas(ctx, "Mama: Wat dan?", this.canvas.width / 2, this.canvas.height / 2 - 40);
-        this.writeTextToCanvas(ctx, `${this.name}: Nou... Ik was via snapchat aan het praten met een jongen..`, this.canvas.width / 2, this.canvas.height / 2);
-        this.writeTextToCanvas(ctx, "Mama: En toen?", this.canvas.width / 2, this.canvas.height / 2 + 40);
-        this.writeTextToCanvas(ctx, `${this.name}: Nou, hij vroeg om naaktfoto's en ik gaf ze. Hij zou ze niet screenshotten`, this.canvas.width / 2, this.canvas.height / 2 + 80);
-        this.writeTextToCanvas(ctx, `${this.name}: Maar dat deed hij wel`, this.canvas.width / 2, this.canvas.height / 2 + 120);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.7, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, `Mama: Hey ${this.name}, hoe gaat het?`, this.canvas.width / 2, this.canvas.height - 290);
+        this.writeTextToCanvas(ctx, `${this.name}: Niet zo goed eigenlijk, er is wat gebeurt`, this.canvas.width / 2, this.canvas.height - 250);
+        this.writeTextToCanvas(ctx, "Mama: Wat dan?", this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, `${this.name}: Nou... Ik was via snapchat aan het praten met een jongen..`, this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "Mama: En toen?", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, `${this.name}: Nou, hij vroeg om naaktfoto's en ik gaf ze. Hij zou ze niet screenshotten`, this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, `${this.name}: Maar dat deed hij wel`, this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
     }
 }
 class HomeBadSnapDialoogBadFour extends GameScreen {
@@ -3372,16 +3372,16 @@ class SchoolPartyFollowUpGoodPartFive extends GameScreen {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.momImage, -400, 0);
         this.ctx.drawImage(this.youImage, 0, 0);
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, `Mama: Hey ${this.name}, hoe was het feestje?`, this.canvas.width / 2, this.canvas.height / 2 - 140);
-        this.writeTextToCanvas(ctx, `${this.name}: Meh was wel leuk, er was één zo'n gast bij die mij om mijn snapchat vroeg`, this.canvas.width / 2, this.canvas.height / 2 - 100);
-        this.writeTextToCanvas(ctx, "Mama: Heb je het gegeven aan hem?", this.canvas.width / 2, this.canvas.height / 2 - 60);
-        this.writeTextToCanvas(ctx, `${this.name}: Nee, heb hem niet gegeven, kende hem nog maar net en ik vertrouwde hem niet zo erg`, this.canvas.width / 2, this.canvas.height / 2 - 20);
-        this.writeTextToCanvas(ctx, "Mama: Ah joh, weet je, je kan hem altijd geven.", this.canvas.width / 2, this.canvas.height / 2 + 20);
-        this.writeTextToCanvas(ctx, "Het maakt niet zo veel uit, of je zoiets aan iemand geeft, ", this.canvas.width / 2, this.canvas.height / 2 + 60);
-        this.writeTextToCanvas(ctx, "zolang je er maar verstandig mee omgaat.", this.canvas.width / 2, this.canvas.height / 2 + 100);
-        this.writeTextToCanvas(ctx, `${this.name}: Oh, serieus? Dat wist ik niet, goed om te weten`, this.canvas.width / 2, this.canvas.height / 2 + 140);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.9, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, `Mama: Hey ${this.name}, hoe was het feestje?`, this.canvas.width / 2, this.canvas.height - 330);
+        this.writeTextToCanvas(ctx, `${this.name}: Meh was wel leuk, er was één zo'n gast bij die mij om mijn snapchat vroeg`, this.canvas.width / 2, this.canvas.height - 290);
+        this.writeTextToCanvas(ctx, "Mama: Heb je het gegeven aan hem?", this.canvas.width / 2, this.canvas.height - 250);
+        this.writeTextToCanvas(ctx, `${this.name}: Nee, heb hem niet gegeven, kende hem nog maar net en ik vertrouwde hem niet zo erg`, this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, "Mama: Ah joh, weet je, je kan hem altijd geven.", this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "Het maakt niet zo veel uit, of je zoiets aan iemand geeft, ", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "zolang je er maar verstandig mee omgaat.", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, `${this.name}: Oh, serieus? Dat wist ik niet, goed om te weten`, this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
     }
 }
 class SchoolPartyFollowUpGoodPartFour extends GameScreen {
@@ -3407,10 +3407,9 @@ class SchoolPartyFollowUpGoodPartFour extends GameScreen {
         this.ctx.drawImage(this.momImage, -400, 0);
         this.ctx.drawImage(this.youImage, 0, 0);
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Je besluit ervoor om je snapchat toch niet te geven,", this.canvas.width / 2, this.canvas.height / 2 - 60, 50);
-        this.writeTextToCanvas(ctx, "Op dat punt stuurt je moeder je een appje dat ze buiten staat", this.canvas.width / 2, this.canvas.height / 2, 50);
-        this.writeTextToCanvas(ctx, "Je stapt in de auto", this.canvas.width / 2, this.canvas.height / 2 + 60, 50);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "Je besluit ervoor om je snapchat toch niet te geven,", this.canvas.width / 2, this.canvas.height - 110);
+        this.writeTextToCanvas(ctx, "Op dat punt stuurt je moeder je een appje dat ze buiten staat", this.canvas.width / 2, this.canvas.height - 70);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 30);
     }
 }
 class SchoolPartyFirstDialogue extends GameScreen {
