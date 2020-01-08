@@ -39,6 +39,7 @@ class SchoolNeutralPartFour extends GameScreen {
 
         this.youImage = new Image()
         this.youImage.src = "./assets/images/characters/karakter2.png";
+        
 
 
 
