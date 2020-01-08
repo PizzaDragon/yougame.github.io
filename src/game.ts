@@ -66,7 +66,7 @@ class Game {
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ENTER) 
         ) {
             //console.log('you switched your screen');
-            // this.name = this.nameInput()
+            this.name = this.nameInput()
             this.currentScreen = new NameScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             
         }
@@ -634,7 +634,7 @@ class Game {
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new HomeGoodDialogueOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
-            this.delay = 0
+            this.delay = 1
         }
         //This if statement will take you to the good ending
         if (this.currentScreen instanceof HomeGoodDialogueOne
@@ -642,6 +642,14 @@ class Game {
         ) {
             this.currentScreen = new HomeGoodEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
         }
+       
+        if (this.currentScreen instanceof HomeGoodDialogueOne
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)
+        ) {
+            this.currentScreen = new HomeNeutralSnapOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        }
+
+
 
         /**
         * These next options will handle the evenst
@@ -697,6 +705,20 @@ class Game {
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
         ) {
             this.currentScreen = new SchoolNeutralPartSeven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+       
+        if (this.currentScreen instanceof SchoolNeutralPartSeven
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new SchoolNeutralPartEight(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+       
+        if (this.currentScreen instanceof SchoolNeutralPartEight
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
+        ) {
+            this.currentScreen = new NeutralEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
 
