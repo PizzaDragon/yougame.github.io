@@ -544,6 +544,20 @@ class Game {
             this.currentScreen = new HomeBadPartTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
+        if (
+            this.currentScreen instanceof HomeBadPartTwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadPartThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadPartThree
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapTwentyseven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
 
         //This is the scenario where you don't tell 
         //your parents
