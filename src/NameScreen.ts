@@ -55,5 +55,6 @@ class NameScreen extends GameScreen {
         this.ctx.drawImage(this.dialogueBar, 0 , this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
         this.writeTextToCanvas(ctx, `Je personage heet nu ${this.name}`, this.canvas.width/2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height -50)
+        this.writeTextToCanvas(ctx, 'DRUK OP ESCAPE OM HET SPEL TE VERLATEN', 240, 20, 20)
     }
 }

@@ -27,6 +27,7 @@ class Game {
 
         this.keyboardListener = new KeyboardListener();
         this.currentScreen = new StartScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        this.delay = 1
 
         document.getElementById('body').style.maxWidth = "this.canvas.width";
 
@@ -62,11 +63,12 @@ class Game {
          */
         if (
             this.currentScreen instanceof StartScreen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ENTER)
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ENTER) 
         ) {
             //console.log('you switched your screen');
             // this.name = this.nameInput()
             this.currentScreen = new NameScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            
         }
         if (
             this.currentScreen instanceof NameScreen
@@ -80,7 +82,7 @@ class Game {
         //Here the screen can go back to the title screen by pressing the escape key on your keyboard.
         //If you continue you cannot go back so if you don't want to play, this is your final return chance.
         if (
-            this.currentScreen instanceof SchoolParty
+            this.currentScreen instanceof NameScreen
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ESC)
         ) {
             this.currentScreen = new StartScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
@@ -836,6 +838,30 @@ class Game {
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)
         ) {
             this.currentScreen = new SchoolGoodDialogue1Part3(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        }
+
+
+        //This is the End
+
+        if (this.currentScreen instanceof NeutralEnding
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+
+        if (this.currentScreen instanceof StartScreen
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_E) && this.keyboardListener.isKeyDown(KeyboardListener.KEY_N) && this.keyboardListener.isKeyDown(KeyboardListener.KEY_D) && this.delay > 60
+        ) {
+            this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+
+        if (
+            this.currentScreen instanceof End
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ESC)
+        ) {
+            this.currentScreen = new StartScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
         }
 
 
