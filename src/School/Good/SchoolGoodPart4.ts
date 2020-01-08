@@ -4,7 +4,7 @@ class SchoolGoodPart4 extends GameScreen {
     //add the global attributes
     private shouldStartLevel: boolean = false;
     private backgroundImage: HTMLImageElement;
-    private emilyImage: HTMLImageElement;
+    private keesImage: HTMLImageElement;
     private youImage: HTMLImageElement;
     private dialogueBar: HTMLImageElement;
 
@@ -26,12 +26,12 @@ class SchoolGoodPart4 extends GameScreen {
 
         //Loads the backgroundImage into the memory
         this.backgroundImage = new Image();
-        this.emilyImage = new Image();
+        this.keesImage = new Image();
         this.youImage = new Image();
         this.dialogueBar = new Image()
         //Now, set the src to start loading the image
-        this.backgroundImage.src = './assets/images/background/klaslokaal1.jpg';
-        this.emilyImage.src = "./assets/images/characters/emily1.png";
+        this.backgroundImage.src = './assets/images/background/street.jpg';
+        this.keesImage.src = "./assets/images/characters/Kees1.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png"
     }
@@ -48,7 +48,7 @@ class SchoolGoodPart4 extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         //Loads images into the DOM
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.keesImage, -200, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 

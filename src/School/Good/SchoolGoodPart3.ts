@@ -30,7 +30,7 @@ class SchoolGoodPart3 extends GameScreen {
         this.youImage = new Image();
         this.dialogueBar = new Image()
         //Now, set the src to start loading the image
-        this.backgroundImage.src = './assets/images/background/klaslokaal1.jpg';
+        this.backgroundImage.src = './assets/images/background/street.jpg';
         this.emilyImage.src = "./assets/images/characters/emily1.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png"
@@ -53,7 +53,8 @@ class SchoolGoodPart3 extends GameScreen {
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "Emily: Hé, stop even. Dit is de huis van één van mijn mama's vrienden en ik kijk even of alles op slot is. Wacht op me.", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Emily: Hé, stop even. Dit is de huis van één van mijn mama's vrienden", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "en ik kijk even of alles op slot is. Wacht op me.", this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, `${this.name}: Is goed, ik wacht wel heel even.`, this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height - 10);
     }

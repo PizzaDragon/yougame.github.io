@@ -50,12 +50,14 @@ class SchoolGoodEnding2 extends GameScreen {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.45, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "Een week later wordt Kees in elkaar geslagen door een groep onbekende derdeklassers die het filmpje gezien hebben.", this.canvas.width/2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Emily en jij hebben een dikke voldoende voor de toets en gaan sowieso over dit jaar naar Klas 2.", this.canvas.width/2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "Iedereen die het filmpje gezien heeft, vinden jou en Emily heel dapper en al heel snel heb je vele goede vrienden", this.canvas.width/2, this.canvas.height - 10);
+        this.writeTextToCanvas(ctx, "Een week later wordt Kees in elkaar geslagen door een groep onbekende derdeklassers", this.canvas.width/2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, "die het filmpje gezien hebben.", this.canvas.width/2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "Emily en jij hebben een dikke voldoende voor de toets en gaan sowieso over dit jaar naar Klas 2.", this.canvas.width/2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Iedereen die het filmpje gezien heeft, vinden jou en Emily heel dapper", this.canvas.width/2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "en al heel snel heb je vele goede vrienden", this.canvas.width/2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "Je eindigt het jaar met goede cijfers, goede vrienden en zo trots als een pauw.", this.canvas.width/2, this.canvas.height - 10);
     }
 

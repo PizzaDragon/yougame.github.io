@@ -67,7 +67,7 @@ class HomeBadPartThree extends GameScreen {
         this.writeTextToCanvas(ctx, "ik dit moet oplossen", this.canvas.width / 2, this.canvas.height/2 -40);
         this.writeTextToCanvas(ctx, `Mama: ${this.name}, ja. Lastig, wat denk jij lieverd?`, this.canvas.width / 2, this.canvas.height/2);
         this.writeTextToCanvas(ctx, "Papa: Ja, gewoon in zijn beloop laten denk ik. Meer kunnen we ook niet doen.",  this.canvas.width / 2, this.canvas.height/2+40);
-        this.writeTextToCanvas(ctx, `Het zal allemaal wel goedkomen neem ik aan.`, this.canvas.width/2, this.canvas.height/2+80)
+        this.writeTextToCanvas(ctx, `Het zal allemaal wel goed komen neem ik aan.`, this.canvas.width/2, this.canvas.height/2+80)
         this.writeTextToCanvas(ctx, `${this.name}: Weet je het zeker? Is dat het slimste?`, this.canvas.width / 2, this.canvas.height/2+120);
         this.writeTextToCanvas(ctx, `Papa: Meer kunnen we niet doen toch?`, this.canvas.width / 2, this.canvas.height/2+160);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height -50);

@@ -61,7 +61,7 @@ class SchoolPartyFollowUpGoodPartFour extends GameScreen {
         this.writeTextToCanvas(ctx, "Je besluit ervoor om je snapchat toch niet te geven,", this.canvas.width / 2, this.canvas.height/2 -60, 50);
         this.writeTextToCanvas(ctx, "Op dat punt stuurt je moeder je een appje dat ze buiten staat", this.canvas.width / 2, this.canvas.height/2, 50);
         this.writeTextToCanvas(ctx, "Je stapt in de auto", this.canvas.width / 2, this.canvas.height/2 +60, 50);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height-60)
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height-50)
         
     }
 }

@@ -66,7 +66,7 @@ class Game {
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ENTER)
         ) {
             //console.log('you switched your screen');
-            this.name = this.nameInput()
+            // this.name = this.nameInput()
             this.currentScreen = new NameScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
 
         }
@@ -944,23 +944,85 @@ class Game {
             this.currentScreen = new SchoolGoodDialogue1(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 0
         }
-        //if you choose the first option
-        if (this.currentScreen instanceof SchoolGoodDialogue1
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)
-        ) {
-            this.currentScreen = new SchoolGoodDialogue1Part3(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
-        }
+        
         //if you choose the second option
         if (this.currentScreen instanceof SchoolGoodDialogue1
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)
         ) {
             this.currentScreen = new SchoolGoodDialogue1Part2(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
         }
-        //if you choose the second option option
+        //if you choose the second option
         if (this.currentScreen instanceof SchoolGoodDialogue1Part2
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
         ) {
             this.currentScreen = new SchoolGoodDialogue1Part3(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        }
+        if (this.currentScreen instanceof SchoolGoodDialogue1Part3
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            this.currentScreen = new SchoolGoodPart2(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+        if (this.currentScreen instanceof SchoolGoodPart2
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new SchoolGoodPart3(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+        if (this.currentScreen instanceof SchoolGoodPart3
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new SchoolGoodPart4(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+        if (this.currentScreen instanceof SchoolGoodPart4
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new SchoolGoodPart5(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+        if (this.currentScreen instanceof SchoolGoodPart5
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new SchoolGoodPart6(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+        if (this.currentScreen instanceof SchoolGoodPart6
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new SchoolGoodPart7(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+        if (this.currentScreen instanceof SchoolGoodPart7
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new SchoolGoodPart8(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+        if (this.currentScreen instanceof SchoolGoodPart8
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new SchoolGoodPart9(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+        if (this.currentScreen instanceof SchoolGoodPart9
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new SchoolGoodDialogue2(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 0
+        }
+        if (this.currentScreen instanceof SchoolGoodDialogue2
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)
+        ) {
+            this.currentScreen = new SchoolGoodEnding1(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+        if (this.currentScreen instanceof SchoolGoodDialogue2
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)
+        ) {
+            this.currentScreen = new SchoolGoodEnding2(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
         }
 
 
