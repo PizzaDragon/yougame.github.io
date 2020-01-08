@@ -63,12 +63,12 @@ class Game {
          */
         if (
             this.currentScreen instanceof StartScreen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ENTER) 
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ENTER)
         ) {
             //console.log('you switched your screen');
             this.name = this.nameInput()
             this.currentScreen = new NameScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
-            
+
         }
         if (
             this.currentScreen instanceof NameScreen
@@ -640,6 +640,83 @@ class Game {
             this.currentScreen = new HomeBadDialogueTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
+        //This is the scenario where you pay
+        //him to not leak your nudes
+        if (
+            this.currentScreen instanceof HomeBadDialogueTwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapDialoogBadOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapDialoogBadOne
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapDialoogBadTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapDialoogBadTwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapDialoogBadThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapDialoogBadThree
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapDialoogBadFour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapDialoogBadFour
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        
+        //This is the scenario where you don't pay him
+        //And you don't know if he leaks your nudes or not
+        if (
+            this.currentScreen instanceof HomeBadDialogueTwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapDialoogGoodOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapDialoogGoodOne
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapDialoogGoodTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapDialoogGoodTwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapDialoogGoodThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapDialoogGoodThree
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadSnapDialoogGoodFour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeBadSnapDialoogGoodFour
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new HomeBadEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+
+
 
 
 
@@ -757,7 +834,7 @@ class Game {
         ) {
             this.currentScreen = new HomeGoodEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
         }
-       
+
         if (this.currentScreen instanceof HomeGoodDialogueOne
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)
         ) {
@@ -822,14 +899,14 @@ class Game {
             this.currentScreen = new SchoolNeutralPartSeven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
-       
+
         if (this.currentScreen instanceof SchoolNeutralPartSeven
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new SchoolNeutralPartEight(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
-       
+
         if (this.currentScreen instanceof SchoolNeutralPartEight
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
         ) {
