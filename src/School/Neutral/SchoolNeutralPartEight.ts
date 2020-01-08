@@ -29,7 +29,7 @@ class SchoolNeutralPartEight extends GameScreen {
         //Loads the backgroundImage into the memory
         this.backgroundImage = new Image();
         // Now, set the src to start loading the image
-        this.backgroundImage.src = "./assets/images/background/startscreen2.jpg";
+        this.backgroundImage.src = "https://www.toronto.ca/wp-content/uploads/2017/11/9119-Temporary-on-street.jpg";
 
         this.dialogueBar = new Image()
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
@@ -62,6 +62,8 @@ class SchoolNeutralPartEight extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.emilyImage, -400, 0,)
+        this.ctx.drawImage(this.youImage, 0, 0,)
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.25, this.canvas.width, this.canvas.height);
         this.writeTextToCanvas(ctx, "Emily: Kom je bij mij thuis leren? Het wordt wel eens tijd hahaha.", this.canvas.width / 2, this.canvas.height - 130,);
         this.writeTextToCanvas(ctx, "Ja, denk dat dat wel slim is. (toets 1)", this.canvas.width / 2, this.canvas.height - 90,);

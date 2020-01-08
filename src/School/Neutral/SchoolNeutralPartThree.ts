@@ -4,8 +4,8 @@ class SchoolNeutralPartThree extends GameScreen {
     // //add the global attributes
     private shouldStartLevel: boolean = false;
     private backgroundImage: HTMLImageElement;
-    private moederCharacterImage: HTMLImageElement;
-    private youCharacterImage: HTMLImageElement;
+    private emilyImage: HTMLImageElement;
+    private youImage: HTMLImageElement;
     private dialogueBar: HTMLImageElement;
 
 
@@ -34,6 +34,12 @@ class SchoolNeutralPartThree extends GameScreen {
         this.dialogueBar = new Image()
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
 
+        this.emilyImage = new Image();
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
+
+        this.youImage = new Image();
+        this.youImage.src = "./assets/images/characters/karakter2.png";
+
 
 
 
@@ -54,6 +60,8 @@ class SchoolNeutralPartThree extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.emilyImage, -400, 0,)
+        this.ctx.drawImage(this.youImage, 0, 0,)
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.25, this.canvas.width, this.canvas.height);
         this.writeTextToCanvas(ctx, "Emily: Wil je vanavond anders met me mee naar de bar? Ik ga met een paar oudere jaars.", this.canvas.width / 2, this.canvas.height - 130);
         this.writeTextToCanvas(ctx, "Ja hoor, lijkt me leuk. (toets 1)", this.canvas.width / 2, this.canvas.height - 90);
