@@ -48,13 +48,15 @@ class SchoolGoodDialogue1Part2 extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         //Loads images into the DOM
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "Emily: Nee? Je wilt niet mee? Maar waarom?", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Jij: Die jongens zijn absoluut niet te vertrouwen. (toets 1)", this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "Jij: Weet je, we gaan wel erg vaak uit. (toets 2)", this.canvas.width / 2, this.canvas.height - 10);
-        this.writeTextToCanvas(ctx, "Jij: Ik heb er geen zin in. (toets 3)", this.canvas.width/2, this.canvas.height + 30);
+        this.writeTextToCanvas(ctx, "Emily: Nee? Je wilt niet mee? Maar waarom?", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Die jongens zijn absoluut niet te vertrouwen. (toets 1)", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Weet je, we gaan wel erg vaak uit. (toets 2)", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "Ik heb er geen zin in. (toets 3)", this.canvas.width/2, this.canvas.height -10);
     }
 
 }
