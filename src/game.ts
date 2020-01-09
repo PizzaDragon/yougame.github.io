@@ -840,7 +840,7 @@ class Game {
         }
         //This if statement will take you to the good ending
         if (this.currentScreen instanceof HomeGoodDialogueOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
         ) {
             this.currentScreen = new HomeGoodEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
@@ -861,7 +861,7 @@ class Game {
         }
         if (
             this.currentScreen instanceof HomeNeutralFollowUpTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
         ) {
             this.currentScreen = new HomeGoodEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
@@ -926,7 +926,7 @@ class Game {
         }
 
         if (this.currentScreen instanceof SchoolNeutralPartSix
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new SchoolNeutralPartSeven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
@@ -1049,6 +1049,29 @@ class Game {
 
 
         //This is the End
+        if (this.currentScreen instanceof SchoolNeutralPartThree
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_THREE)
+        ) {
+            this.currentScreen = new EndingBadOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 0
+        }
+        if (this.currentScreen instanceof SchoolGoodDialogue1Part2
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_THREE)
+        ) {
+            this.currentScreen = new EndingBadOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 0
+        }
+        if (this.currentScreen instanceof EndingBadOne
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            this.currentScreen = new EndingBadTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+        if (this.currentScreen instanceof EndingBadTwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        }
 
 
 
