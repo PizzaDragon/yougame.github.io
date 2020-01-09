@@ -843,6 +843,28 @@ class Game {
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)
         ) {
             this.currentScreen = new HomeGoodEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+        if (
+            this.currentScreen instanceof HomeNeutralFollowUpOne
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_THREE)
+        ) {
+            this.currentScreen = new HomeGoodBlockedSnap(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (
+            this.currentScreen instanceof HomeGoodBlockedSnap
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            this.currentScreen = new HomeGoodEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+        if (
+            this.currentScreen instanceof HomeNeutralFollowUpTwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)
+        ) {
+            this.currentScreen = new HomeGoodEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
         }
 
         if (this.currentScreen instanceof HomeGoodDialogueOne
@@ -927,7 +949,7 @@ class Game {
 
         //this will take you to the good part of the school scenario
         if (this.currentScreen instanceof HomeGoodEnding
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
         ) {
             this.currentScreen = new SchoolGoodIntro(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
