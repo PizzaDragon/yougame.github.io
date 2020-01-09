@@ -6,10 +6,9 @@
 class NameScreen extends GameScreen {
 
     //adds basic attributes to class
-    private shouldStartLevel: boolean = false;
     private backgroundImage: HTMLImageElement;
     private dialogueBar: HTMLImageElement;
-   
+
 
 
 
@@ -34,27 +33,17 @@ class NameScreen extends GameScreen {
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
 
         //Now, set the src to start loading the image
-        
-    }
 
-    /**
-    * method to initialize the screen
-    */
-    public listen(input: KeyboardListener) {
-        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
-            this.shouldStartLevel = true
-        }
     }
-   
 
     public draw(ctx: CanvasRenderingContext2D) {
         //This is ugly but it gives an idea
 
         //write the image functions
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.dialogueBar, 0 , this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
-        this.writeTextToCanvas(ctx, `Je personage heet nu ${this.name}`, this.canvas.width/2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height -50)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
+        this.writeTextToCanvas(ctx, `Je personage heet nu ${this.name}`, this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50)
         this.writeTextToCanvas(ctx, 'DRUK OP ESCAPE OM HET SPEL TE VERLATEN', 240, 20, 20)
     }
 }
