@@ -6,6 +6,7 @@ class BarPart3 extends GameScreen {
     private backgroundImage: HTMLImageElement;
     private emilyImage: HTMLImageElement;
     private youImage: HTMLImageElement;
+    private keesImage: HTMLImageElement;
     private dialogueBar: HTMLImageElement;
 
 
@@ -28,11 +29,13 @@ class BarPart3 extends GameScreen {
         this.backgroundImage = new Image();
         this.emilyImage = new Image();
         this.youImage = new Image();
+        this.keesImage = new Image();
         this.dialogueBar = new Image()
         //Now, set the src to start loading the image
         this.backgroundImage.src = './assets/images/background/barbackground.jpg';
         this.emilyImage.src = "./assets/images/characters/emily1.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
+        this.keesImage.src = "./assets/images/characters/kees1.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png"
     }
 
@@ -50,12 +53,16 @@ class BarPart3 extends GameScreen {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.45, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "Jullie komen aan bij een tafel helemaal achterin de bar.", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Aan de tafel zitten Kees, 3 andere jongens en 1 meisje.", this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 10);
+        this.writeTextToCanvas(ctx, "Niemand lijkt al te geïnteresseerd in jullie aanwezigheid, behalve Kees.", this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, "Kees: Hé, wat fijn dat jullie het gehaald hebben!", this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, `Emily: Ja, ik heb ${this.name} ook gebracht, zoals je gevraagd had!`, this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, `${this.name}: Ah, dus Kees was de jongen die me hier wou hebben?`, this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Kees: Ahahahah, maak je toch geen zorgen. Het was een uitnodiging voor een goede avond!", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
+
     }
 
 }

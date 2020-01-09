@@ -54,7 +54,7 @@ class SchoolGoodPart4 extends GameScreen {
 
         //Loads text into the DOM
         this.writeTextToCanvas(ctx, "Een paar seconden nadat Emily verdwijnt, komt die jongen van het feestje aanlopen.", this.canvas.width / 2, this.canvas.height - 130);
-        this.writeTextToCanvas(ctx, "Hij nadert agressief en zijn gezicht leest helvuur af. Je schrikt van zijn houding.", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Hij nadert agressief en zijn gezicht leest niks meer dan intense woede af. Je schrikt van zijn houding.", this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, `Kees: Ik zou maar hier blijven staan, ${this.name}! Wij zijn nog niet klaar.`, this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height - 10);
     }

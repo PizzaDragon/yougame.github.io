@@ -53,8 +53,8 @@ class SchoolGoodEnding2 extends GameScreen {
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.45, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "Een week later wordt Kees in elkaar geslagen door een groep onbekende derdeklassers", this.canvas.width/2, this.canvas.height - 210);
-        this.writeTextToCanvas(ctx, "die het filmpje gezien hebben.", this.canvas.width/2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "Een week later wordt Kees steeds vaker door een groep onbekende derdeklassers gepest.", this.canvas.width/2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, "Het blijkt dat iedereen die het filmpje zag niet zo blij was met Kees z'n dreigementen.", this.canvas.width/2, this.canvas.height - 170);
         this.writeTextToCanvas(ctx, "Emily en jij hebben een dikke voldoende voor de toets en gaan sowieso over dit jaar naar Klas 2.", this.canvas.width/2, this.canvas.height - 130);
         this.writeTextToCanvas(ctx, "Iedereen die het filmpje gezien heeft, vinden jou en Emily heel dapper", this.canvas.width/2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, "en al heel snel heb je vele goede vrienden", this.canvas.width/2, this.canvas.height - 50);
