@@ -949,7 +949,7 @@ class Game {
 
         //this will take you to the good part of the school scenario
         if (this.currentScreen instanceof HomeGoodEnding
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolGoodIntro(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
