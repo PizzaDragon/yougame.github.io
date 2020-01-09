@@ -1,5 +1,5 @@
 /// <reference path='../../GameScreen.ts'/>
-class SchoolGoodPart2 extends GameScreen {
+class BarPart3 extends GameScreen {
 
     //add the global attributes
     private shouldStartLevel: boolean = false;
@@ -30,7 +30,7 @@ class SchoolGoodPart2 extends GameScreen {
         this.youImage = new Image();
         this.dialogueBar = new Image()
         //Now, set the src to start loading the image
-        this.backgroundImage.src = './assets/images/background/straatafbeelding.png';
+        this.backgroundImage.src = './assets/images/background/barbackground.jpg';
         this.emilyImage.src = "./assets/images/characters/emily1.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png"
@@ -53,9 +53,9 @@ class SchoolGoodPart2 extends GameScreen {
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "Na een lange schooldag met hard werken, naar de muur staren en", this.canvas.width/2, this.canvas.height - 110);
-        this.writeTextToCanvas(ctx, "niet zeker weten wat 'prend du temps' betekent, lopen jullie naar huis.", this.canvas.width/2, this.canvas.height - 70);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height - 30);
+        this.writeTextToCanvas(ctx, "Jullie komen aan bij een tafel helemaal achterin de bar.", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Aan de tafel zitten Kees, 3 andere jongens en 1 meisje.", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 10);
     }
 
 }
