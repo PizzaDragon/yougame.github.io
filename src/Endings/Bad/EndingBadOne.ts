@@ -1,10 +1,10 @@
 /// <reference path='../../GameScreen.ts'/>
-class HomeNeutralFollowUpOne extends GameScreen {
+class EndingBadOne extends GameScreen {
 
     //add the global attributes
     private shouldStartLevel: boolean = false;
     private backgroundImage: HTMLImageElement;
-    private keesImage: HTMLImageElement;
+    private emilyImage: HTMLImageElement;
     private youImage: HTMLImageElement;
     private dialogueBar: HTMLImageElement;
 
@@ -26,12 +26,12 @@ class HomeNeutralFollowUpOne extends GameScreen {
 
         //Loads the backgroundImage into the memory
         this.backgroundImage = new Image();
-        this.keesImage = new Image();
+        this.emilyImage = new Image();
         this.youImage = new Image();
         this.dialogueBar = new Image()
         //Now, set the src to start loading the image
-        this.backgroundImage.src = './assets/images/background/homeBedroom2.jpg';
-        this.keesImage.src = "./assets/images/characters/kees1.png";
+        this.backgroundImage.src = './assets/images/background/klaslokaal1.jpg';
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png"
     }
@@ -48,13 +48,17 @@ class HomeNeutralFollowUpOne extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         //Loads images into the DOM
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.45, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "Je ziet dat Kees je toegevoegd heeft op Snapchat.", this.canvas.width / 2, this.canvas.height - 130);
-        this.writeTextToCanvas(ctx, "Oh, dat is Kees van het feestje, laat ik hem ook toevoegen. (Toets 1)", this.canvas.width/2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Je besluit de melding te negeren. (Toets 2)", this.canvas.width/2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "Je besluit zijn Snapchat te blokkeren. (Toets 3)", this.canvas.width/2, this.canvas.height - 10);
+        this.writeTextToCanvas(ctx, "Emily: Je hebt er geen zin in?!", this.canvas.width/2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, "Emily: Ik probeer je helpen, omdat je moeite hebt met contacten leggen", this.canvas.width/2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "en als ik wat probeer te regelen, waardeer je het niet?!", this.canvas.width/2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Emily: Zoek het dan maar uit ook!", this.canvas.width/2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Emily loopt boos bij je weg", this.canvas.width/2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height - 10);
     }
 
 }

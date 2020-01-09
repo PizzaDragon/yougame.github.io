@@ -54,7 +54,7 @@ class SchoolPartyFollowUpGoodPartFive extends GameScreen {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.momImage, -400, 0,)
         this.ctx.drawImage(this.youImage, 0, 0,)
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.9, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.7, this.canvas.width, this.canvas.height)
 
 
         // Text methods in the canvas
