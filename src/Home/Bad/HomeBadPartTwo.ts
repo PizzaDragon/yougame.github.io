@@ -54,18 +54,18 @@ class HomeBadPartTwo extends GameScreen {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.momImage, -400, 0,)
         this.ctx.drawImage(this.youImage, 0, 0,)
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.7, this.canvas.width, this.canvas.height)
 
 
         // Text methods in the canvas
-        this.writeTextToCanvas(ctx, `Mama: Hey ${this.name}, hoe gaat het?`, this.canvas.width / 2, this.canvas.height/2-120);
-        this.writeTextToCanvas(ctx, `${this.name}: Niet zo goed eigenlijk, er is wat gebeurt`, this.canvas.width / 2, this.canvas.height/2-80);
-        this.writeTextToCanvas(ctx, "Mama: Wat dan?", this.canvas.width / 2, this.canvas.height/2 -40);
-        this.writeTextToCanvas(ctx, `${this.name}: Nou... Ik was via snapchat aan het praten met een jongen..`, this.canvas.width / 2, this.canvas.height/2);
-        this.writeTextToCanvas(ctx, "Mama: En toen?",  this.canvas.width / 2, this.canvas.height/2+40);
-        this.writeTextToCanvas(ctx, `${this.name}: Nou, hij vroeg om naaktfoto's en ik gaf ze. Hij zou ze niet screenshotten`, this.canvas.width/2, this.canvas.height/2+80)
-        this.writeTextToCanvas(ctx, `${this.name}: Maar dat deed hij wel`, this.canvas.width / 2, this.canvas.height/2+120);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height -50);
+        this.writeTextToCanvas(ctx, `Mama: Hey ${this.name}, hoe gaat het?`, this.canvas.width / 2, this.canvas.height - 290);
+        this.writeTextToCanvas(ctx, `${this.name}: Niet zo goed eigenlijk, er is wat gebeurt`, this.canvas.width / 2, this.canvas.height -250);
+        this.writeTextToCanvas(ctx, "Mama: Wat dan?", this.canvas.width / 2, this.canvas.height -210);
+        this.writeTextToCanvas(ctx, `${this.name}: Nou... Ik was via snapchat aan het praten met een jongen..`, this.canvas.width / 2, this.canvas.height -170);
+        this.writeTextToCanvas(ctx, "Mama: En toen?",  this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, `${this.name}: Nou, hij vroeg om naaktfoto's en ik gaf ze. Hij zou ze niet screenshotten`, this.canvas.width/2, this.canvas.height - 90)
+        this.writeTextToCanvas(ctx, `${this.name}: Maar dat deed hij wel`, this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height -10);
 
 
     }

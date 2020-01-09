@@ -58,19 +58,19 @@ class HomeBadPartThree extends GameScreen {
         this.ctx.drawImage(this.momImage, -400, 0,)
         this.ctx.drawImage(this.youImage, 0, 0,)
         this.ctx.drawImage(this.dadImage, -550, 0)
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.9, this.canvas.width, this.canvas.height)
 
 
         // Text methods in the canvas
-        this.writeTextToCanvas(ctx, `Mama: Verdorie ${this.name}, dat is nu echt het stomste dat je kan doen.`, this.canvas.width / 2, this.canvas.height/2-120);
-        this.writeTextToCanvas(ctx, `${this.name}: Ja, ik weet het, ik was stom maar ik weet niet hoe`, this.canvas.width / 2, this.canvas.height/2-80);
-        this.writeTextToCanvas(ctx, "ik dit moet oplossen", this.canvas.width / 2, this.canvas.height/2 -40);
-        this.writeTextToCanvas(ctx, `Mama: ${this.name}, ja. Lastig, wat denk jij lieverd?`, this.canvas.width / 2, this.canvas.height/2);
-        this.writeTextToCanvas(ctx, "Papa: Ja, gewoon in zijn beloop laten denk ik. Meer kunnen we ook niet doen.",  this.canvas.width / 2, this.canvas.height/2+40);
-        this.writeTextToCanvas(ctx, `Het zal allemaal wel goedkomen neem ik aan.`, this.canvas.width/2, this.canvas.height/2+80)
-        this.writeTextToCanvas(ctx, `${this.name}: Weet je het zeker? Is dat het slimste?`, this.canvas.width / 2, this.canvas.height/2+120);
-        this.writeTextToCanvas(ctx, `Papa: Meer kunnen we niet doen toch?`, this.canvas.width / 2, this.canvas.height/2+160);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height -50);
+        this.writeTextToCanvas(ctx, `Mama: Verdorie, ${this.name}, dat is nu echt het stomste dat je kan doen.`, this.canvas.width / 2, this.canvas.height - 330);
+        this.writeTextToCanvas(ctx, `${this.name}: Ja, ik weet het, ik was stom maar ik weet niet hoe`, this.canvas.width / 2, this.canvas.height - 290);
+        this.writeTextToCanvas(ctx, "ik dit moet oplossen", this.canvas.width / 2, this.canvas.height - 250);
+        this.writeTextToCanvas(ctx, `Mama: ${this.name}, ja. Lastig, wat denk jij lieverd?`, this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, "Papa: Ja, gewoon in zijn beloop laten denk ik. Meer kunnen we ook niet doen.",  this.canvas.width / 2, this.canvas.height -170);
+        this.writeTextToCanvas(ctx, `Het zal allemaal wel goed komen neem ik aan.`, this.canvas.width/2, this.canvas.height - 130)
+        this.writeTextToCanvas(ctx, `${this.name}: Weet je het zeker? Is dat het slimste?`, this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, `Papa: Meer kunnen we niet doen toch?`, this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height -10);
        
 
     }

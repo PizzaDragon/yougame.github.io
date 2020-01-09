@@ -50,14 +50,16 @@ class SchoolGoodDialogue2 extends GameScreen {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.55, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "De volgende dag doe je de toets. Jij en Emily hebben een goed gevoel erover.", this.canvas.width / 2, this.canvas.height - 170);
-        this.writeTextToCanvas(ctx, `Emily: Zoals afgesproken, sturen we nu het filmpje naar iedereen.`, this.canvas.width / 2, this.canvas.height - 130);
-        this.writeTextToCanvas(ctx, `${this.name}: Een deel van me hoopt dat Kees spijt heeft, maar ik denk niet dat hij dat heeft. Stuur het maar.`, this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Emily: Wil je de politie erbij betrekken?", this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, `${this.name}: Betrek de politie erbij. (Toets 1) Laat het bij je klasgenoten en vrienden (Toets 2)`, this.canvas.width / 2, this.canvas.height - 10);
+        this.writeTextToCanvas(ctx, "De volgende dag maak je de toets. Jij en Emily hebben een goed gevoel erover.", this.canvas.width / 2, this.canvas.height - 250);
+        this.writeTextToCanvas(ctx, `Emily: Zoals afgesproken, sturen we nu het filmpje naar iedereen.`, this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, `${this.name}: Een deel van me hoopt dat Kees spijt heeft,`, this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, `maar ik denk niet dat hij dat heeft. Stuur het maar.`, this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Emily: Wil je de politie erbij betrekken?", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, `Betrek de politie erbij. (Toets 1)`, this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, `Laat het bij je klasgenoten en vrienden (Toets 2)`, this.canvas.width / 2, this.canvas.height - 10);
     }
 
 }

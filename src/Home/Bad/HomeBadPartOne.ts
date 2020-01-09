@@ -54,11 +54,11 @@ class HomebadPartOne extends GameScreen {
 
         // Text methods in the canvas
        
-        this.writeTextToCanvas(ctx, `${this.name}: Onee, hij heeft een screenshot gemaakt. Wat nu?`, this.canvas.width / 2, this.canvas.height -180);
-        this.writeTextToCanvas(ctx, `${this.name}: Moet ik dit aan mijn ouders vertellen?`, this.canvas.width / 2, this.canvas.height -150);
-        this.writeTextToCanvas(ctx, `${this.name}: Of moet ik het laten gaan en afwachten?`, this.canvas.width / 2, this.canvas.height -120);
-        this.writeTextToCanvas(ctx, "Vertel het je ouders (toets 1)", this.canvas.width / 2, this.canvas.height -80);
-        this.writeTextToCanvas(ctx, "Vertel het je ouders niet (toets 2)", this.canvas.width / 2, this.canvas.height -50);
+        this.writeTextToCanvas(ctx, `${this.name}: Onee, hij heeft een screenshot gemaakt. Wat nu?`, this.canvas.width / 2, this.canvas.height -170);
+        this.writeTextToCanvas(ctx, `${this.name}: Moet ik dit aan mijn ouders vertellen?`, this.canvas.width / 2, this.canvas.height -130);
+        this.writeTextToCanvas(ctx, `${this.name}: Of moet ik het laten gaan en afwachten?`, this.canvas.width / 2, this.canvas.height -90);
+        this.writeTextToCanvas(ctx, "Vertel het je ouders (toets 1)", this.canvas.width / 2, this.canvas.height -50);
+        this.writeTextToCanvas(ctx, "Vertel het je ouders niet (toets 2)", this.canvas.width / 2, this.canvas.height -10);
 
 
     }
