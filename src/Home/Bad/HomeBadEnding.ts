@@ -49,14 +49,14 @@ class HomeBadEnding extends GameScreen {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
         // this.ctx.drawImage(this.momImage, -400, 0,)
         this.ctx.drawImage(this.youImage, 0, 0)
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.40, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 
 
         // Text methods in the canvas
 
-        this.writeTextToCanvas(ctx, `${this.name}: Nou, hopen dat dat goed komt.`, this.canvas.width / 2, this.canvas.height - 180);
-        this.writeTextToCanvas(ctx, `Laat ik maar gaan slapen, morgen heb ik een lange dag school`, this.canvas.width / 2, this.canvas.height - 150);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, `${this.name}: Nou, hopen dat dat goed komt.`, this.canvas.width / 2, this.canvas.height - 110);
+        this.writeTextToCanvas(ctx, `Laat ik maar gaan slapen, morgen heb ik een lange dag school`, this.canvas.width / 2, this.canvas.height - 70);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 30);
 
 
     }
