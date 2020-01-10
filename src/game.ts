@@ -981,6 +981,17 @@ class Game {
             this.currentScreen = new SchoolGoodDialogue1Part2(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
+        if (this.currentScreen instanceof SchoolGoodDialogue1Part2
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)
+        ) {
+            this.currentScreen = new SchoolGoodDialogue1Part2Option1(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        }
+        if (this.currentScreen instanceof SchoolGoodDialogue1Part2Option1
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            this.currentScreen = new BarIntro(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
         //if you choose the second option at dialogue1part2
         if (this.currentScreen instanceof SchoolGoodDialogue1Part2
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15
