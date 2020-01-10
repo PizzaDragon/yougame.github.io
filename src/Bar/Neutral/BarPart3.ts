@@ -52,8 +52,8 @@ class BarPart3 extends GameScreen {
         //Loads images into the DOM
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.keesImage, 600, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.youImage, -100, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.keesImage, 400, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.45, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM

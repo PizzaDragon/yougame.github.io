@@ -97,7 +97,7 @@ class Game {
          */
         if (
             this.currentScreen instanceof SchoolParty
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             //console.log('you switched your screen);
             this.currentScreen = new SchoolPartyFirstDialogue(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
@@ -124,7 +124,7 @@ class Game {
         //Now you go into the scene where you get in the car with your mom
         if (
             this.currentScreen instanceof SchoolPartyFollowUpSnapCutscene
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolPartyEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
@@ -176,16 +176,16 @@ class Game {
         }
         if (
             this.currentScreen instanceof SchoolPartyFollowUpNeutralPartThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             //console.log('you switched your screen');
             this.currentScreen = new SchoolPartyEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
-            this.score = 600;
+            this.score = 150;
         }
         if (
             this.currentScreen instanceof SchoolPartyFollowUpNeutral
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15
         ) {
             //console.log('you switched your screen');
             this.currentScreen = new SchoolPartyFollowUpNeutralBad1(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
@@ -238,7 +238,7 @@ class Game {
         }
         if (
             this.currentScreen instanceof SchoolPartyFollowUpSnapCutscene
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolPartyEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name)
             this.delay = 1;
@@ -268,7 +268,7 @@ class Game {
         //now, this scene will take you to the cutscene where you are driving in the car
         if (
             this.currentScreen instanceof SchoolPartyFollowUpGoodPartFive
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             //console.log('you switched screens');
             this.currentScreen = new SchoolPartyEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
@@ -293,7 +293,7 @@ class Game {
         //now, this scene will take you to you giving your snap
         if (
             this.currentScreen instanceof SchoolPartyFollowUpGoodPartThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             //console.log('you switched screens');
             this.currentScreen = new SchoolPartyFollowUpSnapCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
@@ -317,7 +317,7 @@ class Game {
         //This is the beginning of the bad homeScenario
         if (
             this.currentScreen instanceof SchoolPartyEnding
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeIntroScene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
@@ -336,147 +336,147 @@ class Game {
         }
         if (
             this.currentScreen instanceof HomeIntroScene
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60 && this.score == 0
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15 && this.score == 0
         ) {
             this.currentScreen = new HomeBadSnapOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapFour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapFour
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapFive(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapFive
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapSix(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapSix
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapSeven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapSeven
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapEight(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapEight
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapNine(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapNine
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapTen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapTen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapEleven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapEleven
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapTwelve(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapTwelve
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapThirteen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapThirteen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapFourteen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapFourteen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapFifteen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapFifteen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapSixteen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapSixteen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapSeventeen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapSeventeen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapEightteen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapEightteen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapNineteen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapNineteen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapTwenty(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapTwenty
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapTwentyone(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
@@ -486,7 +486,7 @@ class Game {
         //on the bad path
         if (
             this.currentScreen instanceof HomeBadSnapTwentyone
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadDialogueOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
@@ -494,42 +494,42 @@ class Game {
         //These if statements continue the bad path until you get another option
         if (
             this.currentScreen instanceof HomeBadDialogueOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapTwentytwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapTwentytwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapTwentythree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapTwentythree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapTwentyfour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapTwentyfour
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapTwentyfive(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapTwentyfive
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapTwentysix(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapTwentysix
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomebadPartOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
@@ -539,21 +539,21 @@ class Game {
         //you have send nudes to Kees
         if (
             this.currentScreen instanceof HomebadPartOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadPartTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadPartTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadPartThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadPartThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapTwentyseven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
@@ -563,70 +563,70 @@ class Game {
         //your parents
         if (
             this.currentScreen instanceof HomebadPartOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapTwentyseven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapTwentyseven
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapTwentyeight(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapTwentyeight
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapTwentynine(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapTwentynine
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapThirty(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapThirty
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapThirtyone(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapThirtyone
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapThirtytwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapThirtytwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapThirtythree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapThirtythree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapThirtyfour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapThirtyfour
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapThirtyfive(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapThirtyfive
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapThirtysix(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
@@ -635,7 +635,7 @@ class Game {
         //pay or not
         if (
             this.currentScreen instanceof HomeBadSnapThirtysix
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadDialogueTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
@@ -644,35 +644,35 @@ class Game {
         //him to not leak your nudes
         if (
             this.currentScreen instanceof HomeBadDialogueTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapDialoogBadOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapDialoogBadOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapDialoogBadTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapDialoogBadTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapDialoogBadThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapDialoogBadThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapDialoogBadFour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapDialoogBadFour
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
@@ -682,35 +682,35 @@ class Game {
         //And you don't know if he leaks your nudes or not
         if (
             this.currentScreen instanceof HomeBadDialogueTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapDialoogGoodOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapDialoogGoodOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapDialoogGoodTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapDialoogGoodTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapDialoogGoodThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapDialoogGoodThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadSnapDialoogGoodFour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeBadSnapDialoogGoodFour
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeBadEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
@@ -721,21 +721,21 @@ class Game {
         //You hope not
         if (
             this.currentScreen instanceof HomeBadEnding
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolBadPartOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof SchoolBadPartOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolBadPartTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof SchoolBadPartTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolBadPartThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
@@ -743,7 +743,7 @@ class Game {
         //this goes to the end
         if (
             this.currentScreen instanceof SchoolBadPartThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
@@ -759,7 +759,7 @@ class Game {
         //If you don't you will go to the neutral path
         if (
             this.currentScreen instanceof HomeBadDialogueOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15
         ) {
             this.currentScreen = new HomeNeutralEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
@@ -769,49 +769,49 @@ class Game {
         //This is the beginning of the Neutral HomeScenario
         if (
             this.currentScreen instanceof HomeIntroScene
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60 && this.score == 600
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15 && this.score == 150
         ) {
             this.currentScreen = new HomeNeutralFollowUpOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeNeutralFollowUpOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15
         ) {
             this.currentScreen = new HomeNeutralFollowUpTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeNeutralFollowUpTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 15
         ) {
             this.currentScreen = new HomeNeutralSnapOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeNeutralSnapOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeNeutralSnapTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeNeutralSnapTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeNeutralSnapThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeNeutralSnapThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeNeutralSnapFour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeNeutralSnapFour
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeNeutralEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
@@ -820,27 +820,27 @@ class Game {
         //This is the beginning of the Good HomeScenario
         if (
             this.currentScreen instanceof HomeIntroScene
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60 && this.score == 100
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15 && this.score == 100
         ) {
             this.currentScreen = new HomeGoodFollowUpOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (
             this.currentScreen instanceof HomeGoodFollowUpOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeGoodFollowUpTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeGoodFollowUpTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new HomeGoodDialogueOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
         //This if statement will take you to the good ending
         if (this.currentScreen instanceof HomeGoodDialogueOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15
         ) {
             this.currentScreen = new HomeGoodEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
@@ -861,7 +861,7 @@ class Game {
         }
         if (
             this.currentScreen instanceof HomeNeutralFollowUpTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15
         ) {
             this.currentScreen = new HomeGoodEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
@@ -884,63 +884,63 @@ class Game {
 
         //This is the beginning of the neutral school path
         if (this.currentScreen instanceof HomeNeutralEnding
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolNeutralPartOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
 
         if (this.currentScreen instanceof SchoolNeutralPartOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolNeutralPartTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
 
         if (this.currentScreen instanceof SchoolNeutralPartTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolNeutralPartThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
 
         if (this.currentScreen instanceof SchoolNeutralPartThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15
         ) {
             this.currentScreen = new SchoolNeutralPartFour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
 
         if (this.currentScreen instanceof SchoolNeutralPartFour
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolNeutralPartFive(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
 
         if (this.currentScreen instanceof SchoolNeutralPartFive
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolNeutralPartSix(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
 
         if (this.currentScreen instanceof SchoolNeutralPartSix
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolNeutralPartSeven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
 
         if (this.currentScreen instanceof SchoolNeutralPartSeven
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolNeutralPartEight(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
 
         if (this.currentScreen instanceof SchoolNeutralPartEight
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15
         ) {
             this.currentScreen = new NeutralEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
@@ -949,34 +949,41 @@ class Game {
 
         //this will take you to the good part of the school scenario
         if (this.currentScreen instanceof HomeGoodEnding
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolGoodIntro(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
         if (this.currentScreen instanceof SchoolGoodIntro
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolGoodPart1(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
         if (this.currentScreen instanceof SchoolGoodPart1
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolGoodDialogue1(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 0
         }
 
-        //if you choose the second option
+        //if you choose the first option at dialogue1
+        if (this.currentScreen instanceof SchoolGoodDialogue1
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)
+        ) {
+            this.currentScreen = new SchoolGoodDialogue1Option1(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+        //if you choose the second option at dialogue1
         if (this.currentScreen instanceof SchoolGoodDialogue1
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)
         ) {
             this.currentScreen = new SchoolGoodDialogue1Part2(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
-        //if you choose the second option
+        //if you choose the second option at dialogue1part2
         if (this.currentScreen instanceof SchoolGoodDialogue1Part2
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15
         ) {
             this.currentScreen = new SchoolGoodDialogue1Part3(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
         }
@@ -987,49 +994,49 @@ class Game {
             this.delay = 1
         }
         if (this.currentScreen instanceof SchoolGoodPart2
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolGoodPart3(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
         if (this.currentScreen instanceof SchoolGoodPart3
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolGoodPart4(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
         if (this.currentScreen instanceof SchoolGoodPart4
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolGoodPart5(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
         if (this.currentScreen instanceof SchoolGoodPart5
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolGoodPart6(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
         if (this.currentScreen instanceof SchoolGoodPart6
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolGoodPart7(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
         if (this.currentScreen instanceof SchoolGoodPart7
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolGoodPart8(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
         if (this.currentScreen instanceof SchoolGoodPart8
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolGoodPart9(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
         if (this.currentScreen instanceof SchoolGoodPart9
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new SchoolGoodDialogue2(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 0
@@ -1046,6 +1053,81 @@ class Game {
             this.currentScreen = new SchoolGoodEnding2(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
+
+
+        //bar scene
+        if (this.currentScreen instanceof SchoolGoodDialogue1Option1
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            this.currentScreen = new BarIntro(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+        if (this.currentScreen instanceof BarIntro
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
+        ) {
+            this.currentScreen = new BarPart1(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof BarPart1
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
+        ) {
+            this.currentScreen = new BarPart2(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof BarPart2
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
+        ) {
+            this.currentScreen = new BarPart3(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof BarPart3
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
+        ) {
+            this.currentScreen = new BarPart4(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof BarPart4
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
+        ) {
+            this.currentScreen = new BarPart5(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof BarPart5
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
+        ) {
+            this.currentScreen = new BarPart6(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof BarPart6
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
+        ) {
+            this.currentScreen = new BarDialogue1(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        }
+        if (this.currentScreen instanceof BarDialogue1
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)
+        ) {
+            this.currentScreen = new BarBadEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        }
+        if (this.currentScreen instanceof BarBadEnding
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            this.currentScreen = new BarBadEndingPart2(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof BarBadEndingPart2
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
+        ) {
+            this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 0;
+        }
+        if (this.currentScreen instanceof BarDialogue1
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)
+        ) {
+            this.currentScreen = new GoodEnd(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 0;
+        }
+
+
 
 
         //This is the End
@@ -1068,7 +1150,7 @@ class Game {
             this.delay = 1
         }
         if (this.currentScreen instanceof EndingBadTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
         }
@@ -1076,14 +1158,14 @@ class Game {
 
 
         if (this.currentScreen instanceof NeutralEnding
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
 
         if (this.currentScreen instanceof StartScreen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_E) && this.keyboardListener.isKeyDown(KeyboardListener.KEY_N) && this.keyboardListener.isKeyDown(KeyboardListener.KEY_D) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_E) && this.keyboardListener.isKeyDown(KeyboardListener.KEY_N) && this.keyboardListener.isKeyDown(KeyboardListener.KEY_D) && this.delay > 15
         ) {
             this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
@@ -1101,7 +1183,7 @@ class Game {
 
         if (
             this.currentScreen instanceof SchoolNeutralPartThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 15
         ) {
             this.currentScreen = new BarIntro(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
@@ -1120,7 +1202,7 @@ class Game {
         ) {
             this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
         }
-        
+
         if (
             this.currentScreen instanceof SchoolNeutralPartEight
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_THREE)
@@ -1130,7 +1212,7 @@ class Game {
 
         if (
             this.currentScreen instanceof SchoolNeutralPartNine
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15
         ) {
             this.currentScreen = new BarIntro(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1

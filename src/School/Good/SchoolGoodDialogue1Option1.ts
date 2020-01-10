@@ -1,12 +1,11 @@
 /// <reference path='../../GameScreen.ts'/>
-class BarPart6 extends GameScreen {
+class SchoolGoodDialogue1Option1 extends GameScreen {
 
     //add the global attributes
     private shouldStartLevel: boolean = false;
     private backgroundImage: HTMLImageElement;
     private emilyImage: HTMLImageElement;
     private youImage: HTMLImageElement;
-    private keesImage: HTMLImageElement;
     private dialogueBar: HTMLImageElement;
 
 
@@ -29,13 +28,11 @@ class BarPart6 extends GameScreen {
         this.backgroundImage = new Image();
         this.emilyImage = new Image();
         this.youImage = new Image();
-        this.keesImage = new Image();
         this.dialogueBar = new Image()
         //Now, set the src to start loading the image
-        this.backgroundImage.src = './assets/images/background/barbackground.jpg';
+        this.backgroundImage.src = './assets/images/background/klaslokaal1.jpg';
         this.emilyImage.src = "./assets/images/characters/emily1.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
-        this.keesImage.src = "./assets/images/characters/kees1.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png"
     }
 
@@ -52,16 +49,13 @@ class BarPart6 extends GameScreen {
         //Loads images into the DOM
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.youImage, -100, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.keesImage, 400, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.35, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "Het aanzicht van 2 vechtende dronken mensen op de grond met glas om hen heen,", this.canvas.width / 2, this.canvas.height - 170);
-        this.writeTextToCanvas(ctx, "breekt de gezellige sfeer.", this.canvas.width / 2, this.canvas.height - 130);
-        this.writeTextToCanvas(ctx, `${this.name}: Kom, Emily. We gaan nu vertrekken. We moeten nog leren voor die toets.`, this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Emily: Voor deze ene keer ben ik het met je eens.", this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 10);
+        this.writeTextToCanvas(ctx, `${this.name}: Ja, klinkt leuk.`, this.canvas.width / 2, this.canvas.height - 110);
+        this.writeTextToCanvas(ctx, "Emily: Top. Ik zal het de jongens laten weten.", this.canvas.width / 2, this.canvas.height - 70);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 30);
     }
 
 }

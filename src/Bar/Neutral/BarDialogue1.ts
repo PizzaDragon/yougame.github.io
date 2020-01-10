@@ -52,14 +52,14 @@ class BarDialogue1 extends GameScreen {
         //Loads images into the DOM
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.keesImage, 600, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.45, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.youImage, -100, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.keesImage, 400, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "Kees: Oh, je gaat naar huis? Vergeet je cola niet op te drinken, anders kom ik in de problemen ervoor.", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Drink snel je drinken op en ga met Emily naar huis (Toets 1)", this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "Gooi je drinken weg en zet je glas terug (Toets 2)", this.canvas.width / 2, this.canvas.height - 10);
+        this.writeTextToCanvas(ctx, "Kees: Oh, je gaat naar huis? Vergeet je cola niet op te drinken, anders kom ik in de problemen ervoor.", this.canvas.width / 2, this.canvas.height - 110);
+        this.writeTextToCanvas(ctx, "Drink snel je drinken op en ga met Emily naar huis (Toets 1)", this.canvas.width / 2, this.canvas.height - 70);
+        this.writeTextToCanvas(ctx, "Gooi je drinken weg en zet je glas terug (Toets 2)", this.canvas.width / 2, this.canvas.height - 30);
     }
 
 }

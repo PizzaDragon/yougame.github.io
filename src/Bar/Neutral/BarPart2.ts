@@ -53,9 +53,9 @@ class BarPart2 extends GameScreen {
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "Jullie komen aan bij een tafel helemaal achterin de bar.", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Aan de tafel zitten Kees, 3 andere jongens en 1 meisje.", this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 10);
+        this.writeTextToCanvas(ctx, "Jullie komen aan bij een tafel helemaal achterin de bar.", this.canvas.width / 2, this.canvas.height - 110);
+        this.writeTextToCanvas(ctx, "Aan de tafel zitten Kees, 3 andere jongens en 1 meisje.", this.canvas.width / 2, this.canvas.height - 70);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 30);
     }
 
 }

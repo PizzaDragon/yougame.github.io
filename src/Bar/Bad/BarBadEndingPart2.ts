@@ -53,9 +53,9 @@ class BarBadEndingPart2 extends GameScreen {
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "Je wordt wakker in een pikzwarte ruimte.", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Terwijl je ogen aan de eindeloze duisternis wennen, heb je snel door dat je vastgebonden zit aan een bed.", this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "Uh oh.", this.canvas.width / 2, this.canvas.height - 10);
+        this.writeTextToCanvas(ctx, "Je wordt wakker in een pikzwarte ruimte.", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Terwijl je ogen aan de eindeloze duisternis wennen, heb je snel door dat je vastgebonden zit aan een bed.", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Uh oh.", this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
 
     }
