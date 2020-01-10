@@ -6,7 +6,6 @@
 class SchoolParty extends GameScreen {
 
     //add the global attributes
-    private shouldStartLevel: boolean = false;
     private backgroundImage: HTMLImageElement
     private dialogueBar: HTMLImageElement;
 
@@ -31,21 +30,11 @@ class SchoolParty extends GameScreen {
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png"
     }
 
-    /**
-     * method to initialize the screen
-     */
-    public listen(input: KeyboardListener) {
-        if (input.isKeyDown(KeyboardListener.KEY_SPACE)) {
-            this.shouldStartLevel = true
-        }
-    }
-
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.25, this.canvas.width, this.canvas.height)
-        this.writeTextToCanvas(ctx, "FEESTSCENE", this.canvas.width / 2, this.canvas.height/2, 140);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
         this.writeTextToCanvas(ctx, 'Je bent op een feestje met Emily en wat mensen van school', this.canvas.width / 2, this.canvas.height - 90)
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
-        
+
     }
 }
