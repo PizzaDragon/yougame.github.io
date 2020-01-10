@@ -57,7 +57,7 @@ class SchoolGoodPart7 extends GameScreen {
         this.writeTextToCanvas(ctx, "Kees: Maar aangezien je niks meer dan een dom, irritant rotkind bent zal ik ervoor zorgen", this.canvas.width / 2, this.canvas.height - 250);
         this.writeTextToCanvas(ctx, "dat niemand ooit meer met jou zal spreken. Niemand gaat met een vriendloze loser als jou om", this.canvas.width / 2, this.canvas.height - 210);
         this.writeTextToCanvas(ctx, "als ik tegen Emily vertel hoe jij over haar roddelt. Wees maar stil of ik stomp je in elkaar.", this.canvas.width / 2, this.canvas.height - 170);
-        this.writeTextToCanvas(ctx, `${this.name}: Bah, wat kan jij toch zeiken, jij manipulatieve, vuile aartsleugena-`, this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, `${this.name}: Bah, wat kan jij toch zeuren, jij zielige, vuile aartsleugena-`, this.canvas.width / 2, this.canvas.height - 130);
         this.writeTextToCanvas(ctx, "Kees: HOUD JE BEK DICHT. *Kees begint dreigend te naderen met een opgeheven vuist*", this.canvas.width/2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, "Je probeert wat te zeggen, maar merkt dat Emily verderop staat met een telefooncamera gericht op jullie.", this.canvas.width/2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height - 10);

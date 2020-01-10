@@ -1,11 +1,12 @@
 /// <reference path='../../GameScreen.ts'/>
-class SchoolGoodPart9 extends GameScreen {
+class BarPart6 extends GameScreen {
 
     //add the global attributes
     private shouldStartLevel: boolean = false;
     private backgroundImage: HTMLImageElement;
     private emilyImage: HTMLImageElement;
     private youImage: HTMLImageElement;
+    private keesImage: HTMLImageElement;
     private dialogueBar: HTMLImageElement;
 
 
@@ -28,11 +29,13 @@ class SchoolGoodPart9 extends GameScreen {
         this.backgroundImage = new Image();
         this.emilyImage = new Image();
         this.youImage = new Image();
+        this.keesImage = new Image();
         this.dialogueBar = new Image()
         //Now, set the src to start loading the image
-        this.backgroundImage.src = './assets/images/background/street.jpg';
+        this.backgroundImage.src = './assets/images/background/barbackground.jpg';
         this.emilyImage.src = "./assets/images/characters/emily1.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
+        this.keesImage.src = "./assets/images/characters/kees1.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png"
     }
 
@@ -50,15 +53,14 @@ class SchoolGoodPart9 extends GameScreen {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.keesImage, 600, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.45, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, `${this.name}: Wat? Je hebt het opgenomen maar deed niks?`, this.canvas.width / 2, this.canvas.height - 210);
-        this.writeTextToCanvas(ctx, `Emily: Sorry ${this.name}, ik was heel erg geschrokken en dacht niet na.`, this.canvas.width / 2, this.canvas.height - 170);
-        this.writeTextToCanvas(ctx, `${this.name}: Ah, het geeft niks. Je hebt bewijs dat hij me bedreigde en ik ben nog OK.`, this.canvas.width / 2, this.canvas.height - 130);
-        this.writeTextToCanvas(ctx, "Emily: Ik heb een slim idee. Beter sturen we dit naar iedereen, zodat iedereen ziet wat hij echt is.", this.canvas.width/2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, `${this.name}: Kom, we studeren thuis en doen die toets, dan sturen we het filmpje.`, this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height - 10);
+        this.writeTextToCanvas(ctx, "Het aanzicht van 2 vechtende dronken mensen op de grond met glas om hen heen breekt de gezellige sfeer.", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, `${this.name}: Kom, Emily. We gaan nu vertrekken. We moeten nog leren voor die toets.`, this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "Emily: Voor deze ene keer ben ik het met je eens.", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 10);
     }
 
 }

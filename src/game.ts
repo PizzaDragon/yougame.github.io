@@ -1096,6 +1096,47 @@ class Game {
             this.currentScreen = new StartScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
         }
 
+        // some final changes
+
+
+        if (
+            this.currentScreen instanceof SchoolNeutralPartThree
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 60
+        ) {
+            this.currentScreen = new BarIntro(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+
+        if (
+            this.currentScreen instanceof SchoolNeutralPartEight
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)
+        ) {
+            this.currentScreen = new GoodEnd(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        }
+
+        if (
+            this.currentScreen instanceof GoodEnd
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        }
+        
+        if (
+            this.currentScreen instanceof SchoolNeutralPartEight
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_THREE)
+        ) {
+            this.currentScreen = new SchoolNeutralPartNine(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        }
+
+        if (
+            this.currentScreen instanceof SchoolNeutralPartNine
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60
+        ) {
+            this.currentScreen = new BarIntro(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+
+
 
     }
 

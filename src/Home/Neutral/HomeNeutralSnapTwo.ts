@@ -48,7 +48,8 @@ class HomeNeutralSnapTwo extends GameScreen {
     public draw(ctx: CanvasRenderingContext2D) {
         //Loads images into the DOM
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapImage, this.canvas.width/3, 0, this.canvas.width/3, this.canvas.height);
+        this.ctx.drawImage(this.snapImage, this.canvas.width/3, 0, this.canvas.width/3, this.canvas.height/1.25);
+        this.ctx.drawImage(this.dialogueBar, 0 , this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height - 50);
 
        
