@@ -58,16 +58,10 @@ KeyboardListener.KEY_D = 68;
 class NameScreen extends GameScreen {
     constructor(game, canvas, ctx, img, keyboardListener, name) {
         super(game, canvas, ctx, img, keyboardListener, name);
-        this.shouldStartLevel = false;
         this.backgroundImage = new Image();
         this.backgroundImage.src = './assets/images/background/startscreen2.jpg';
         this.dialogueBar = new Image();
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
-    }
-    listen(input) {
-        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
-            this.shouldStartLevel = true;
-        }
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
@@ -101,6 +95,7 @@ class Game {
     switchScreen() {
         if (this.currentScreen instanceof StartScreen
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ENTER)) {
+            this.name = this.nameInput();
             this.currentScreen = new NameScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
         }
         if (this.currentScreen instanceof NameScreen
@@ -113,7 +108,7 @@ class Game {
             this.currentScreen = new StartScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
         }
         if (this.currentScreen instanceof SchoolParty
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolPartyFirstDialogue(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
         }
         if (this.currentScreen instanceof SchoolPartyFirstDialogue
@@ -127,7 +122,7 @@ class Game {
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolPartyFollowUpSnapCutscene
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolPartyEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
             this.score = 0;
@@ -151,13 +146,13 @@ class Game {
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolPartyFollowUpNeutralPartThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolPartyEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
-            this.score = 50;
+            this.score = 150;
         }
         if (this.currentScreen instanceof SchoolPartyFollowUpNeutral
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15) {
             this.currentScreen = new SchoolPartyFollowUpNeutralBad1(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 0;
         }
@@ -180,7 +175,7 @@ class Game {
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolPartyFollowUpSnapCutscene
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolPartyEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
             this.score = 100;
@@ -195,7 +190,7 @@ class Game {
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolPartyFollowUpGoodPartFive
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolPartyEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
             this.score = 100;
@@ -206,12 +201,12 @@ class Game {
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolPartyFollowUpGoodPartThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolPartyFollowUpSnapCutscene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 0;
         }
         if (this.currentScreen instanceof SchoolPartyEnding
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeIntroScene(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
@@ -221,407 +216,428 @@ class Game {
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeIntroScene
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60 && this.score == 0) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15 && this.score == 0) {
             this.currentScreen = new HomeBadSnapOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapFour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapFour
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapFive(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapFive
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapSix(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapSix
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapSeven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapSeven
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapEight(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapEight
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapNine(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapNine
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapTen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapTen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapEleven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapEleven
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapTwelve(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapTwelve
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapThirteen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapThirteen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapFourteen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapFourteen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapFifteen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapFifteen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapSixteen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapSixteen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapSeventeen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapSeventeen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapEightteen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapEightteen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapNineteen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapNineteen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapTwenty(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapTwenty
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapTwentyone(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapTwentyone
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadDialogueOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadDialogueOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapTwentytwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapTwentytwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapTwentythree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapTwentythree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapTwentyfour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapTwentyfour
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapTwentyfive(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapTwentyfive
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapTwentysix(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapTwentysix
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomebadPartOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomebadPartOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 15) {
             this.currentScreen = new HomeBadPartTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadPartTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadPartThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadPartThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapTwentyseven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomebadPartOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapTwentyseven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapTwentyseven
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapTwentyeight(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapTwentyeight
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapTwentynine(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapTwentynine
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapThirty(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapThirty
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapThirtyone(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapThirtyone
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapThirtytwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapThirtytwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapThirtythree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapThirtythree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapThirtyfour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapThirtyfour
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapThirtyfive(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapThirtyfive
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapThirtysix(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapThirtysix
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadDialogueTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadDialogueTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapDialoogBadOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapDialoogBadOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapDialoogBadTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapDialoogBadTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapDialoogBadThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapDialoogBadThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapDialoogBadFour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapDialoogBadFour
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadDialogueTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapDialoogGoodOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapDialoogGoodOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapDialoogGoodTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapDialoogGoodTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapDialoogGoodThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapDialoogGoodThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadSnapDialoogGoodFour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadSnapDialoogGoodFour
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeBadEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadEnding
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolBadPartOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolBadPartOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolBadPartTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolBadPartTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolBadPartThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolBadPartThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeBadDialogueOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15) {
             this.currentScreen = new HomeNeutralEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeIntroScene
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60 && this.score == 50) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15 && this.score == 150) {
             this.currentScreen = new HomeNeutralFollowUpOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeNeutralFollowUpOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15) {
             this.currentScreen = new HomeNeutralFollowUpTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeNeutralFollowUpTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 15) {
             this.currentScreen = new HomeNeutralSnapOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeNeutralSnapOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeNeutralSnapTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeNeutralSnapTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeNeutralSnapThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeNeutralSnapThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeNeutralSnapFour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeNeutralSnapFour
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeNeutralEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeIntroScene
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60 && this.score == 100) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15 && this.score == 100) {
             this.currentScreen = new HomeGoodFollowUpOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeGoodFollowUpOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeGoodFollowUpTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeGoodFollowUpTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new HomeGoodDialogueOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeGoodDialogueOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15) {
             this.currentScreen = new HomeGoodEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof HomeNeutralFollowUpOne
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_THREE)) {
+            this.currentScreen = new HomeGoodBlockedSnap(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof HomeGoodBlockedSnap
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)) {
+            this.currentScreen = new HomeGoodEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof HomeNeutralFollowUpTwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15) {
+            this.currentScreen = new HomeGoodEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
         }
         if (this.currentScreen instanceof HomeGoodDialogueOne
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)) {
             this.currentScreen = new HomeNeutralSnapOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
         }
         if (this.currentScreen instanceof HomeNeutralEnding
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolNeutralPartOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolNeutralPartOne
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolNeutralPartTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolNeutralPartTwo
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolNeutralPartThree(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolNeutralPartThree
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15) {
             this.currentScreen = new SchoolNeutralPartFour(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolNeutralPartFour
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolNeutralPartFive(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolNeutralPartFive
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolNeutralPartSix(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolNeutralPartSix
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolNeutralPartSeven(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolNeutralPartSeven
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolNeutralPartEight(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolNeutralPartEight
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15) {
             this.currentScreen = new NeutralEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof HomeGoodEnding
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolGoodIntro(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolGoodIntro
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolGoodPart1(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolGoodPart1
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolGoodDialogue1(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 0;
+        }
+        if (this.currentScreen instanceof SchoolGoodDialogue1
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)) {
+            this.currentScreen = new SchoolGoodDialogue1Option1(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolGoodDialogue1
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)) {
@@ -629,7 +645,16 @@ class Game {
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolGoodDialogue1Part2
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)) {
+            this.currentScreen = new SchoolGoodDialogue1Part2Option1(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        }
+        if (this.currentScreen instanceof SchoolGoodDialogue1Part2Option1
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)) {
+            this.currentScreen = new BarIntro(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof SchoolGoodDialogue1Part2
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO) && this.delay > 15) {
             this.currentScreen = new SchoolGoodDialogue1Part3(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
         }
         if (this.currentScreen instanceof SchoolGoodDialogue1Part3
@@ -638,42 +663,42 @@ class Game {
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolGoodPart2
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolGoodPart3(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolGoodPart3
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolGoodPart4(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolGoodPart4
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolGoodPart5(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolGoodPart5
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolGoodPart6(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolGoodPart6
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolGoodPart7(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolGoodPart7
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolGoodPart8(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolGoodPart8
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolGoodPart9(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof SchoolGoodPart9
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new SchoolGoodDialogue2(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 0;
         }
@@ -687,19 +712,118 @@ class Game {
             this.currentScreen = new SchoolGoodEnding2(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
+        if (this.currentScreen instanceof SchoolGoodDialogue1Option1
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)) {
+            this.currentScreen = new BarIntro(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof BarIntro
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
+            this.currentScreen = new BarPart1(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof BarPart1
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
+            this.currentScreen = new BarPart2(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof BarPart2
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
+            this.currentScreen = new BarPart3(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof BarPart3
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
+            this.currentScreen = new BarPart4(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof BarPart4
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
+            this.currentScreen = new BarPart5(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof BarPart5
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
+            this.currentScreen = new BarPart6(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof BarPart6
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
+            this.currentScreen = new BarDialogue1(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        }
+        if (this.currentScreen instanceof BarDialogue1
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)) {
+            this.currentScreen = new BarBadEnding(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        }
+        if (this.currentScreen instanceof BarBadEnding
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)) {
+            this.currentScreen = new BarBadEndingPart2(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof BarBadEndingPart2
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
+            this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 0;
+        }
+        if (this.currentScreen instanceof BarDialogue1
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_TWO)) {
+            this.currentScreen = new GoodEnd(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 0;
+        }
+        if (this.currentScreen instanceof SchoolNeutralPartThree
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_THREE)) {
+            this.currentScreen = new EndingBadOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 0;
+        }
+        if (this.currentScreen instanceof SchoolGoodDialogue1Part2
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_THREE)) {
+            this.currentScreen = new EndingBadOne(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 0;
+        }
+        if (this.currentScreen instanceof EndingBadOne
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)) {
+            this.currentScreen = new EndingBadTwo(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof EndingBadTwo
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
+            this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        }
         if (this.currentScreen instanceof NeutralEnding
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
             this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof StartScreen
-            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_E) && this.keyboardListener.isKeyDown(KeyboardListener.KEY_N) && this.keyboardListener.isKeyDown(KeyboardListener.KEY_D) && this.delay > 60) {
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_E) && this.keyboardListener.isKeyDown(KeyboardListener.KEY_N) && this.keyboardListener.isKeyDown(KeyboardListener.KEY_D) && this.delay > 15) {
             this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
         if (this.currentScreen instanceof End
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ESC)) {
             this.currentScreen = new StartScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        }
+        if (this.currentScreen instanceof SchoolNeutralPartThree
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE) && this.delay > 15) {
+            this.currentScreen = new BarIntro(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof SchoolNeutralPartEight
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_ONE)) {
+            this.currentScreen = new GoodEnd(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        }
+        if (this.currentScreen instanceof GoodEnd
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)) {
+            this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        }
+        if (this.currentScreen instanceof SchoolNeutralPartEight
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_THREE)) {
+            this.currentScreen = new SchoolNeutralPartNine(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+        }
+        if (this.currentScreen instanceof SchoolNeutralPartNine
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE) && this.delay > 15) {
+            this.currentScreen = new BarIntro(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
         }
     }
     nameInput() {
@@ -714,10 +838,29 @@ window.addEventListener("load", init);
 class StartScreen extends GameScreen {
     constructor(game, canvas, ctx, img, keyboardListener, name) {
         super(game, canvas, ctx, img, keyboardListener, name);
-        this.shouldStartLevel = false;
         this.backgroundImage = new Image();
         this.backgroundImage.src = './assets/images/background/startscreen2.jpg';
         this.dialogueBar = new Image();
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
+    }
+    draw(ctx) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "You", this.canvas.width / 2, this.canvas.height / 2 - 40, 200);
+        this.writeTextToCanvas(ctx, "DRUK OP ENTER OM TE SPELEN", this.canvas.width / 2, this.canvas.height - 50);
+    }
+}
+class BarBadEnding extends GameScreen {
+    constructor(game, canvas, ctx, img, keyboardListener, name) {
+        super(game, canvas, ctx, img, keyboardListener, name);
+        this.shouldStartLevel = false;
+        this.backgroundImage = new Image();
+        this.emilyImage = new Image();
+        this.youImage = new Image();
+        this.dialogueBar = new Image();
+        this.backgroundImage.src = './assets/images/background/street.jpg';
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
+        this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
     }
     listen(input) {
@@ -727,9 +870,282 @@ class StartScreen extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.55, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Je loopt met Emily naar huis en begint je al snel flauw te voelen.", this.canvas.width / 2, this.canvas.height - 250);
+        this.writeTextToCanvas(ctx, "Emily: Gaat het wel met je?", this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, `${this.name}: Ja, geef me even een minuutje. Loop maar alvast naar huis.`, this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "Emily twijfelt duidelijk, maar loopt alvast verder.", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Je voelt je nu heel moe en je lichaam verlamt zich.", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Je hoort haastige voetstappen naderen en een auto trapt op de remmen.", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
+    }
+}
+class BarBadEndingPart2 extends GameScreen {
+    constructor(game, canvas, ctx, img, keyboardListener, name) {
+        super(game, canvas, ctx, img, keyboardListener, name);
+        this.backgroundImage = new Image();
+        this.dialogueBar = new Image();
+        this.backgroundImage.src = './assets/images/background/darkbedroom.jpg';
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
+    }
+    draw(ctx) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.35, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Je wordt wakker in een pikzwarte ruimte.", this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "Terwijl je ogen aan de eindeloze duisternis wennen,", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "heb je snel door dat je vastgebonden zit aan een bed.", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, `${this.name}: Uh oh.`, this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
+    }
+}
+class BarDialogue1 extends GameScreen {
+    constructor(game, canvas, ctx, img, keyboardListener, name) {
+        super(game, canvas, ctx, img, keyboardListener, name);
+        this.shouldStartLevel = false;
+        this.backgroundImage = new Image();
+        this.emilyImage = new Image();
+        this.youImage = new Image();
+        this.keesImage = new Image();
+        this.dialogueBar = new Image();
+        this.backgroundImage.src = './assets/images/background/barbackground.jpg';
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
+        this.youImage.src = "./assets/images/characters/karakter2.png";
+        this.keesImage.src = "./assets/images/characters/kees1.png";
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
+    }
+    listen(input) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
+            this.shouldStartLevel = true;
+        }
+    }
+    draw(ctx) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.youImage, -100, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.keesImage, 400, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "You", this.canvas.width / 2, this.canvas.height / 2 - 40, 200);
-        this.writeTextToCanvas(ctx, "DRUK OP ENTER OM TE SPELEN", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "Kees: Oh, je gaat naar huis? Vergeet je cola niet op te drinken, anders kom ik in de problemen ervoor.", this.canvas.width / 2, this.canvas.height - 110);
+        this.writeTextToCanvas(ctx, "Drink snel je drinken op en ga met Emily naar huis (Toets 1)", this.canvas.width / 2, this.canvas.height - 70);
+        this.writeTextToCanvas(ctx, "Gooi je drinken weg en zet je glas terug (Toets 2)", this.canvas.width / 2, this.canvas.height - 30);
+    }
+}
+class BarIntro extends GameScreen {
+    constructor(game, canvas, ctx, img, keyboardListener, name) {
+        super(game, canvas, ctx, img, keyboardListener, name);
+        this.shouldStartLevel = false;
+        this.backgroundImage = new Image();
+        this.emilyImage = new Image();
+        this.youImage = new Image();
+        this.dialogueBar = new Image();
+        this.backgroundImage.src = './assets/images/background/barbackground.jpg';
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
+        this.youImage.src = "./assets/images/characters/karakter2.png";
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
+    }
+    listen(input) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
+            this.shouldStartLevel = true;
+        }
+    }
+    draw(ctx) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Je komt samen met Emily aan bij de bar.", this.canvas.width / 2, this.canvas.height - 110);
+        this.writeTextToCanvas(ctx, "Het ruikt er naar nat, oud hout gemixt met zweet en een bittere geur die je niet echt herkent.", this.canvas.width / 2, this.canvas.height - 70);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 30);
+    }
+}
+class BarPart1 extends GameScreen {
+    constructor(game, canvas, ctx, img, keyboardListener, name) {
+        super(game, canvas, ctx, img, keyboardListener, name);
+        this.shouldStartLevel = false;
+        this.backgroundImage = new Image();
+        this.emilyImage = new Image();
+        this.youImage = new Image();
+        this.dialogueBar = new Image();
+        this.backgroundImage.src = './assets/images/background/barbackground.jpg';
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
+        this.youImage.src = "./assets/images/characters/karakter2.png";
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
+    }
+    listen(input) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
+            this.shouldStartLevel = true;
+        }
+    }
+    draw(ctx) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.55, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, `${this.name}: Dus... dit is waar al die ouderejaars altijd komen?`, this.canvas.width / 2, this.canvas.height - 250);
+        this.writeTextToCanvas(ctx, "Emily: Ja. Ze zitten er bijna elk weekend ook nog.", this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, `${this.name}: Waarom zou iemand hier regelmatig willen zijn?`, this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "Iedereen is druk of dronken en ugh... de geur hier is echt misselijkmakend.", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Emily: Sommige kinderen zeggen dat dit is wat de volwassenen steeds vaker doen.", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, `${this.name}: Oh, briljant. Ik kan niet wachten tot ik volwassen word.`, this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 10);
+    }
+}
+class BarPart2 extends GameScreen {
+    constructor(game, canvas, ctx, img, keyboardListener, name) {
+        super(game, canvas, ctx, img, keyboardListener, name);
+        this.shouldStartLevel = false;
+        this.backgroundImage = new Image();
+        this.emilyImage = new Image();
+        this.youImage = new Image();
+        this.dialogueBar = new Image();
+        this.backgroundImage.src = './assets/images/background/barbackground.jpg';
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
+        this.youImage.src = "./assets/images/characters/karakter2.png";
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
+    }
+    listen(input) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
+            this.shouldStartLevel = true;
+        }
+    }
+    draw(ctx) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Jullie komen aan bij een tafel helemaal achterin de bar.", this.canvas.width / 2, this.canvas.height - 110);
+        this.writeTextToCanvas(ctx, "Aan de tafel zitten Kees, 3 andere jongens en 1 meisje.", this.canvas.width / 2, this.canvas.height - 70);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 30);
+    }
+}
+class BarPart3 extends GameScreen {
+    constructor(game, canvas, ctx, img, keyboardListener, name) {
+        super(game, canvas, ctx, img, keyboardListener, name);
+        this.shouldStartLevel = false;
+        this.backgroundImage = new Image();
+        this.emilyImage = new Image();
+        this.youImage = new Image();
+        this.keesImage = new Image();
+        this.dialogueBar = new Image();
+        this.backgroundImage.src = './assets/images/background/barbackground.jpg';
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
+        this.youImage.src = "./assets/images/characters/karakter2.png";
+        this.keesImage.src = "./assets/images/characters/kees1.png";
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
+    }
+    listen(input) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
+            this.shouldStartLevel = true;
+        }
+    }
+    draw(ctx) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.youImage, -100, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.keesImage, 400, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.45, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Niemand lijkt al te geïnteresseerd in jullie aanwezigheid, behalve Kees.", this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, "Kees: Hé, wat fijn dat jullie het gehaald hebben!", this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, `Emily: Ja, ik heb ${this.name} ook gebracht, zoals je gevraagd had!`, this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, `${this.name}: Ah, dus Kees was de jongen die me hier wou hebben?`, this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Kees: Ahahahah, maak je toch geen zorgen. Het was een uitnodiging voor een goede avond!", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
+    }
+}
+class BarPart4 extends GameScreen {
+    constructor(game, canvas, ctx, img, keyboardListener, name) {
+        super(game, canvas, ctx, img, keyboardListener, name);
+        this.shouldStartLevel = false;
+        this.backgroundImage = new Image();
+        this.emilyImage = new Image();
+        this.youImage = new Image();
+        this.keesImage = new Image();
+        this.dialogueBar = new Image();
+        this.backgroundImage.src = './assets/images/background/barbackground.jpg';
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
+        this.youImage.src = "./assets/images/characters/karakter2.png";
+        this.keesImage.src = "./assets/images/characters/kees1.png";
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
+    }
+    listen(input) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
+            this.shouldStartLevel = true;
+        }
+    }
+    draw(ctx) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.youImage, -100, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.keesImage, 400, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "2 UUR LATER", this.canvas.width / 2, this.canvas.height - 80);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 40);
+    }
+}
+class BarPart5 extends GameScreen {
+    constructor(game, canvas, ctx, img, keyboardListener, name) {
+        super(game, canvas, ctx, img, keyboardListener, name);
+        this.shouldStartLevel = false;
+        this.backgroundImage = new Image();
+        this.emilyImage = new Image();
+        this.youImage = new Image();
+        this.keesImage = new Image();
+        this.dialogueBar = new Image();
+        this.backgroundImage.src = './assets/images/background/barbackground.jpg';
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
+        this.youImage.src = "./assets/images/characters/karakter2.png";
+        this.keesImage.src = "./assets/images/characters/kees1.png";
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
+    }
+    listen(input) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
+            this.shouldStartLevel = true;
+        }
+    }
+    draw(ctx) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.youImage, -100, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.keesImage, 400, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Terwijl je aan het drinken bent, breekt er verderop glas en valt er iemand op de grond.", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Emily: WOW! Er is een complete vechtpartij daar achterin!", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Je hele groepje staat op om te kijken en loopt er na toe, met Kees net iets later en achteraan.", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 10);
+    }
+}
+class BarPart6 extends GameScreen {
+    constructor(game, canvas, ctx, img, keyboardListener, name) {
+        super(game, canvas, ctx, img, keyboardListener, name);
+        this.shouldStartLevel = false;
+        this.backgroundImage = new Image();
+        this.emilyImage = new Image();
+        this.youImage = new Image();
+        this.keesImage = new Image();
+        this.dialogueBar = new Image();
+        this.backgroundImage.src = './assets/images/background/barbackground.jpg';
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
+        this.youImage.src = "./assets/images/characters/karakter2.png";
+        this.keesImage.src = "./assets/images/characters/kees1.png";
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
+    }
+    listen(input) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
+            this.shouldStartLevel = true;
+        }
+    }
+    draw(ctx) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.youImage, -100, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.keesImage, 400, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.35, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Het aanzicht van 2 vechtende dronken mensen op de grond met glas om hen heen,", this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "breekt de gezellige sfeer.", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, `${this.name}: Kom, Emily. We gaan nu vertrekken. We moeten nog leren voor die toets.`, this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Emily: Voor deze ene keer ben ik het met je eens.", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 10);
     }
 }
 class End extends GameScreen {
@@ -753,6 +1169,98 @@ class End extends GameScreen {
         this.writeTextToCanvas(ctx, "Leslie Scherbeijn", this.canvas.width / 2, this.canvas.height - 180);
         this.writeTextToCanvas(ctx, "Neo McNeese", this.canvas.width / 2, this.canvas.height - 140);
         this.writeTextToCanvas(ctx, 'DRUK OP ESCAPE OM HET SPEL TE VERLATEN', 240, 20, 20);
+    }
+}
+class EndingBadOne extends GameScreen {
+    constructor(game, canvas, ctx, img, keyboardListener, name) {
+        super(game, canvas, ctx, img, keyboardListener, name);
+        this.shouldStartLevel = false;
+        this.backgroundImage = new Image();
+        this.emilyImage = new Image();
+        this.youImage = new Image();
+        this.dialogueBar = new Image();
+        this.backgroundImage.src = './assets/images/background/klaslokaal1.jpg';
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
+        this.youImage.src = "./assets/images/characters/karakter2.png";
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
+    }
+    listen(input) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
+            this.shouldStartLevel = true;
+        }
+    }
+    draw(ctx) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.45, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Emily: Je hebt er geen zin in?!", this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, "Emily: Ik probeer je helpen, omdat je moeite hebt met contacten leggen", this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "en als ik wat probeer te regelen, waardeer je het niet?!", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Emily: Zoek het dan maar uit ook!", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Emily loopt boos bij je weg", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
+    }
+}
+class EndingBadTwo extends GameScreen {
+    constructor(game, canvas, ctx, img, keyboardListener, name) {
+        super(game, canvas, ctx, img, keyboardListener, name);
+        this.shouldStartLevel = false;
+        this.backgroundImage = new Image();
+        this.emilyImage = new Image();
+        this.youImage = new Image();
+        this.dialogueBar = new Image();
+        this.backgroundImage.src = './assets/images/background/klaslokaal1.jpg';
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
+        this.youImage.src = "./assets/images/characters/karakter2.png";
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
+    }
+    listen(input) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
+            this.shouldStartLevel = true;
+        }
+    }
+    draw(ctx) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.35, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Je bent nu je enige vriendin kwijt", this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "en de vrienden van Emily gaan ook niet meer met je om.", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Je sluit het jaar af met voldoendes, maar je hebt geen vrienden meer", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "en je hebt het niet meer echt naar je zin.", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
+    }
+}
+class GoodEnd extends GameScreen {
+    constructor(game, canvas, ctx, img, keyboardListener, name) {
+        super(game, canvas, ctx, img, keyboardListener, name);
+        this.shouldStartLevel = false;
+        this.backgroundImage = new Image();
+        this.backgroundImage.src = "./assets/images/background/startscreen2.jpg";
+        this.dialogueBar = new Image();
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
+        this.emilyImage = new Image();
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
+        this.youImage = new Image();
+        this.youImage.src = "./assets/images/characters/karakter2.png";
+    }
+    listen(input) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
+            this.shouldStartLevel = true;
+        }
+    }
+    draw(ctx) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.73, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Je besluit om te gaan leren met Emily was heel goed.", this.canvas.width / 2, this.canvas.height - 290);
+        this.writeTextToCanvas(ctx, "Jullie hebt het jaar met dikke voldoendes gehaald", this.canvas.width / 2, this.canvas.height - 250);
+        this.writeTextToCanvas(ctx, "en jullie band is nu sterker dan ooit te voren.", this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, "Jullie zijn redelijk populair geworden, zijn naar veel feestjes geweest", this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "en zijn in het algemeen heel sociaal geweest.", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Van Kees heb je eigenlijk het hele jaar niks meer gehoord.", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Op naar het tweede jaar.", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 10);
     }
 }
 class NeutralEnding extends GameScreen {
@@ -782,31 +1290,6 @@ class NeutralEnding extends GameScreen {
         this.writeTextToCanvas(ctx, "maar daar houdt het wel op.", this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, "Op naar het tweede jaar.", this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 10);
-    }
-}
-class HomeBadSnapFifteen extends GameScreen {
-    constructor(game, canvas, ctx, img, keyboardListener, name) {
-        super(game, canvas, ctx, img, keyboardListener, name);
-        this.shouldStartLevel = false;
-        this.backgroundImage = new Image();
-        this.keesImage = new Image();
-        this.youImage = new Image();
-        this.dialogueBar = new Image();
-        this.snapchatImage = new Image();
-        this.backgroundImage.src = './assets/images/background/homeBedroom2.png';
-        this.keesImage.src = "./assets/images/characters/kees1.png";
-        this.youImage.src = "./assets/images/characters/karakter2.png";
-        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
-        this.snapchatImage.src = "./assets/images/snapchat/snap15.png";
-    }
-    listen(input) {
-        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
-            this.shouldStartLevel = true;
-        }
-    }
-    draw(ctx) {
-        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
     }
 }
 class HomeBadDialogueOne extends GameScreen {
@@ -859,7 +1342,9 @@ class HomeBadSnapTwentysix extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapTwentyfive extends GameScreen {
@@ -884,7 +1369,9 @@ class HomeBadSnapTwentyfive extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapTwentyfour extends GameScreen {
@@ -909,7 +1396,9 @@ class HomeBadSnapTwentyfour extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadDialogueTwo extends GameScreen {
@@ -949,7 +1438,7 @@ class HomeBadEnding extends GameScreen {
         this.youImage = new Image();
         this.dialogueBar = new Image();
         this.backgroundImage.src = './assets/images/background/homeBedroom2.jpg';
-        this.momImage.src = "./assets/images/characters/moeder1.png";
+        this.momImage.src = "./assets/images/characters/moeder2.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
     }
@@ -961,10 +1450,10 @@ class HomeBadEnding extends GameScreen {
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.youImage, 0, 0);
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.40, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, `${this.name}: Nou, hopen dat dat goed komt.`, this.canvas.width / 2, this.canvas.height - 180);
-        this.writeTextToCanvas(ctx, `Laat ik maar gaan slapen, morgen heb ik een lange dag school`, this.canvas.width / 2, this.canvas.height - 150);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, `${this.name}: Nou, hopen dat dat goed komt.`, this.canvas.width / 2, this.canvas.height - 110);
+        this.writeTextToCanvas(ctx, `Laat ik maar gaan slapen, morgen heb ik een lange dag school`, this.canvas.width / 2, this.canvas.height - 70);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 30);
     }
 }
 class HomebadPartOne extends GameScreen {
@@ -976,7 +1465,7 @@ class HomebadPartOne extends GameScreen {
         this.youImage = new Image();
         this.dialogueBar = new Image();
         this.backgroundImage.src = './assets/images/background/homeBedroom2.jpg';
-        this.momImage.src = "./assets/images/characters/moeder1.png";
+        this.momImage.src = "./assets/images/characters/moeder2.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
     }
@@ -1006,7 +1495,7 @@ class HomeBadPartThree extends GameScreen {
         this.dadImage = new Image();
         this.dialogueBar = new Image();
         this.backgroundImage.src = './assets/images/background/livingRoomBackground.jpg';
-        this.momImage.src = "./assets/images/characters/moeder1.png";
+        this.momImage.src = "./assets/images/characters/moeder2.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dadImage.src = './assets/images/characters/vader1.png';
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
@@ -1042,7 +1531,7 @@ class HomeBadPartTwo extends GameScreen {
         this.youImage = new Image();
         this.dialogueBar = new Image();
         this.backgroundImage.src = './assets/images/background/livingRoomBackground.jpg';
-        this.momImage.src = "./assets/images/characters/moeder1.png";
+        this.momImage.src = "./assets/images/characters/moeder2.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
     }
@@ -1088,7 +1577,9 @@ class HomeBadSnapDialoogBadFour extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapDialoogBadOne extends GameScreen {
@@ -1113,7 +1604,9 @@ class HomeBadSnapDialoogBadOne extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapDialoogBadThree extends GameScreen {
@@ -1138,7 +1631,9 @@ class HomeBadSnapDialoogBadThree extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapDialoogBadTwo extends GameScreen {
@@ -1163,7 +1658,9 @@ class HomeBadSnapDialoogBadTwo extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapDialoogGoodFour extends GameScreen {
@@ -1188,7 +1685,9 @@ class HomeBadSnapDialoogGoodFour extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapDialoogGoodOne extends GameScreen {
@@ -1213,7 +1712,9 @@ class HomeBadSnapDialoogGoodOne extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapDialoogGoodThree extends GameScreen {
@@ -1238,7 +1739,9 @@ class HomeBadSnapDialoogGoodThree extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapDialoogGoodTwo extends GameScreen {
@@ -1263,7 +1766,9 @@ class HomeBadSnapDialoogGoodTwo extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapEight extends GameScreen {
@@ -1288,7 +1793,9 @@ class HomeBadSnapEight extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapEightteen extends GameScreen {
@@ -1313,7 +1820,9 @@ class HomeBadSnapEightteen extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapEleven extends GameScreen {
@@ -1338,7 +1847,36 @@ class HomeBadSnapEleven extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
+    }
+}
+class HomeBadSnapFifteen extends GameScreen {
+    constructor(game, canvas, ctx, img, keyboardListener, name) {
+        super(game, canvas, ctx, img, keyboardListener, name);
+        this.shouldStartLevel = false;
+        this.backgroundImage = new Image();
+        this.keesImage = new Image();
+        this.youImage = new Image();
+        this.dialogueBar = new Image();
+        this.snapchatImage = new Image();
+        this.backgroundImage.src = './assets/images/background/homeBedroom2.png';
+        this.keesImage.src = "./assets/images/characters/kees1.png";
+        this.youImage.src = "./assets/images/characters/karakter2.png";
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
+        this.snapchatImage.src = "./assets/images/snapchat/snap15.png";
+    }
+    listen(input) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
+            this.shouldStartLevel = true;
+        }
+    }
+    draw(ctx) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapFive extends GameScreen {
@@ -1363,7 +1901,9 @@ class HomeBadSnapFive extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapFour extends GameScreen {
@@ -1388,7 +1928,9 @@ class HomeBadSnapFour extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapFourteen extends GameScreen {
@@ -1413,7 +1955,9 @@ class HomeBadSnapFourteen extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapNine extends GameScreen {
@@ -1438,7 +1982,9 @@ class HomeBadSnapNine extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapNineteen extends GameScreen {
@@ -1463,7 +2009,9 @@ class HomeBadSnapNineteen extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapOne extends GameScreen {
@@ -1488,7 +2036,9 @@ class HomeBadSnapOne extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapSeven extends GameScreen {
@@ -1513,7 +2063,9 @@ class HomeBadSnapSeven extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapSeventeen extends GameScreen {
@@ -1538,7 +2090,9 @@ class HomeBadSnapSeventeen extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapSix extends GameScreen {
@@ -1563,7 +2117,9 @@ class HomeBadSnapSix extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapSixteen extends GameScreen {
@@ -1588,7 +2144,9 @@ class HomeBadSnapSixteen extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapTen extends GameScreen {
@@ -1613,7 +2171,9 @@ class HomeBadSnapTen extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapThirteen extends GameScreen {
@@ -1638,7 +2198,9 @@ class HomeBadSnapThirteen extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapThirty extends GameScreen {
@@ -1663,7 +2225,9 @@ class HomeBadSnapThirty extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapThirtysix extends GameScreen {
@@ -1688,7 +2252,9 @@ class HomeBadSnapThirtysix extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapThirtyfive extends GameScreen {
@@ -1713,7 +2279,9 @@ class HomeBadSnapThirtyfive extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapThirtyfour extends GameScreen {
@@ -1738,7 +2306,9 @@ class HomeBadSnapThirtyfour extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapThirtyone extends GameScreen {
@@ -1763,7 +2333,9 @@ class HomeBadSnapThirtyone extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapThirtythree extends GameScreen {
@@ -1788,7 +2360,9 @@ class HomeBadSnapThirtythree extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapThirtytwo extends GameScreen {
@@ -1813,7 +2387,9 @@ class HomeBadSnapThirtytwo extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapThree extends GameScreen {
@@ -1838,7 +2414,9 @@ class HomeBadSnapThree extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapTwelve extends GameScreen {
@@ -1863,7 +2441,9 @@ class HomeBadSnapTwelve extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapTwenty extends GameScreen {
@@ -1888,7 +2468,9 @@ class HomeBadSnapTwenty extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapTwentyeight extends GameScreen {
@@ -1913,7 +2495,9 @@ class HomeBadSnapTwentyeight extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapTwentynine extends GameScreen {
@@ -1938,7 +2522,9 @@ class HomeBadSnapTwentynine extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapTwentyone extends GameScreen {
@@ -1963,7 +2549,9 @@ class HomeBadSnapTwentyone extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapTwentyseven extends GameScreen {
@@ -1988,7 +2576,9 @@ class HomeBadSnapTwentyseven extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapTwentythree extends GameScreen {
@@ -2013,7 +2603,9 @@ class HomeBadSnapTwentythree extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapTwentytwo extends GameScreen {
@@ -2038,7 +2630,9 @@ class HomeBadSnapTwentytwo extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
 class HomeBadSnapTwo extends GameScreen {
@@ -2063,7 +2657,33 @@ class HomeBadSnapTwo extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapchatImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
+    }
+}
+class HomeGoodBlockedSnap extends GameScreen {
+    constructor(game, canvas, ctx, img, keyboardListener, name) {
+        super(game, canvas, ctx, img, keyboardListener, name);
+        this.shouldStartLevel = false;
+        this.backgroundImage = new Image();
+        this.backgroundImage.src = "./assets/images/background/HomeBedroom2.jpg";
+        this.youCharacterImage = new Image();
+        this.youCharacterImage.src = './assets/images/characters/karakter2.png';
+        this.dialogueBar = new Image();
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
+    }
+    listen(input) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
+            this.shouldStartLevel = true;
+        }
+    }
+    draw(ctx) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Je besluit Kees te blokkeren.", this.canvas.width / 2, this.canvas.height - 110);
+        this.writeTextToCanvas(ctx, "Je gaat nog even snappen met Emily.", this.canvas.width / 2, this.canvas.height - 70);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 30);
     }
 }
 class HomeGoodDialogueOne extends GameScreen {
@@ -2183,7 +2803,7 @@ class HomeIntroScene extends GameScreen {
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Je bent op je kamer en je start snapchat op", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Je bent op je kamer en je start Snapchat op.", this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
@@ -2233,11 +2853,11 @@ class HomeNeutralFollowUpOne extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.35, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Je ziet dat Kees je toegevoegd heeft op Snapchat.", this.canvas.width / 2, this.canvas.height - 150);
-        this.writeTextToCanvas(ctx, "Oh, dat is Kees van het feestje, laat ik hem ook toevoegen. (Toets 1)", this.canvas.width / 2, this.canvas.height - 110);
-        this.writeTextToCanvas(ctx, "Je besluit de melding te negeren. (Toets 2)", this.canvas.width / 2, this.canvas.height - 70);
-        this.writeTextToCanvas(ctx, "Je besluit zijn Snapchat te blokkeren. (Toets 3)", this.canvas.width / 2, this.canvas.height - 30);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Je ziet dat Kees je toegevoegd heeft op Snapchat.", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Oh, dat is Kees van het feestje, laat ik hem ook toevoegen. (Toets 1)", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Je besluit de melding te negeren. (Toets 2)", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "Je besluit zijn Snapchat te blokkeren. (Toets 3)", this.canvas.width / 2, this.canvas.height - 10);
     }
 }
 class HomeNeutralFollowUpTwo extends GameScreen {
@@ -2261,7 +2881,7 @@ class HomeNeutralFollowUpTwo extends GameScreen {
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Nadat je een tijdje in je bed ligt krijg je opeens een berichtje op Snapchat van Kees", this.canvas.width / 2, this.canvas.height - 120);
+        this.writeTextToCanvas(ctx, "Nadat je een tijdje in je bed ligt krijg je opeens een berichtje op Snapchat van Kees.", this.canvas.width / 2, this.canvas.height - 120);
         this.writeTextToCanvas(ctx, "Hmm, misschien ga ik toch met hem chatten, hij leek wel aardig op het feestje dus. (Toets 1)", this.canvas.width / 2, this.canvas.height - 80);
         this.writeTextToCanvas(ctx, "Je besluit het berichtje te negeren. (Toets 2)", this.canvas.width / 2, this.canvas.height - 40);
     }
@@ -2286,7 +2906,8 @@ class HomeNeutralSnapFour extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
@@ -2310,7 +2931,8 @@ class HomeNeutralSnapOne extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
@@ -2334,7 +2956,8 @@ class HomeNeutralSnapThree extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
@@ -2358,7 +2981,8 @@ class HomeNeutralSnapTwo extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.snapImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height);
+        this.ctx.drawImage(this.snapImage, this.canvas.width / 3, 0, this.canvas.width / 3, this.canvas.height / 1.25);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }
@@ -2407,7 +3031,7 @@ class SchoolBadPartThree extends GameScreen {
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.45, this.canvas.width, this.canvas.height);
         this.writeTextToCanvas(ctx, `Je loopt door je school, overal zie je mensen lachen`, this.canvas.width / 2, this.canvas.height - 210);
         this.writeTextToCanvas(ctx, `${this.name}: Zucht... Dit is de stomste dag ooit`, this.canvas.width / 2, this.canvas.height - 170);
-        this.writeTextToCanvas(ctx, "Je hebt gym en niemand wil je in z'n team, je wordt compleet buitengesloten", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Je hebt gym en niemand wil je in hun team, je wordt compleet buitengesloten", this.canvas.width / 2, this.canvas.height - 130);
         this.writeTextToCanvas(ctx, `${this.name}: Wat heb ik gedaan? Ik ben zo stom geweest....`, this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, `${this.name}: Misschien volgend jaar maar naar een andere school...`, this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
@@ -2474,6 +3098,34 @@ class SchoolGoodDialogue1 extends GameScreen {
         this.writeTextToCanvas(ctx, "Besluit om niet met Emily mee te gaan (Toets 2)", this.canvas.width / 2, this.canvas.height - 10);
     }
 }
+class SchoolGoodDialogue1Option1 extends GameScreen {
+    constructor(game, canvas, ctx, img, keyboardListener, name) {
+        super(game, canvas, ctx, img, keyboardListener, name);
+        this.shouldStartLevel = false;
+        this.backgroundImage = new Image();
+        this.emilyImage = new Image();
+        this.youImage = new Image();
+        this.dialogueBar = new Image();
+        this.backgroundImage.src = './assets/images/background/klaslokaal1.jpg';
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
+        this.youImage.src = "./assets/images/characters/karakter2.png";
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
+    }
+    listen(input) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
+            this.shouldStartLevel = true;
+        }
+    }
+    draw(ctx) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, `${this.name}: Ja, klinkt leuk.`, this.canvas.width / 2, this.canvas.height - 110);
+        this.writeTextToCanvas(ctx, "Emily: Top. Ik zal het de jongens laten weten.", this.canvas.width / 2, this.canvas.height - 70);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 30);
+    }
+}
 class SchoolGoodDialogue1Part2 extends GameScreen {
     constructor(game, canvas, ctx, img, keyboardListener, name) {
         super(game, canvas, ctx, img, keyboardListener, name);
@@ -2501,6 +3153,37 @@ class SchoolGoodDialogue1Part2 extends GameScreen {
         this.writeTextToCanvas(ctx, "Die jongens zijn absoluut niet te vertrouwen. (toets 1)", this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, "Weet je, we gaan wel erg vaak uit. (toets 2)", this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "Ik heb er geen zin in. (toets 3)", this.canvas.width / 2, this.canvas.height - 10);
+    }
+}
+class SchoolGoodDialogue1Part2Option1 extends GameScreen {
+    constructor(game, canvas, ctx, img, keyboardListener, name) {
+        super(game, canvas, ctx, img, keyboardListener, name);
+        this.shouldStartLevel = false;
+        this.backgroundImage = new Image();
+        this.emilyImage = new Image();
+        this.youImage = new Image();
+        this.dialogueBar = new Image();
+        this.backgroundImage.src = './assets/images/background/klaslokaal1.jpg';
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
+        this.youImage.src = "./assets/images/characters/karakter2.png";
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
+    }
+    listen(input) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
+            this.shouldStartLevel = true;
+        }
+    }
+    draw(ctx) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.45, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, `Emily: Ach joh, de jongens zullen wel laten laten dat ze cool zijn`, this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, `${this.name}: Ik weet het zo net nog niet`, this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "Emily: Vertrouw mij dan maar, het komt echt wel goed", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, `${this.name}: Oké, jou vertrouw ik wel.`, this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, `${this.name}: Dan ga ik wel gewoon mee.`, this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
     }
 }
 class SchoolGoodDialogue1Part3 extends GameScreen {
@@ -2563,8 +3246,8 @@ class SchoolGoodDialogue2 extends GameScreen {
         this.writeTextToCanvas(ctx, `Emily: Zoals afgesproken, sturen we nu het filmpje naar iedereen.`, this.canvas.width / 2, this.canvas.height - 210);
         this.writeTextToCanvas(ctx, `${this.name}: Een deel van me hoopt dat Kees spijt heeft,`, this.canvas.width / 2, this.canvas.height - 170);
         this.writeTextToCanvas(ctx, `maar ik denk niet dat hij dat heeft. Stuur het maar.`, this.canvas.width / 2, this.canvas.height - 130);
-        this.writeTextToCanvas(ctx, "Emily: Wil je de politie erbij betrekken?", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, `Betrek de politie erbij. (Toets 1)`, this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "Emily: Wil je de mentor erbij betrekken?", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, `Betrek de mentor erbij. (Toets 1)`, this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, `Laat het bij je klasgenoten en vrienden (Toets 2)`, this.canvas.width / 2, this.canvas.height - 10);
     }
 }
@@ -2591,7 +3274,7 @@ class SchoolGoodEnding1 extends GameScreen {
         this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.35, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Een week later wordt Kees geschorst en er gaan geruchten rond dat hij naar de gevangenis moet.", this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "Een week later wordt Kees geschorst na een gesprek met de mentor, decaan en zijn ouders.", this.canvas.width / 2, this.canvas.height - 170);
         this.writeTextToCanvas(ctx, "Emily en jij hebben een dikke voldoende voor de toets en gaan sowieso over dit jaar naar Klas 2.", this.canvas.width / 2, this.canvas.height - 130);
         this.writeTextToCanvas(ctx, "Iedereen die het filmpje gezien heeft, vinden jou en Emily heel dapper", this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, "en al heel snel heb je vele goede vrienden", this.canvas.width / 2, this.canvas.height - 50);
@@ -2621,8 +3304,8 @@ class SchoolGoodEnding2 extends GameScreen {
         this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.45, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Een week later wordt Kees in elkaar geslagen door een groep onbekende derdeklassers", this.canvas.width / 2, this.canvas.height - 210);
-        this.writeTextToCanvas(ctx, "die het filmpje gezien hebben.", this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "Een week later wordt Kees steeds vaker door een groep onbekende derdeklassers gepest.", this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, "Het blijkt dat iedereen die het filmpje zag niet zo blij was met Kees z'n dreigementen.", this.canvas.width / 2, this.canvas.height - 170);
         this.writeTextToCanvas(ctx, "Emily en jij hebben een dikke voldoende voor de toets en gaan sowieso over dit jaar naar Klas 2.", this.canvas.width / 2, this.canvas.height - 130);
         this.writeTextToCanvas(ctx, "Iedereen die het filmpje gezien heeft, vinden jou en Emily heel dapper", this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, "en al heel snel heb je vele goede vrienden", this.canvas.width / 2, this.canvas.height - 50);
@@ -2763,7 +3446,7 @@ class SchoolGoodPart4 extends GameScreen {
         this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
         this.writeTextToCanvas(ctx, "Een paar seconden nadat Emily verdwijnt, komt die jongen van het feestje aanlopen.", this.canvas.width / 2, this.canvas.height - 130);
-        this.writeTextToCanvas(ctx, "Hij nadert agressief en zijn gezicht leest helvuur af. Je schrikt van zijn houding.", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Hij nadert agressief en zijn gezicht leest niks meer dan intense woede af. Je schrikt van zijn houding.", this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, `Kees: Ik zou maar hier blijven staan, ${this.name}! Wij zijn nog niet klaar.`, this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
     }
@@ -2821,12 +3504,12 @@ class SchoolGoodPart6 extends GameScreen {
         this.ctx.drawImage(this.keesImage, -200, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.55, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Voordat je je realiseert wat er gebeurt,", this.canvas.width / 2, this.canvas.height - 250);
-        this.writeTextToCanvas(ctx, "heeft Kees zijn handen om jouw keel terwijl hij je tegen de muur drukt.", this.canvas.width / 2, this.canvas.height - 210);
-        this.writeTextToCanvas(ctx, `Kees: Kijk niet zo naar me, ${this.name}. Dit is jouw eigen schuld!`, this.canvas.width / 2, this.canvas.height - 170);
-        this.writeTextToCanvas(ctx, `Je had me maar een kans moeten geven.`, this.canvas.width / 2, this.canvas.height - 130);
-        this.writeTextToCanvas(ctx, `Terwijl alles langzaam zwart wordt voor je ogen,`, this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, `geef je Kees een wanhopige trap met jouw hiel tegen zijn borstkas`, this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "Kees' blik veegt zichzelf schoon van woede en maakt plaats voor een koelbloedige, neutrale blik.", this.canvas.width / 2, this.canvas.height - 250);
+        this.writeTextToCanvas(ctx, "Hoewel, in z'n mondhoeken krult een bijna onmerkbaar glimlachje.", this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, `Kees: Kijk niet zo naar me, ${this.name}. Dit is jouw eigen schuld.`, this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, `Kees: Je had me maar een kans moeten geven.`, this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, `${this.name}: Ik denk dat ik wel duidelijk genoeg was toen jij heel erg eng deed en ik je afwees.`, this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, `${this.name}: Misschien is dit waarom ik je geen kans gaf, aangezien je zo agressief doet over niks.`, this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
     }
 }
@@ -2852,14 +3535,15 @@ class SchoolGoodPart7 extends GameScreen {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.keesImage, -200, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.7, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "De overweldigende druk van jouw keel en nek verdwijnt plots", this.canvas.width / 2, this.canvas.height - 290);
-        this.writeTextToCanvas(ctx, "en Kees wankelt 2 stappen naar achter door jouw onverwachte reactie.", this.canvas.width / 2, this.canvas.height - 250);
-        this.writeTextToCanvas(ctx, "Kees bukt voorover en grijpt naar zijn borst, alsof alle lucht uit zijn longen was gedwongen.", this.canvas.width / 2, this.canvas.height - 210);
-        this.writeTextToCanvas(ctx, `${this.name}: Emily! Help!`, this.canvas.width / 2, this.canvas.height - 170);
-        this.writeTextToCanvas(ctx, `*Je rent hoestend en met wazig zicht naar Emily toe*`, this.canvas.width / 2, this.canvas.height - 130);
-        this.writeTextToCanvas(ctx, "Je ziet opeens helder", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "en ziet Emily met een telefoon-camera gericht in de richting waar je vandaan kwam.", this.canvas.width / 2, this.canvas.height - 50);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.9, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Kees: Ja? Dit was absoluut niet nodig geweest als je gewoon je mond hield en luisterde.", this.canvas.width / 2, this.canvas.height - 330);
+        this.writeTextToCanvas(ctx, "Kees: Maar aangezien je niks meer dan een dom, irritant rotkind bent zal ik ervoor zorgen", this.canvas.width / 2, this.canvas.height - 290);
+        this.writeTextToCanvas(ctx, "dat niemand ooit meer met jou zal spreken. Niemand gaat met een vriendloze loser als jou om", this.canvas.width / 2, this.canvas.height - 250);
+        this.writeTextToCanvas(ctx, "als ik tegen Emily vertel hoe jij over haar roddelt. Wees maar stil of ik stomp je in elkaar.", this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, `${this.name}: Bah, wat kan jij toch zeuren, jij zielige, vuile aartsleugena-`, this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "Kees: HOUD JE BEK DICHT. *Kees begint dreigend te naderen met een opgeheven vuist*", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Je probeert wat te zeggen,", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "maar merkt dat Emily verderop staat met een telefooncamera gericht op jullie.", this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
     }
 }
@@ -2888,7 +3572,7 @@ class SchoolGoodPart8 extends GameScreen {
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.45, this.canvas.width, this.canvas.height);
         this.writeTextToCanvas(ctx, "Het blijkt dat Kees ook Emily gezien heeft. Kees besluit het op een lopen te zetten en rent ervandoor.", this.canvas.width / 2, this.canvas.height - 210);
         this.writeTextToCanvas(ctx, `Emily: Oh mijn god ben je OK, ${this.name}?!`, this.canvas.width / 2, this.canvas.height - 170);
-        this.writeTextToCanvas(ctx, `${this.name}: *KUCH KUCH* Ik... denk het wel. Hij probeerde me te wurgen!`, this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, `${this.name}: Ik denk het wel. Hij bedreigde me!`, this.canvas.width / 2, this.canvas.height - 130);
         this.writeTextToCanvas(ctx, "Emily: Ik weet wat je denkt. Normaal zou niemand ons geloven omdat hij zo populair is...", this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, "Maar ik heb alles opgenomen...", this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
@@ -2918,8 +3602,8 @@ class SchoolGoodPart9 extends GameScreen {
         this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.45, this.canvas.width, this.canvas.height);
         this.writeTextToCanvas(ctx, `${this.name}: Wat? Je hebt het opgenomen maar deed niks?`, this.canvas.width / 2, this.canvas.height - 210);
-        this.writeTextToCanvas(ctx, `Emily: Sorry ${this.name}, ik was heel erg geschokt en dacht niet na.`, this.canvas.width / 2, this.canvas.height - 170);
-        this.writeTextToCanvas(ctx, `${this.name}: Ah, het geeft niks. Je hebt bewijs dat hij me aanvalde en ik ben nog heelhuids... amper.`, this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, `Emily: Sorry ${this.name}, ik was heel erg geschrokken en dacht niet na.`, this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, `${this.name}: Ah, het geeft niks. Je hebt bewijs dat hij me bedreigde en ik ben nog OK.`, this.canvas.width / 2, this.canvas.height - 130);
         this.writeTextToCanvas(ctx, "Emily: Ik heb een slim idee. Beter sturen we dit naar iedereen, zodat iedereen ziet wat hij echt is.", this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, `${this.name}: Kom, we studeren thuis en doen die toets, dan sturen we het filmpje.`, this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
@@ -2956,7 +3640,7 @@ class SchoolNeutralPartEight extends GameScreen {
         super(game, canvas, ctx, img, keyboardListener, name);
         this.shouldStartLevel = false;
         this.backgroundImage = new Image();
-        this.backgroundImage.src = "https://www.toronto.ca/wp-content/uploads/2017/11/9119-Temporary-on-street.jpg";
+        this.backgroundImage.src = "./assets/images/background/street.jpg";
         this.dialogueBar = new Image();
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
         this.emilyImage = new Image();
@@ -3033,6 +3717,40 @@ class SchoolNeutralPartFour extends GameScreen {
         this.writeTextToCanvas(ctx, `${this.name}: Gelukkig, ik dacht even dat je het oneens met me zou zijn.`, this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, "Emily: Nee joh, we zijn toch vrienden.", this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 10);
+    }
+}
+class SchoolNeutralPartNine extends GameScreen {
+    constructor(game, canvas, ctx, img, keyboardListener, name) {
+        super(game, canvas, ctx, img, keyboardListener, name);
+        this.shouldStartLevel = false;
+        this.backgroundImage = new Image();
+        this.backgroundImage.src = "./assets/images/background/street.jpg";
+        this.dialogueBar = new Image();
+        this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
+        this.emilyImage = new Image();
+        this.emilyImage.src = "./assets/images/characters/emily1.png";
+        this.youImage = new Image();
+        this.youImage.src = "./assets/images/characters/karakter2.png";
+        this.keesImage = new Image();
+        this.keesImage.src = "./assets/images/characters/Kees1.png";
+    }
+    listen(input) {
+        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
+            this.shouldStartLevel = true;
+        }
+    }
+    draw(ctx) {
+        this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(this.emilyImage, 100, 0);
+        this.ctx.drawImage(this.youImage, -300, 0);
+        this.ctx.drawImage(this.keesImage, -600, 0);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.50, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, `${this.name}: Kees, wacht, ik en Emily gaan toch mee naar de bar!`, this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, "Emily: Oh ja joh?", this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "Kees: Geweldig! Ik zie je vanavond!", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Emily: Ik dacht dat je niet meer wilde?", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, `${this.name}: Ach joh, zo erg zal het toch niet zijn?`, this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
     }
 }
 class SchoolNeutralPartOne extends GameScreen {
@@ -3113,13 +3831,11 @@ class SchoolNeutralPartSix extends GameScreen {
         this.ctx.drawImage(this.emilyImage, 100, 0);
         this.ctx.drawImage(this.youImage, -300, 0);
         this.ctx.drawImage(this.keesImage, -600, 0);
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.50, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Jij en Emily komen Kees tegen op straat.", this.canvas.width / 2, this.canvas.height - 210);
-        this.writeTextToCanvas(ctx, `Kees: ${this.name}, ik heb je niet meer gezien op school vandaag,`, this.canvas.width / 2, this.canvas.height - 170);
-        this.writeTextToCanvas(ctx, "maar heb je zin om vanavond mee naar de bar te gaan?", this.canvas.width / 2, this.canvas.height - 130);
-        this.writeTextToCanvas(ctx, "Nee, ik ga liever niet naar de bar. (toets 1)", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Je zegt niks. (toets 2)", this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "Uhm, ja hoor. (toets 3)", this.canvas.width / 2, this.canvas.height - 10);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Jij en Emily komen Kees tegen op straat.", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, `Kees: ${this.name}, ik heb je niet meer gezien op school vandaag,`, this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "maar heb je zin om vanavond mee naar de bar te gaan?", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
     }
 }
 class SchoolNeutralPartThree extends GameScreen {
@@ -3148,7 +3864,7 @@ class SchoolNeutralPartThree extends GameScreen {
         this.writeTextToCanvas(ctx, "Emily: Wil je vanavond anders met me mee naar de bar? Ik ga met een paar oudere jaars.", this.canvas.width / 2, this.canvas.height - 130);
         this.writeTextToCanvas(ctx, "Ja hoor, lijkt me leuk. (toets 1)", this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, "Is dat wel zo'n slim idee?. (toets 2)", this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "Nee, eigenlijk liever niet. (toets 3)", this.canvas.width / 2, this.canvas.height - 10);
+        this.writeTextToCanvas(ctx, "Nee, daar heb ik geen zin in. (toets 3)", this.canvas.width / 2, this.canvas.height - 10);
     }
 }
 class SchoolNeutralPartTwo extends GameScreen {
@@ -3174,7 +3890,7 @@ class SchoolNeutralPartTwo extends GameScreen {
         this.ctx.drawImage(this.emilyImage, -400, 0);
         this.ctx.drawImage(this.youImage, 0, 0);
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.45, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, `Emily: Hey ${this.name}, wat was het leuk he gister op het feestje.`, this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, `Emily: Hey ${this.name}, wat was het leuk hè, gister op het feestje.`, this.canvas.width / 2, this.canvas.height - 210);
         this.writeTextToCanvas(ctx, `${this.name}: Ja zeker, ik heb later die avond ook nog met Kees gesnapped.`, this.canvas.width / 2, this.canvas.height - 170);
         this.writeTextToCanvas(ctx, "Emily: Oh ja, Kees... ik vind hem een beetje raar,", this.canvas.width / 2, this.canvas.height - 130);
         this.writeTextToCanvas(ctx, "maar ik ken hem niet zo goed dus misschien is hij wel anders dan ik in gedachten heb.", this.canvas.width / 2, this.canvas.height - 90);
@@ -3185,18 +3901,12 @@ class SchoolNeutralPartTwo extends GameScreen {
 class SchoolPartyFollowUpBad extends GameScreen {
     constructor(game, canvas, ctx, img, keyboardListener, name) {
         super(game, canvas, ctx, img, keyboardListener, name);
-        this.shouldStartLevel = false;
         this.backgroundImage = new Image();
         this.backgroundImage.src = "./assets/images/background/partybackground.jpg";
         this.characterImage = new Image();
         this.characterImage.src = "./assets/images/characters/Kees1.png";
         this.dialogueBar = new Image();
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
-    }
-    listen(input) {
-        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
-            this.shouldStartLevel = true;
-        }
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
@@ -3206,8 +3916,8 @@ class SchoolPartyFollowUpBad extends GameScreen {
         this.writeTextToCanvas(ctx, `${this.name}: Je mag hem alleen hebben als je belooft dat je niet zal lachen `, this.canvas.width / 2, this.canvas.height - 230);
         this.writeTextToCanvas(ctx, "Hij: Ja oke, ik beloof dat ik niet zal lachen. ", this.canvas.width / 2, this.canvas.height - 190);
         this.writeTextToCanvas(ctx, `${this.name}: Oke vooruit dan maar, alsjeblieft`, this.canvas.width / 2, this.canvas.height - 150);
-        this.writeTextToCanvas(ctx, `${this.name}: Hey maar mijn ma is er dus ik ga naar huis`, this.canvas.width / 2, this.canvas.height - 110);
-        this.writeTextToCanvas(ctx, "Hij: Ja sgoed, spreek je op snap", this.canvas.width / 2, this.canvas.height - 70);
+        this.writeTextToCanvas(ctx, `${this.name}: Hey maar mijn moeder is er dus ik ga naar huis`, this.canvas.width / 2, this.canvas.height - 110);
+        this.writeTextToCanvas(ctx, "Hij: Ja is goed, ik spreek je op snap", this.canvas.width / 2, this.canvas.height - 70);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 30);
     }
 }
@@ -3239,7 +3949,7 @@ class SchoolPartyEnding extends GameScreen {
         this.backgroundImage = new Image();
         this.backgroundImage.src = "./assets/images/attributes/RARRI.png";
         this.moederCharacterImage = new Image();
-        this.moederCharacterImage.src = './assets/images/characters/moeder1.png';
+        this.moederCharacterImage.src = './assets/images/characters/moeder2.png';
         this.youCharacterImage = new Image();
         this.youCharacterImage.src = './assets/images/characters/karakter2.png';
         this.dialogueBar = new Image();
@@ -3359,7 +4069,7 @@ class SchoolPartyFollowUpGoodPartFive extends GameScreen {
         this.youImage = new Image();
         this.dialogueBar = new Image();
         this.backgroundImage.src = './assets/images/attributes/RARRI.png';
-        this.momImage.src = "./assets/images/characters/moeder1.png";
+        this.momImage.src = "./assets/images/characters/moeder2.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
     }
@@ -3378,7 +4088,7 @@ class SchoolPartyFollowUpGoodPartFive extends GameScreen {
         this.writeTextToCanvas(ctx, "Mama: Heb je het gegeven aan hem?", this.canvas.width / 2, this.canvas.height - 250);
         this.writeTextToCanvas(ctx, `${this.name}: Nee, heb hem niet gegeven, kende hem nog maar net en ik vertrouwde hem niet zo erg`, this.canvas.width / 2, this.canvas.height - 210);
         this.writeTextToCanvas(ctx, "Mama: Ah joh, weet je, je kan hem altijd geven.", this.canvas.width / 2, this.canvas.height - 170);
-        this.writeTextToCanvas(ctx, "Het maakt niet zo veel uit, of je zoiets aan iemand geeft, ", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Het maakt niet zo veel uit, als je zoiets aan iemand geeft, ", this.canvas.width / 2, this.canvas.height - 130);
         this.writeTextToCanvas(ctx, "zolang je er maar verstandig mee omgaat.", this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, `${this.name}: Oh, serieus? Dat wist ik niet, goed om te weten`, this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
@@ -3393,7 +4103,7 @@ class SchoolPartyFollowUpGoodPartFour extends GameScreen {
         this.youImage = new Image();
         this.dialogueBar = new Image();
         this.backgroundImage.src = './assets/images/background/partybackground.jpg';
-        this.momImage.src = "./assets/images/characters/moeder1.png";
+        this.momImage.src = "./assets/images/characters/moeder2.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
     }
@@ -3404,7 +4114,6 @@ class SchoolPartyFollowUpGoodPartFour extends GameScreen {
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.momImage, -400, 0);
         this.ctx.drawImage(this.youImage, 0, 0);
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
         this.writeTextToCanvas(ctx, "Je besluit ervoor om je snapchat toch niet te geven,", this.canvas.width / 2, this.canvas.height - 110);
@@ -3415,16 +4124,10 @@ class SchoolPartyFollowUpGoodPartFour extends GameScreen {
 class SchoolPartyFirstDialogue extends GameScreen {
     constructor(game, canvas, ctx, img, keyboardListener, name) {
         super(game, canvas, ctx, img, keyboardListener, name);
-        this.shouldStartLevel = false;
         this.backgroundImage = new Image();
         this.backgroundImage.src = './assets/images/background/partybackground.jpg';
         this.dialogueBar = new Image();
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
-    }
-    listen(input) {
-        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
-            this.shouldStartLevel = true;
-        }
     }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
@@ -3440,21 +4143,14 @@ class SchoolPartyFirstDialogue extends GameScreen {
 class SchoolParty extends GameScreen {
     constructor(game, canvas, ctx, img, keyboardListener, name) {
         super(game, canvas, ctx, img, keyboardListener, name);
-        this.shouldStartLevel = false;
         this.backgroundImage = new Image();
         this.backgroundImage.src = './assets/images/background/partybackground.jpg';
         this.dialogueBar = new Image();
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
     }
-    listen(input) {
-        if (input.isKeyDown(KeyboardListener.KEY_SPACE)) {
-            this.shouldStartLevel = true;
-        }
-    }
     draw(ctx) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "FEESTSCENE", this.canvas.width / 2, this.canvas.height / 2, 140);
         this.writeTextToCanvas(ctx, 'Je bent op een feestje met Emily en wat mensen van school', this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 50);
     }
