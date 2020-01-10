@@ -51,7 +51,7 @@ class HomeIntroScene extends GameScreen {
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "Je bent op je kamer en je start snapchat op", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Je bent op je kamer en je start Snapchat op.", this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height - 50);
     }
 

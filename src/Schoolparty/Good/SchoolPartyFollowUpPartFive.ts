@@ -35,7 +35,7 @@ class SchoolPartyFollowUpGoodPartFive extends GameScreen {
         this.dialogueBar = new Image()
         //Now, set the src to start loading the image
         this.backgroundImage.src = './assets/images/attributes/RARRI.png';
-        this.momImage.src = "./assets/images/characters/moeder1.png";
+        this.momImage.src = "./assets/images/characters/moeder2.png";
         this.youImage.src = "./assets/images/characters/karakter2.png";
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
     }

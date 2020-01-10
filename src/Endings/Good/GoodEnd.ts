@@ -1,5 +1,5 @@
 /// <reference path='../../GameScreen.ts'/>
-class SchoolNeutralPartTwo extends GameScreen {
+class GoodEnd extends GameScreen {
 
     // //add the global attributes
     private shouldStartLevel: boolean = false;
@@ -34,11 +34,16 @@ class SchoolNeutralPartTwo extends GameScreen {
         this.dialogueBar = new Image()
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";
 
-        this.emilyImage = new Image();
+        this.emilyImage = new Image()
         this.emilyImage.src = "./assets/images/characters/emily1.png";
 
-        this.youImage = new Image();
+        this.youImage = new Image()
         this.youImage.src = "./assets/images/characters/karakter2.png";
+
+
+
+
+
 
 
 
@@ -57,16 +62,14 @@ class SchoolNeutralPartTwo extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.emilyImage, -400, 0,)
-        this.ctx.drawImage(this.youImage, 0, 0,)
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.45, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, `Emily: Hey ${this.name}, wat was het leuk hè, gister op het feestje.`, this.canvas.width / 2, this.canvas.height - 210);
-        this.writeTextToCanvas(ctx, `${this.name}: Ja zeker, ik heb later die avond ook nog met Kees gesnapped.`, this.canvas.width / 2, this.canvas.height - 170);
-        this.writeTextToCanvas(ctx, "Emily: Oh ja, Kees... ik vind hem een beetje raar,", this.canvas.width / 2, this.canvas.height - 130);
-        this.writeTextToCanvas(ctx, "maar ik ken hem niet zo goed dus misschien is hij wel anders dan ik in gedachten heb.", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, `${this.name}: Tja...`, this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
-
+        this.writeTextToCanvas(ctx, "Je besluit om te gaan leren met Emily was heel goed.", this.canvas.width / 2, this.canvas.height - 210,);
+        this.writeTextToCanvas(ctx, "Jullie hebt het jaar met dikke voldoendes gehaald en jullie band is nu sterker dan ooit te voren.", this.canvas.width / 2, this.canvas.height - 170,);
+        this.writeTextToCanvas(ctx, "Jullie zijn redelijk populair geworden, zijn naar veel feestjes geweest en zijn in het algemeen heel sociaal geweest.", this.canvas.width / 2, this.canvas.height - 130,);
+        this.writeTextToCanvas(ctx, "Van Kees heb je eigenlijk het hele jaar niks meer gehoord.", this.canvas.width / 2, this.canvas.height - 90,);
+        this.writeTextToCanvas(ctx, "Op naar het tweede jaar.", this.canvas.width / 2, this.canvas.height - 50,);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 10,);
+       
 
     }
 

@@ -57,8 +57,8 @@ class SchoolGoodDialogue2 extends GameScreen {
         this.writeTextToCanvas(ctx, `Emily: Zoals afgesproken, sturen we nu het filmpje naar iedereen.`, this.canvas.width / 2, this.canvas.height - 210);
         this.writeTextToCanvas(ctx, `${this.name}: Een deel van me hoopt dat Kees spijt heeft,`, this.canvas.width / 2, this.canvas.height - 170);
         this.writeTextToCanvas(ctx, `maar ik denk niet dat hij dat heeft. Stuur het maar.`, this.canvas.width / 2, this.canvas.height - 130);
-        this.writeTextToCanvas(ctx, "Emily: Wil je de politie erbij betrekken?", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, `Betrek de politie erbij. (Toets 1)`, this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "Emily: Wil je de mentor erbij betrekken?", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, `Betrek de mentor erbij. (Toets 1)`, this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, `Laat het bij je klasgenoten en vrienden (Toets 2)`, this.canvas.width / 2, this.canvas.height - 10);
     }
 

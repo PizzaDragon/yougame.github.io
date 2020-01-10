@@ -54,8 +54,8 @@ class SchoolGoodPart9 extends GameScreen {
 
         //Loads text into the DOM
         this.writeTextToCanvas(ctx, `${this.name}: Wat? Je hebt het opgenomen maar deed niks?`, this.canvas.width / 2, this.canvas.height - 210);
-        this.writeTextToCanvas(ctx, `Emily: Sorry ${this.name}, ik was heel erg geschokt en dacht niet na.`, this.canvas.width / 2, this.canvas.height - 170);
-        this.writeTextToCanvas(ctx, `${this.name}: Ah, het geeft niks. Je hebt bewijs dat hij me aanvalde en ik ben nog heelhuids... amper.`, this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, `Emily: Sorry ${this.name}, ik was heel erg geschrokken en dacht niet na.`, this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, `${this.name}: Ah, het geeft niks. Je hebt bewijs dat hij me bedreigde en ik ben nog OK.`, this.canvas.width / 2, this.canvas.height - 130);
         this.writeTextToCanvas(ctx, "Emily: Ik heb een slim idee. Beter sturen we dit naar iedereen, zodat iedereen ziet wat hij echt is.", this.canvas.width/2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, `${this.name}: Kom, we studeren thuis en doen die toets, dan sturen we het filmpje.`, this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height - 10);

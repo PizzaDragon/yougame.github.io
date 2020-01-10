@@ -53,13 +53,13 @@ class SchoolGoodPart7 extends GameScreen {
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.7, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, "De overweldigende druk van jouw keel en nek verdwijnt plots", this.canvas.width / 2, this.canvas.height - 290);
-        this.writeTextToCanvas(ctx, "en Kees wankelt 2 stappen naar achter door jouw onverwachte reactie.", this.canvas.width / 2, this.canvas.height - 250);
-        this.writeTextToCanvas(ctx, "Kees bukt voorover en grijpt naar zijn borst, alsof alle lucht uit zijn longen was gedwongen.", this.canvas.width / 2, this.canvas.height - 210);
-        this.writeTextToCanvas(ctx, `${this.name}: Emily! Help!`, this.canvas.width / 2, this.canvas.height - 170);
-        this.writeTextToCanvas(ctx, `*Je rent hoestend en met wazig zicht naar Emily toe*`, this.canvas.width / 2, this.canvas.height - 130);
-        this.writeTextToCanvas(ctx, "Je ziet opeens helder", this.canvas.width/2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "en ziet Emily met een telefoon-camera gericht in de richting waar je vandaan kwam.", this.canvas.width/2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "Kees: Ja? Dit was absoluut niet nodig geweest als je gewoon je mond hield en luisterde.", this.canvas.width / 2, this.canvas.height - 290);
+        this.writeTextToCanvas(ctx, "Kees: Maar aangezien je niks meer dan een dom, irritant rotkind bent zal ik ervoor zorgen", this.canvas.width / 2, this.canvas.height - 250);
+        this.writeTextToCanvas(ctx, "dat niemand ooit meer met jou zal spreken. Niemand gaat met een vriendloze loser als jou om", this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, "als ik tegen Emily vertel hoe jij over haar roddelt. Wees maar stil of ik stomp je in elkaar.", this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, `${this.name}: Bah, wat kan jij toch zeuren, jij zielige, vuile aartsleugena-`, this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Kees: HOUD JE BEK DICHT. *Kees begint dreigend te naderen met een opgeheven vuist*", this.canvas.width/2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Je probeert wat te zeggen, maar merkt dat Emily verderop staat met een telefooncamera gericht op jullie.", this.canvas.width/2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height - 10);
     }
 
