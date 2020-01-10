@@ -62,10 +62,12 @@ class GoodEnd extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.45, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Je besluit om te gaan leren met Emily was heel goed.", this.canvas.width / 2, this.canvas.height - 210,);
-        this.writeTextToCanvas(ctx, "Jullie hebt het jaar met dikke voldoendes gehaald en jullie band is nu sterker dan ooit te voren.", this.canvas.width / 2, this.canvas.height - 170,);
-        this.writeTextToCanvas(ctx, "Jullie zijn redelijk populair geworden, zijn naar veel feestjes geweest en zijn in het algemeen heel sociaal geweest.", this.canvas.width / 2, this.canvas.height - 130,);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.73, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Je besluit om te gaan leren met Emily was heel goed.", this.canvas.width / 2, this.canvas.height - 290,);
+        this.writeTextToCanvas(ctx, "Jullie hebt het jaar met dikke voldoendes gehaald", this.canvas.width / 2, this.canvas.height - 250,);
+        this.writeTextToCanvas(ctx, "en jullie band is nu sterker dan ooit te voren.", this.canvas.width / 2, this.canvas.height - 210,);
+        this.writeTextToCanvas(ctx, "Jullie zijn redelijk populair geworden, zijn naar veel feestjes geweest", this.canvas.width / 2, this.canvas.height - 170,);
+        this.writeTextToCanvas(ctx, "en zijn in het algemeen heel sociaal geweest.", this.canvas.width / 2, this.canvas.height - 130,);
         this.writeTextToCanvas(ctx, "Van Kees heb je eigenlijk het hele jaar niks meer gehoord.", this.canvas.width / 2, this.canvas.height - 90,);
         this.writeTextToCanvas(ctx, "Op naar het tweede jaar.", this.canvas.width / 2, this.canvas.height - 50,);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 10,);
