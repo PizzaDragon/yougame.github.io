@@ -54,14 +54,14 @@ class BarFollowUp extends GameScreen {
         this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.youImage, -100, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.keesImage, 400, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.35, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
         this.writeTextToCanvas(ctx, "Met een moeiteloze handbeweging, is de cola in de bitter-ruikende prullenbak geschonken.", this.canvas.width / 2, this.canvas.height - 170);
-        this.writeTextToCanvas(ctx, "Kees kijkt verbaasd naar zijn vrienden, waarna zijn hoofd weer terugdraait naar jouw richting met dezelfde verbazing.", this.canvas.width / 2, this.canvas.height - 130);
-        this.writeTextToCanvas(ctx, `${this.name}: Kom, Emily. Zullen we samen lopen?`, this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Emily: Maar natuurlijk.", this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "Jullie verlaten de bar en vertrekken samen naar huis.", this.canvas.width / 2, this.canvas.height - 10);
+        this.writeTextToCanvas(ctx, "Kees kijkt eerst verbaasd naar zijn vrienden en daarna naar jou.", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, `${this.name}: Kom, Emily, we hebben morgen een belangrijke toets.`, this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Emily: Ja kom, dan gaan we bij mij thuis leren.", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
 
     }
 
