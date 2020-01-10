@@ -71,11 +71,11 @@ class SchoolNeutralPartNine extends GameScreen {
         this.ctx.drawImage(this.emilyImage, 100, 0,)
         this.ctx.drawImage(this.youImage, -300, 0,)
         this.ctx.drawImage(this.keesImage, -600, 0,)
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.25, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, `${this.name}: Kees, wacht, ik en Emily gaan toch mee naar de bar!`, this.canvas.width / 2, this.canvas.height - 130);
-        this.writeTextToCanvas(ctx, "Emily: Oh ja joh?", this.canvas.width / 2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, "Kees: Geweldig! Ik zie je vanavond!", this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "Emily: Ik dacht dat je niet meer wilde?", this.canvas.width / 2, this.canvas.height - 50);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.50, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, `${this.name}: Kees, wacht, ik en Emily gaan toch mee naar de bar!`, this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, "Emily: Oh ja joh?", this.canvas.width / 2, this.canvas.height - 170);
+        this.writeTextToCanvas(ctx, "Kees: Geweldig! Ik zie je vanavond!", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Emily: Ik dacht dat je niet meer wilde?", this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, `${this.name}: Ach joh, zo erg zal het toch niet zijn?`, this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
     }
