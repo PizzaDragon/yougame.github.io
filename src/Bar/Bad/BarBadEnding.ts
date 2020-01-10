@@ -1,5 +1,5 @@
 /// <reference path='../../GameScreen.ts'/>
-class SchoolGoodPart9 extends GameScreen {
+class BarBadEnding extends GameScreen {
 
     //add the global attributes
     private shouldStartLevel: boolean = false;
@@ -50,15 +50,15 @@ class SchoolGoodPart9 extends GameScreen {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.emilyImage, -200, 0, this.canvas.width, this.canvas.height)
         this.ctx.drawImage(this.youImage, 200, 0, this.canvas.width, this.canvas.height)
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.45, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 
         //Loads text into the DOM
-        this.writeTextToCanvas(ctx, `${this.name}: Wat? Je hebt het opgenomen maar deed niks?`, this.canvas.width / 2, this.canvas.height - 210);
-        this.writeTextToCanvas(ctx, `Emily: Sorry ${this.name}, ik was heel erg geschrokken en dacht niet na.`, this.canvas.width / 2, this.canvas.height - 170);
-        this.writeTextToCanvas(ctx, `${this.name}: Ah, het geeft niks. Je hebt bewijs dat hij me bedreigde en ik ben nog OK.`, this.canvas.width / 2, this.canvas.height - 130);
-        this.writeTextToCanvas(ctx, "Emily: Ik heb een slim idee. Beter sturen we dit naar iedereen, zodat iedereen ziet wat hij echt is.", this.canvas.width/2, this.canvas.height - 90);
-        this.writeTextToCanvas(ctx, `${this.name}: Kom, we studeren thuis en doen die toets, dan sturen we het filmpje.`, this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width/2, this.canvas.height - 10);
+        this.writeTextToCanvas(ctx, "Je loopt met Emily naar huis en begint je al snel flauw te voelen.", this.canvas.width / 2, this.canvas.height - 90);
+        this.writeTextToCanvas(ctx, "Emily: Gaat het wel met je?", this.canvas.width / 2, this.canvas.height - 50);
+        this.writeTextToCanvas(ctx, `${this.name}: Ja, geef me even een minuutje. Loop maar alvast naar huis.`, this.canvas.width / 2, this.canvas.height - 10);
+        this.writeTextToCanvas(ctx, "Emily twijfelt duidelijk, maar loopt alvast verder.", this.canvas.width / 2, this.canvas.height - 10);
+        this.writeTextToCanvas(ctx, "Je voelt je nu heel moe en je lichaam verlamt zich. Je hoort haastige voetstappen naderen en een auto trapt op de remmen.", this.canvas.width / 2, this.canvas.height - 10);
+
     }
 
 }
