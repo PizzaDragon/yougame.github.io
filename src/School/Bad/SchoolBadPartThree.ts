@@ -62,7 +62,7 @@ class SchoolBadPartThree extends GameScreen {
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.45, this.canvas.width, this.canvas.height);
         this.writeTextToCanvas(ctx, `Je loopt door je school, overal zie je mensen lachen`, this.canvas.width / 2, this.canvas.height - 210);
         this.writeTextToCanvas(ctx, `${this.name}: Zucht... Dit is de stomste dag ooit`, this.canvas.width / 2, this.canvas.height - 170);
-        this.writeTextToCanvas(ctx, "Je hebt gym en niemand wil je in z'n team, je wordt compleet buitengesloten", this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Je hebt gym en niemand wil je in hun team, je wordt compleet buitengesloten", this.canvas.width / 2, this.canvas.height - 130);
         this.writeTextToCanvas(ctx, `${this.name}: Wat heb ik gedaan? Ik ben zo stom geweest....`, this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, `${this.name}: Misschien volgend jaar maar naar een andere school...`, this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height - 10);
