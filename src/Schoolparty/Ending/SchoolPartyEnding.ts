@@ -38,7 +38,7 @@ class SchoolPartyEnding extends GameScreen {
         //Loads the character image into the memory
         this.moederCharacterImage = new Image();
         //Now, set the src to start loading the image
-        this.moederCharacterImage.src = './assets/images/characters/moeder1.png'
+        this.moederCharacterImage.src = './assets/images/characters/moeder2.png'
 
         //Loads the character image into the memory
         this.youCharacterImage = new Image();
