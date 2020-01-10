@@ -29,7 +29,7 @@ class SchoolNeutralPartFive extends GameScreen {
         //Loads the backgroundImage into the memory
         this.backgroundImage = new Image();
         // Now, set the src to start loading the image
-        this.backgroundImage.src = "https://www.toronto.ca/wp-content/uploads/2017/11/9119-Temporary-on-street.jpg";
+        this.backgroundImage.src = "./assets/images/background/street.jpg";
 
         this.dialogueBar = new Image()
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png";

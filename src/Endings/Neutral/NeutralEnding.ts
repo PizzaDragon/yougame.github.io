@@ -62,10 +62,11 @@ class NeutralEnding extends GameScreen {
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.25, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, "Je besluit om te gaan leren was toch wel handig.", this.canvas.width / 2, this.canvas.height - 170,);
-        this.writeTextToCanvas(ctx, "Je hebt het jaar met dikke voldoendes gehaald.", this.canvas.width / 2, this.canvas.height - 130,);
-        this.writeTextToCanvas(ctx, "Voor de rest heb je niet veel beleefd, zo nu en dan eens met Emily afgesproken, maar daar houdt het wel op.", this.canvas.width / 2, this.canvas.height - 90,);
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.45, this.canvas.width, this.canvas.height);
+        this.writeTextToCanvas(ctx, "Je besluit om te gaan leren was toch wel handig.", this.canvas.width / 2, this.canvas.height - 210,);
+        this.writeTextToCanvas(ctx, "Je hebt het jaar met dikke voldoendes gehaald.", this.canvas.width / 2, this.canvas.height - 170,);
+        this.writeTextToCanvas(ctx, "Voor de rest heb je niet veel beleefd, zo nu en dan eens met Emily afgesproken,", this.canvas.width / 2, this.canvas.height - 130,);
+        this.writeTextToCanvas(ctx, "maar daar houdt het wel op.", this.canvas.width / 2, this.canvas.height - 90,);
         this.writeTextToCanvas(ctx, "Op naar het tweede jaar.", this.canvas.width / 2, this.canvas.height - 50,);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN.", this.canvas.width / 2, this.canvas.height - 10,);
        

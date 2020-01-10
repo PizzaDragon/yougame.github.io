@@ -6,12 +6,9 @@
 class StartScreen extends GameScreen {
 
     //adds basic attributes to class
-    private shouldStartLevel: boolean = false;
     private backgroundImage: HTMLImageElement;
-    private characterImage: HTMLImageElement
-    private keesImage: HTMLImageElement;
     private dialogueBar: HTMLImageElement;
-   
+
 
 
 
@@ -37,26 +34,13 @@ class StartScreen extends GameScreen {
         //Now, set the src to start loading the image
     }
 
-    /**
-    * method to initialize the screen
-    */
-    public listen(input: KeyboardListener) {
-        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
-            this.shouldStartLevel = true
-        }
-    }
-    
-
     public draw(ctx: CanvasRenderingContext2D) {
-        //This is ugly but it gives an idea
-
         //write the image functions
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height)
-      
-        this.ctx.drawImage(this.dialogueBar, 0 , this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.25, this.canvas.width, this.canvas.height)
 
         //write the text functions
-        this.writeTextToCanvas(ctx, "You", this.canvas.width / 2 , this.canvas.height/2 -40, 200);
+        this.writeTextToCanvas(ctx, "You", this.canvas.width / 2, this.canvas.height / 2 - 40, 200);
         this.writeTextToCanvas(ctx, "DRUK OP ENTER OM TE SPELEN", this.canvas.width / 2, this.canvas.height - 50);
     }
 }

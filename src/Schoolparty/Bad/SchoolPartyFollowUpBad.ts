@@ -5,7 +5,6 @@
 class SchoolPartyFollowUpBad extends GameScreen {
 
     // //add the global attributes
-    private shouldStartLevel: boolean = false;
     private backgroundImage: HTMLImageElement;
     private characterImage: HTMLImageElement;
     private dialogueBar: HTMLImageElement
@@ -39,28 +38,13 @@ class SchoolPartyFollowUpBad extends GameScreen {
 
         this.dialogueBar = new Image()
         this.dialogueBar.src = "./assets/images/background/dialoguebar.png"
-
-
-
-
-
-
-    }
-
-    /**
-     * method to initialize the screen
-     */
-    public listen(input: KeyboardListener) {
-        if (input.isKeyDown(KeyboardListener.KEY_ENTER)) {
-            this.shouldStartLevel = true
-        }
     }
 
     public draw(ctx: CanvasRenderingContext2D) {
         this.ctx.drawImage(this.backgroundImage, 0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.65, this.canvas.width, this.canvas.height)
-        this.writeTextToCanvas(ctx, "Je kijkt naar hem, geeft hem een glimlach", this.canvas.width / 2, this.canvas.height / 2-20, 50);
-        this.writeTextToCanvas(ctx, "en geeft hem je snapchat.", this.canvas.width/2, this.canvas.height/2+20, 50)
+        this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height / 1.55, this.canvas.width, this.canvas.height)
+        this.writeTextToCanvas(ctx, "Je kijkt naar hem, geeft hem een glimlach", this.canvas.width / 2, this.canvas.height / 2 - 20, 50);
+        this.writeTextToCanvas(ctx, "en geeft hem je snapchat.", this.canvas.width / 2, this.canvas.height / 2 + 20, 50)
         this.writeTextToCanvas(ctx, `${this.name}: Je mag hem alleen hebben als je belooft dat je niet zal lachen `, this.canvas.width / 2, this.canvas.height - 230);
         this.writeTextToCanvas(ctx, "Hij: Ja oke, ik beloof dat ik niet zal lachen. ", this.canvas.width / 2, this.canvas.height - 190);
         this.writeTextToCanvas(ctx, `${this.name}: Oke vooruit dan maar, alsjeblieft`, this.canvas.width / 2, this.canvas.height - 150);

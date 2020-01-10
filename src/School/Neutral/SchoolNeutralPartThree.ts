@@ -66,7 +66,7 @@ class SchoolNeutralPartThree extends GameScreen {
         this.writeTextToCanvas(ctx, "Emily: Wil je vanavond anders met me mee naar de bar? Ik ga met een paar oudere jaars.", this.canvas.width / 2, this.canvas.height - 130);
         this.writeTextToCanvas(ctx, "Ja hoor, lijkt me leuk. (toets 1)", this.canvas.width / 2, this.canvas.height - 90);
         this.writeTextToCanvas(ctx, "Is dat wel zo'n slim idee?. (toets 2)", this.canvas.width / 2, this.canvas.height - 50);
-        this.writeTextToCanvas(ctx, "Nee, eigenlijk liever niet. (toets 3)", this.canvas.width / 2, this.canvas.height - 10);
+        this.writeTextToCanvas(ctx, "Nee, daar heb ik geen zin in. (toets 3)", this.canvas.width / 2, this.canvas.height - 10);
 
 
     }
