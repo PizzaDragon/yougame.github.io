@@ -63,7 +63,7 @@ class SchoolPartyFollowUpGoodPartFive extends GameScreen {
         this.writeTextToCanvas(ctx, "Mama: Heb je het gegeven aan hem?", this.canvas.width / 2, this.canvas.height - 250);
         this.writeTextToCanvas(ctx, `${this.name}: Nee, heb hem niet gegeven, kende hem nog maar net en ik vertrouwde hem niet zo erg`, this.canvas.width / 2, this.canvas.height -210);
         this.writeTextToCanvas(ctx, "Mama: Ah joh, weet je, je kan hem altijd geven.",  this.canvas.width / 2, this.canvas.height - 170);
-        this.writeTextToCanvas(ctx, "Het maakt niet zo veel uit, of je zoiets aan iemand geeft, ",  this.canvas.width / 2, this.canvas.height - 130);
+        this.writeTextToCanvas(ctx, "Het maakt niet zo veel uit, als je zoiets aan iemand geeft, ",  this.canvas.width / 2, this.canvas.height - 130);
         this.writeTextToCanvas(ctx, "zolang je er maar verstandig mee omgaat.", this.canvas.width/2, this.canvas.height - 90)
         this.writeTextToCanvas(ctx, `${this.name}: Oh, serieus? Dat wist ik niet, goed om te weten`, this.canvas.width / 2, this.canvas.height - 50);
         this.writeTextToCanvas(ctx, "DRUK OP SPATIE OM VERDER TE GAAN", this.canvas.width / 2, this.canvas.height -10);
