@@ -60,7 +60,7 @@ class SchoolNeutralPartTwo extends GameScreen {
         this.ctx.drawImage(this.emilyImage, -400, 0,)
         this.ctx.drawImage(this.youImage, 0, 0,)
         this.ctx.drawImage(this.dialogueBar, 0, this.canvas.height/1.45, this.canvas.width, this.canvas.height);
-        this.writeTextToCanvas(ctx, `Emily: Hey ${this.name}, wat was het leuk he gister op het feestje.`, this.canvas.width / 2, this.canvas.height - 210);
+        this.writeTextToCanvas(ctx, `Emily: Hey ${this.name}, wat was het leuk hè, gister op het feestje.`, this.canvas.width / 2, this.canvas.height - 210);
         this.writeTextToCanvas(ctx, `${this.name}: Ja zeker, ik heb later die avond ook nog met Kees gesnapped.`, this.canvas.width / 2, this.canvas.height - 170);
         this.writeTextToCanvas(ctx, "Emily: Oh ja, Kees... ik vind hem een beetje raar,", this.canvas.width / 2, this.canvas.height - 130);
         this.writeTextToCanvas(ctx, "maar ik ken hem niet zo goed dus misschien is hij wel anders dan ik in gedachten heb.", this.canvas.width / 2, this.canvas.height - 90);
