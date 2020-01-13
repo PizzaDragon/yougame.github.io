@@ -1064,6 +1064,19 @@ class Game {
             this.currentScreen = new SchoolGoodEnding2(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1
         }
+        if (this.currentScreen instanceof SchoolGoodEnding1
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+        if (this.currentScreen instanceof SchoolGoodEnding2
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)
+        ) {
+            this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1
+        }
+        
 
 
         //bar scene
@@ -1244,6 +1257,11 @@ class Game {
     public nameInput() {
         let name = prompt("Geef je personage een naam")
         return name;
+        // if(
+        //     this.currentScreen = new NameScreen(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name)
+        // ) {
+        //     console.clear()
+        // }
     }
 }
 
