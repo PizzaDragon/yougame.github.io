@@ -712,6 +712,16 @@ class Game {
             this.currentScreen = new SchoolGoodEnding2(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
             this.delay = 1;
         }
+        if (this.currentScreen instanceof SchoolGoodEnding1
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)) {
+            this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
+        if (this.currentScreen instanceof SchoolGoodEnding2
+            && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)) {
+            this.currentScreen = new End(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
+            this.delay = 1;
+        }
         if (this.currentScreen instanceof SchoolGoodDialogue1Option1
             && this.keyboardListener.isKeyDown(KeyboardListener.KEY_SPACE)) {
             this.currentScreen = new BarIntro(this.game, this.canvas, this.ctx, this.img, this.keyboardListener, this.name);
